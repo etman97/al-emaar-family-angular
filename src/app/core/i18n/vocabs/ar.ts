@@ -1,80 +1,126 @@
 export const locale = {
   lang: 'ar',
   data: {
-    GENERAL: {
-      // Common Actions
-      SAVE: 'حفظ',
-      CANCEL: 'إلغاء',
-      DELETE: 'حذف',
-      EDIT: 'تعديل',
-      ADD: 'إضافة',
-      SEARCH: 'بحث',
-      FILTER: 'تصفية',
-      RESET: 'إعادة تعيين',
-      SUBMIT: 'إرسال',
-      CONFIRM: 'تأكيد',
-      CLOSE: 'إغلاق',
-      BACK: 'رجوع',
-      NEXT: 'التالي',
-      PREVIOUS: 'السابق',
-      
-      // Common Status
-      ACTIVE: 'نشط',
-      INACTIVE: 'غير نشط',
-      ENABLED: 'مفعّل',
-      DISABLED: 'معطّل',
-      PENDING: 'قيد الانتظار',
-      APPROVED: 'موافق عليه',
-      REJECTED: 'مرفوض',
-      
-      // Common Labels
-      NAME: 'الاسم',
-      DESCRIPTION: 'الوصف',
-      STATUS: 'الحالة',
-      DATE: 'التاريخ',
-      TIME: 'الوقت',
-      TYPE: 'النوع',
-      ACTIONS: 'الإجراءات',
-      DETAILS: 'التفاصيل',
-      
-      // Common Messages
-      SUCCESS: 'تمت العملية بنجاح',
-      ERROR: 'حدث خطأ',
-      LOADING: 'جاري التحميل...',
-      NO_DATA: 'لا توجد بيانات',
-      CONFIRM_DELETE: 'هل أنت متأكد من حذف هذا العنصر؟',
-      
-      // Validation
-      REQUIRED: 'هذا الحقل مطلوب',
-      INVALID_EMAIL: 'يرجى إدخال بريد إلكتروني صالح',
-      INVALID_PHONE: 'يرجى إدخال رقم هاتف صالح',
-      MIN_LENGTH: 'الحد الأدنى للطول هو {{min}} حرفًا',
-      MAX_LENGTH: 'الحد الأقصى للطول هو {{max}} حرفًا',
+    // Navbar
+    NAVBAR: {
+      BRAND: 'عمار',
+      HOME: 'الرئيسية',
+      ABOUT: 'نبذة عنا',
+      PROJECTS: 'مشاريعنا',
+      CONTACT: 'تواصل معنا',
     },
-    
-    // Example Module Structure
-    EXAMPLE_MODULE: {
-      TITLE: 'نموذج مثال',
-      
-      FORM: {
-        FIELD: {
-          LABEL: 'تسمية الحقل',
-          PLACEHOLDER: 'أدخل القيمة',
-          ERROR: 'قيمة غير صالحة',
+    // Home Page
+    HOME: {
+      HERO: {
+        TITLE: 'من عائلة الإعمار..',
+        SUBTITLE: 'تُولد معايير جديدة للتميّز ',
+        DESCRIPTION: 'نصمم مشاريع سكنية تُلهم العيش برفاهية، ومساحات إدارية تُعيد تعريف بيئة العمل الراقية.كل مشروع نحمله برؤية تُوازن بين الفخامة، الأداء، والهوية المعمارية.',
+        GET_STARTED: 'ابدأ الآن',
+        LEARN_MORE: 'اعرف المزيد',
+      },
+      PROJECTS: {
+        SECTION_TITLE: 'أبرز مشاريعنا',
+        PROJECT_1: 'مشروع سكني متميز',
+        PROJECT_2: 'مشروع إداري راقي',
+        PROJECT_3: 'مجمع تجاري حديث',
+        PROJECT_4: 'برج عمار الإداري',
+        NAV: {
+          CURRENT: 'مشروعات حالية',
+          PREVIOUS: 'مشروعات سابقة',
+          COMPLETED: 'مشروعات قادمة'
         },
+        DETAILS: {
+          PROJECT_1: {
+            TITLE: 'اسم المشروع الأول',
+            DESCRIPTION: 'نص افتتاحي عشوائي نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم'
+          },
+          PROJECT_2: {
+            TITLE: 'اسم المشروع الثاني',
+            DESCRIPTION: 'نص افتتاحي عشوائي نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم'
+          },
+          PROJECT_3: {
+            TITLE: 'اسم المشروع الثالث',
+            DESCRIPTION: 'نص افتتاحي عشوائي نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم'
+          },
+          PROJECT_4: {
+            TITLE: 'اسم المشروع الرابع',
+            DESCRIPTION: 'نص افتتاحي عشوائي نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم'
+          }
+        },
+        VIEW_MORE: 'عرض المزيد'
       },
-      
-      FILTERS: {
-        SEARCH_PLACEHOLDER: 'بحث...',
+      CTA: {
+        TITLE: 'جاهز تبدأ بخطوتك الأولى؟',
+        SUBTITLE: 'سواء تبني حلمك السكني أو مشروعك الإداري، نحن نجهّز وحدتك بأعلى معايير الجودة والفخامة.ابدأ اليوم مع عائلة الإعمار... لأن كل تفاصيل وحدتك تستحق العناية.',
+        BUTTON: 'ابدأ الآن ',
       },
-      
-      VALIDATION: {
-        REQUIRED: 'الحقل مطلوب',
-      },
-      
-      ADDED: 'تمت إضافة العنصر بنجاح',
-      EDITED: 'تم تحديث العنصر بنجاح',
-      DELETED: 'تم حذف العنصر بنجاح',
+      ACHIEVEMENTS: {
+        TITLE: 'إنجازات نفخر بها',
+        DESCRIPTION: 'على مدار سنوات من الخبرة، رسخت عائلة الإعمار مكانتها كأحد أبرز المطورين العقاريين في المملكة. نقيس نجاحنا بما ننجزه على الأرض.. والثقة التي نبنيها مع عملائنا.',
+        STATS: {
+          PROJECTS: {
+            VALUE: '+100',
+            LABEL: 'مشروع سكني وتجاري'
+          },
+          AREA: {
+            VALUE: '+2',
+            LABEL: 'مليون متر مربع من المشاريع المطورة'
+          },
+          CLIENTS: {
+            VALUE: '+200',
+            LABEL: 'عميل وشريك ناجح'
+          },
+          EXPERIENCE: {
+            VALUE: '+30',
+            LABEL: 'عاماً من التميز في التطوير العقاري'
+          }
+        }
+      }
     },
+    // Footer
+    FOOTER: {
+      QUICK_ACCESS: 'وصول سريع',
+      HOME: 'الرئيسية',
+      ABOUT: 'نبذة عنا',
+      PROJECTS: 'مشاريعنا',
+      CONTACT: 'تواصل معنا',
+      CONTACT_US: 'تواصل معنا',
+      PHONE: '+966 55 922 3111',
+      ADDRESS: 'Lorem ipsum sit massa nulla quis masa nulla quis.'
+    },
+
+    // Contact Page
+    CONTACT: {
+      TITLE: 'تواصل معنا.',
+      SUBTITLE: 'قم بمراسلتنا',
+      FORM: {
+        FIRST_NAME_LABEL: 'الاسم الأول',
+        FIRST_NAME_PLACEHOLDER: 'الاسم الأول',
+        LAST_NAME_LABEL: 'الاسم الآخر',
+        LAST_NAME_PLACEHOLDER: 'الاسم الآخر',
+        PHONE_LABEL: 'رقم الجوال',
+        PHONE_PLACEHOLDER: 'رقم الجوال',
+        MESSAGE_LABEL: 'الرسالة',
+        MESSAGE_PLACEHOLDER: 'اكتب رسالتك',
+        SELECT_COUNTRY: 'اختر رمز الدولة',
+        SUBMIT: 'إرسال',
+        SUBMIT_ICON_ALT: 'إرسال الرسالة',
+        SUCCESS: 'تم إرسال رسالتك بنجاح!'
+      },
+      COUNTRIES: {
+        SA: 'السعودية',
+        EG: 'مصر',
+        AE: 'الإمارات العربية المتحدة'
+      },
+      MAP: {
+        TITLE: 'زر أقرب فرع',
+        IFRAME_TITLE: 'خريطة مدينة الرياض'
+      },
+      OVERLAY: {
+        TITLE: 'ابق على تواصل',
+        WHATSAPP: '+966 55 922 3111 ',
+        ADDRESS: 'الرياض، المملكة العربية السعودية'
+      }
+    }
   },
 };

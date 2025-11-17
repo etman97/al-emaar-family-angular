@@ -1,0 +1,156 @@
+<section class="contact-us-section">
+    <div class="container-fluid">
+        <div class="row align-items-start g-4 pt-4"> <!-- Left side - Form -->
+            <div class="col-lg-6 order-2 order-lg-1">
+
+                <h1 class="contact-title mb-2 mt-5 mt-lg-6">{{ 'CONTACT.TITLE' | translate }}</h1>
+
+
+                <div class="form-section bg-white p-4 p-md-4 pb-3 pb-md-4 shadow-sm rounded-3 mt-3">
+                    <div class="section-heading mb-4">
+                        <hr class="section-heading-line" />
+                        <h2 class="form-subtitle mb-0">{{ 'CONTACT.SUBTITLE' | translate }}</h2>
+                    </div>
+                    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form" [attr.dir]="direction">
+                        <div class="row g-2 mb-2">
+                            <div class="col-12 col-md-12">
+                                <label for="firstName" class="form-label visually-hidden">{{
+                                    'CONTACT.FORM.FIRST_NAME_LABEL' | translate }}</label>
+                                <input type="text" class="form-control form-control-lg custom-input" id="firstName"
+                                    name="firstName" [(ngModel)]="formData.firstName"
+                                    [attr.aria-label]="('CONTACT.FORM.FIRST_NAME_LABEL' | translate)"
+                                    [placeholder]="'CONTACT.FORM.FIRST_NAME_PLACEHOLDER' | translate"
+                                    [attr.dir]="direction" required />
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <label for="lastName" class="form-label visually-hidden">{{
+                                    'CONTACT.FORM.LAST_NAME_LABEL' | translate }}</label>
+                                <input type="text" class="form-control form-control-lg custom-input" id="lastName"
+                                    name="lastName" [(ngModel)]="formData.lastName"
+                                    [attr.aria-label]="('CONTACT.FORM.LAST_NAME_LABEL' | translate)"
+                                    [placeholder]="'CONTACT.FORM.LAST_NAME_PLACEHOLDER' | translate"
+                                    [attr.dir]="direction" required />
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-2">
+                            <div class="col-12">
+                                <label for="phone" class="form-label visually-hidden">{{ 'CONTACT.FORM.PHONE_LABEL' |
+                                    translate }}</label>
+                                <div class="input-group phone-input" [class.dropdown-open]="countryDropdownOpen">
+                                    <button type="button" class="input-group-text country-selector"
+                                        (click)="toggleCountryDropdown()" aria-haspopup="listbox"
+                                        [attr.aria-expanded]="countryDropdownOpen"
+                                        [attr.aria-label]="('CONTACT.FORM.SELECT_COUNTRY' | translate)">
+                                        <img [src]="selectedCountry.flag"
+                                            [attr.alt]="(selectedCountry.nameKey | translate)" class="flag-icon" />
+                                        <span class="country-name">{{ selectedCountry.nameKey | translate }}</span>
+                                        <i class="bi"
+                                            [ngClass]="countryDropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+                                    </button>
+
+                                    <ul class="country-dropdown" *ngIf="countryDropdownOpen" role="listbox">
+                                        <li *ngFor="let country of countries" role="option"
+                                            [class.active]="country.code === selectedCountry.code"
+                                            (click)="selectCountry(country)">
+                                            <img [src]="country.flag" [attr.alt]="(country.nameKey | translate)"
+                                                class="dropdown-flag" />
+                                            <span class="country-label">{{ country.nameKey | translate }}</span>
+                                            <span class="dial-code">{{ country.dialCode }}</span>
+                                        </li>
+                                    </ul>
+
+                                    <span class="input-group-text country-code">{{ selectedCountry.dialCode }}</span>
+                                    <input type="tel" class="form-control form-control-lg custom-input"
+                                        [ngClass]="{ 'placeholder-rtl': direction === 'rtl' }" id="phone" name="phone"
+                                        [(ngModel)]="formData.phone" inputmode="tel"
+                                        [attr.aria-label]="('CONTACT.FORM.PHONE_LABEL' | translate)"
+                                        [placeholder]="'CONTACT.FORM.PHONE_PLACEHOLDER' | translate" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-2">
+                            <div class="col-12">
+                                <label for="message" class="form-label visually-hidden">{{ 'CONTACT.FORM.MESSAGE_LABEL'
+                                    | translate }}</label>
+                                <textarea class="form-control form-control-lg custom-input" id="message" name="message"
+                                    [(ngModel)]="formData.message" rows="4"
+                                    [attr.aria-label]="('CONTACT.FORM.MESSAGE_LABEL' | translate)"
+                                    [placeholder]="'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate"
+                                    [attr.dir]="direction" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end mt-2">
+                            <button type="submit" class="submit-button" [disabled]="!contactForm.valid">
+                                <span class="submit-text">{{ 'CONTACT.FORM.SUBMIT' | translate }}</span>
+                                <span class="submit-icon">
+                                    <img src="assets/iconMessage.png"
+                                        [attr.alt]="('CONTACT.FORM.SUBMIT_ICON_ALT' | translate)"
+                                        class="submit-icon-img" />
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Map Section -->
+                    <div class="map-section mb-0">
+                        <div class="section-heading map-heading mb-2">
+                            <hr class="section-heading-line" />
+                            <h3 class="map-title mb-0">{{ 'CONTACT.MAP.TITLE' | translate }}</h3>
+                        </div>
+                        <div class="map-wrapper">
+                            <iframe [attr.title]="'CONTACT.MAP.IFRAME_TITLE' | translate"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.907987139956!2d46.6752955753704!3d24.713551577098504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03e4e1985f03%3A0x355bf83e52e7fcd4!2z2KfZhNmF2YbYr9mK2Yog2YHZg9mI2KjZhNmK2Kkg2KfZhNi52KjZitmE!5e0!3m2!1sar!2ssa!4v1731820800000!5m2!1sar!2ssa"
+                                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side - Image -->
+            <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+                <div class="image-wrapper">
+                    <img src="/assets/contact-us.png" alt="Building" class="contact-image img-fluid" />
+                    <div class="image-overlay">
+                        <div class="contact-info-overlay">
+                            <div class="overlay-content">
+                                <div class="overlay-title-wrapper mb-3">
+                                    <hr class="overlay-title-line" />
+                                    <h3 class="overlay-title">{{ 'CONTACT.OVERLAY.TITLE' | translate }}</h3>
+                                </div>
+
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-whatsapp fs-5"></i>
+                                    <span>{{ 'CONTACT.OVERLAY.WHATSAPP' | translate }}</span>
+                                </div>
+
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-geo-alt fs-5"></i>
+                                    <span>{{ 'CONTACT.OVERLAY.ADDRESS' | translate }}</span>
+                                </div>
+
+                                <div class="info-item d-flex align-items-center">
+                                    <div class="social-icons d-flex gap-3">
+                                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="#" title="Facebook" aria-label="Facebook">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#" title="Instagram" aria-label="Instagram">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

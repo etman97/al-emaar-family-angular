@@ -1,0 +1,1101 @@
+﻿.section-divider {
+  width: calc(100% - 200px);
+  max-width: 100%;
+  height: 0;
+  border: 1px solid #E8E8E8;
+  opacity: 1;
+  margin: 40px auto;
+  border-radius: 6px;
+  display: block;
+}
+
+// Projects Gallery Section
+.projects-gallery-section {
+  width: 100%;
+  margin: 60px auto;
+  padding: 0 100px;
+}
+
+.gallery-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-section-title {
+  font-family: 'Alexandria';
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 32px);
+  color: #181818;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  font-family: 'Alexandria';
+  font-weight: 400;
+  font-size: 16px;
+  color: #6d6d6d;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  
+  &.active,
+  &:hover {
+    background: #3F5B91;
+    color: #ffffff;
+  }
+}
+
+.gallery-container {
+  display: flex;
+  gap: 16px;
+  min-height: 500px;
+  height: clamp(500px, 60vh, 690px);
+  border-radius: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.gallery-item {
+  position: relative;
+  min-width: 120px;
+  width: 120px;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.5s ease, min-width 0.5s ease;
+  border-radius: 6px;
+  flex-shrink: 0;
+  
+  &.active {
+    width: clamp(400px, 50%, 808px);
+    min-width: clamp(400px, 50%, 808px);
+    flex-grow: 1;
+    
+    .gallery-content {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.3s;
+    }
+    
+    .gallery-text-vertical {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  &:not(.active) {
+    .gallery-content {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .gallery-text-vertical {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  z-index: 1;
+}
+
+.gallery-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-title {
+  font-family: 'Alexandria';
+  font-weight: 500;
+  font-size: clamp(20px, 2.5vw, 32px);
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.gallery-description {
+  font-family: 'Alexandria';
+  font-weight: 400;
+  font-size: clamp(12px, 1.2vw, 16px);
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.6;
+  text-align: justify;
+  flex: 1;
+}
+
+.gallery-button {
+  background: #3F5B91;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-family: 'Alexandria';
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  
+  &:hover {
+    background: #2d4470;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+}
+
+.gallery-text-vertical {
+  font-family: 'Alexandria';
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  margin: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap;
+}
+
+// RTL Support for Gallery
+:host-context([dir="rtl"]) {
+  .gallery-section-title {
+    text-align: center;
+  }
+  
+  .gallery-title,
+  .gallery-description {
+    text-align: right;
+  }
+  
+  .gallery-button {
+    align-self: flex-start;
+  }
+}
+
+:host-context([dir="ltr"]) {
+  .gallery-title,
+  .gallery-description {
+    text-align: left;
+  }
+  
+  .gallery-button {
+    align-self: flex-start;
+  }
+}
+
+// Responsive Styles for Gallery
+@media (max-width: 1440px) {
+  .projects-gallery-section {
+    padding: 0 80px;
+  }
+  
+  .achievements-section {
+    padding: 60px 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .projects-gallery-section {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 0 60px;
+  }
+  
+  .achievements-section {
+    padding: 50px 60px;
+  }
+  
+  .gallery-section-title {
+    font-size: 28px;
+  }
+  
+  .gallery-container {
+    height: 500px;
+    gap: 12px;
+  }
+  
+  .gallery-item {
+    width: 90px;
+    height: 500px;
+    
+    &.active {
+      width: 600px;
+    }
+  }
+  
+  .gallery-title {
+    font-size: 24px;
+  }
+  
+  .gallery-description {
+    font-size: 14px;
+  }
+  
+  .gallery-text-vertical {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .projects-gallery-section {
+    padding: 0 50px;
+  }
+  
+  .achievements-section {
+    padding: 40px 50px;
+  }
+  
+  .header-content {
+    gap: 16px;
+  }
+  
+  .gallery-section-title {
+    font-size: 24px;
+  }
+  
+  .nav-buttons-container {
+    gap: 12px;
+  }
+  
+  .nav-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  
+  .gallery-container {
+    height: 400px;
+    gap: 10px;
+  }
+  
+  .gallery-item {
+    width: 70px;
+    height: 400px;
+    
+    &.active {
+      width: 450px;
+    }
+  }
+  
+  .gallery-overlay {
+    padding: 30px;
+  }
+  
+  .gallery-title {
+    font-size: 20px;
+  }
+  
+  .gallery-description {
+    font-size: 12px;
+  }
+  
+  .gallery-text-vertical {
+    font-size: 14px;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-gallery-section {
+    padding: 0 30px;
+  }
+  
+  .achievements-section {
+    padding: 30px 30px;
+  }
+  
+  .header-content {
+    gap: 12px;
+  }
+  
+  .gallery-section-title {
+    font-size: 20px;
+  }
+  
+  .nav-buttons-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .nav-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .gallery-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .gallery-button {
+    align-self: flex-start;
+  }
+  
+  .gallery-container {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+  
+  .gallery-item {
+    width: 100%;
+    height: 80px;
+    
+    &.active {
+      width: 100%;
+      height: 400px;
+    }
+  }
+  
+  .gallery-overlay {
+    padding: 20px;
+  }
+  
+  .gallery-text-vertical {
+    writing-mode: horizontal-tb;
+    transform: translateX(-50%) rotate(0deg);
+    font-size: 14px;
+    bottom: 20px;
+    left: 50%;
+  }
+  
+  .gallery-title {
+    font-size: 18px;
+  }
+  
+  .gallery-description {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-gallery-section {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  .achievements-section {
+    padding: 30px 20px;
+  }
+  
+  .gallery-item {
+    height: 60px;
+    
+    &.active {
+      height: 350px;
+    }
+  }
+  
+  .gallery-overlay {
+    padding: 15px;
+  }
+  
+  .gallery-title {
+    font-size: 16px;
+  }
+  
+  .gallery-description {
+    font-size: 11px;
+  }
+  
+  .gallery-button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+.hero-section {
+  padding: 0;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: flex-start;
+  background-color: #ffffff;
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center top;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.hero-section .container-fluid {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-content {
+  max-width: 100%;
+}
+
+.hero-title {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 48px);
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #3F5B91;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 48px);
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #3F5B91;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 24px);
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #181818;
+  margin-bottom: 0;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 900px;
+  margin: 0 auto;
+  
+  .building-img {
+    position: absolute;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .main-img {
+    width: 600px;
+    height: 790px;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .top-img {
+    width: 220px;
+    height: 300px;
+    top: 111px;
+    left: -3%;
+    z-index: 2;
+  }
+  
+  .bottom-img {
+    width: 300px;
+    height: 300px;
+    top: 530px;
+    left: 356px;
+    z-index: 2;
+  }
+}
+
+
+
+.achievements-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.achievements-header {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.achievements-title {
+  font-family: 'Alexandria';
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.3;
+  color: #181818;
+  margin: 0 0 1rem;
+}
+
+.achievements-description {
+  font-family: 'Alexandria';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #6d6d6d;
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-top: 2px solid #E8E8E8;
+  border-right: 2px solid #E8E8E8;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 6px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+  width: 200px;
+  opacity: 1;
+}
+
+.stat-value {
+  font-family: 'Alexandria';
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1;
+  color: #3F5B91;
+  margin-bottom: 1.2rem;
+}
+
+.stat-label {
+  font-family: 'Alexandria';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #3F5B91;
+}
+
+[dir="rtl"] .stat-label,
+[dir="rtl"] .achievements-description {
+  text-align: center;
+}
+
+@media (max-width: 1440px) {
+  .achievements-section {
+    padding: 60px 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .achievements-section {
+    padding: 60px 60px;
+  }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991px) {
+  .achievements-section {
+    padding: 40px 50px;
+  }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-card { min-height: auto; }
+  .achievements-title { font-size: 32px; }
+}
+
+@media (max-width: 768px) {
+  .achievements-section {
+    padding: 30px 30px;
+  }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-card { min-height: auto; }
+  .achievements-title { font-size: 32px; }
+}
+
+@media (max-width: 576px) {
+  .achievements-section {
+    padding: 30px 20px;
+  }
+}
+
+:host-context([dir="rtl"]) {
+  .hero-content {
+    text-align: right;
+  }
+  
+  .hero-description {
+    text-align: justify;
+  }
+  
+  .image-container {
+    .main-img {
+      left: 0;
+      right: auto;
+      top: 60px;
+    }
+    
+    .top-img {
+      left: -3%;
+      right: auto;
+      top: 111px;
+    }
+    
+    .bottom-img {
+      left: 356px;
+      right: auto;
+      top: 520px;
+    }
+  }
+}
+
+:host-context([dir="ltr"]) {
+  .hero-content {
+    text-align: left;
+  }
+  
+  .hero-description {
+    text-align: justify;
+  }
+  
+  .image-container {
+    .main-img {
+      left: auto;
+      right: 0;
+      top: 60px;
+    }
+    
+    .top-img {
+      left: auto;
+      right: -3%;
+      top: 111px;
+    }
+    
+    .bottom-img {
+      left: auto;
+      right: 356px;
+      top: 520px;
+    }
+  }
+}
+
+// Call to Action Section Styles
+.call-to-action-section {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), #3F5B91;
+  width: 100%;
+  height: 400px;
+  margin-top: 60px;
+  opacity: 1;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26%;
+    height: 100%;
+    background-image: url('/assets/Group.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+.cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-left {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  flex-shrink: 0;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-grow: 1;
+  position: absolute;
+  top: 30px;
+  right: 100px;
+}
+
+.cta-image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-image {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  object-fit: cover;
+  border-radius: 0;
+  z-index: 2;
+}
+
+.cta-pattern {
+  display: none;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 690px;
+}
+
+.cta-logo {
+  width: 251px;
+  height: 118px;
+  opacity: 1;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.cta-title {
+  font-family: 'Alexandria';
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.cta-description {
+  font-family: 'Alexandria';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+  text-align: justify;
+}
+
+.cta-button {
+  background-color: #ffffff;
+  color: #3F5B91;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Alexandria';
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+}
+
+// RTL Support for CTA Section
+:host-context([dir="rtl"]) {
+  .call-to-action-section {
+    &::before {
+      left: 0 !important;
+      right: auto !important;
+    }
+  }
+  
+  .cta-left {
+    left: auto !important;
+    right: 100px !important;
+  }
+  
+  .cta-right {
+    right: auto !important;
+    left: 100px !important;
+    justify-content: flex-start !important;
+  }
+  
+  .cta-title {
+    text-align: right !important;
+  }
+  
+  .cta-description {
+    text-align: right !important;
+  }
+  
+  .cta-button {
+    align-self: flex-start !important;
+  }
+}
+
+:host-context([dir="ltr"]) {
+   .call-to-action-section {
+    &::before {
+      left: auto !important;
+      right: 0 !important;
+    }
+  }
+  .cta-left {
+    left: 100px !important;
+    right: auto !important;
+  }
+  
+  .cta-right {
+    right: 100px !important;
+    left: auto !important;
+    justify-content: flex-end !important;
+  }
+  
+  .cta-title {
+    text-align: left;
+  }
+  
+  .cta-description {
+    text-align: justify;
+  }
+  
+  .cta-button {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 1440px) {
+  .cta-left {
+    left: 80px;
+  }
+  
+  .cta-right {
+    right: 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .call-to-action-section {
+    padding: 30px 60px 50px;
+    height: auto;
+  }
+  
+  .cta-left {
+    left: 60px;
+  }
+  
+  .cta-right {
+    top: 20px;
+    right: 60px;
+  }
+  
+  .cta-image {
+    width: 250px;
+    height: 250px;
+    top: 40px;
+    left: 50px;
+  }
+  
+  .cta-right {
+    top: 20px;
+    right: 50px;
+  }
+  
+  .cta-logo {
+    width: 200px;
+    height: 90px;
+  }
+  
+  .cta-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .call-to-action-section {
+    flex-direction: column;
+    padding: 30px;
+    height: auto;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+  }
+  
+  .cta-left {
+    width: 100%;
+  }
+  
+  .cta-image-wrapper {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+  }
+  
+  .cta-image {
+    position: static;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+  
+  .cta-right {
+    position: static;
+    width: 100%;
+    justify-content: flex-start;
+    right: auto;
+    top: auto;
+  }
+  
+  .cta-content {
+    width: 100%;
+  }
+  
+  .cta-logo {
+    width: 180px;
+    height: 80px;
+  }
+  
+  .cta-title {
+    font-size: 22px;
+    text-align: left;
+  }
+  
+  .cta-description {
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .call-to-action-section {
+    padding: 20px;
+  }
+  
+  .cta-image {
+    max-width: 250px;
+  }
+  
+  .cta-logo {
+    width: 150px;
+    height: 70px;
+  }
+  
+  .cta-title {
+    font-size: 18px;
+  }
+  
+  .cta-description {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 0 0 2rem 0;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  
+  .image-container {
+    height: 700px;
+    margin-bottom: 3rem;
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-container {
+    height: 600px;
+    transform: scale(0.45);
+  }
+}

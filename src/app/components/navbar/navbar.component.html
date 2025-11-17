@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <!-- Logo on the left -->
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets/Logo white.png" alt="{{ 'NAVBAR.BRAND' | translate }}" class="logo" />
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Menu in the center -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            {{ 'NAVBAR.HOME' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{ 'NAVBAR.ABOUT' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{ 'NAVBAR.PROJECTS' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{ 'NAVBAR.CONTACT' | translate }}</a>
+        </li>
+      </ul>
+      
+      <!-- Language switcher inside collapse -->
+      <div class="language-section">
+        <button class="language-btn" (click)="toggleLanguage()">
+          {{ currentLang === 'ar' ? 'EN' : 'ع' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

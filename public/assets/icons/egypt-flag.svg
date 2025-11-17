@@ -1,0 +1,6 @@
+<svg width="36" height="24" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Egypt flag">
+  <rect width="36" height="24" rx="3" fill="#ce1126"/>
+  <rect y="8" width="36" height="8" fill="#ffffff"/>
+  <rect y="16" width="36" height="8" fill="#000000"/>
+  <path d="M18 12.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5Zm0 0" fill="#c09300" opacity="0.9"/>
+</svg>

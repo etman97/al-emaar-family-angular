@@ -1,0 +1,63 @@
+<footer class="footer">
+	<div class="footer__container">
+		<!-- Logo Section -->
+		<div class="footer__col footer__col--logo">
+			<div class="logo-icon">
+				<img src="/assets/Logo white (1).png" [alt]="'NAVBAR.BRAND' | translate" class="footer__logo" />
+			</div>
+
+		</div>
+
+		<!-- Quick Links Section -->
+		<div class="footer__col footer__col--links">
+			<div class="footer__title-wrapper">
+				<hr class="footer__title-line" />
+				<h3 class="footer__title">{{ 'FOOTER.QUICK_ACCESS' | translate }}</h3>
+			</div>
+			<ul class="footer__links">
+				<li><a routerLink="/">{{ 'FOOTER.HOME' | translate }}</a></li>
+				<li><a routerLink="/about">{{ 'FOOTER.ABOUT' | translate }}</a></li>
+				<li><a routerLink="/projects">{{ 'FOOTER.PROJECTS' | translate }}</a></li>
+				<li><a routerLink="/contact">{{ 'FOOTER.CONTACT' | translate }}</a></li>
+			</ul>
+		</div>
+
+		<!-- Contact Section -->
+		<div class="footer__col footer__col--contact">
+			<div class="footer__title-wrapper">
+				<hr class="footer__title-line" />
+				<h3 class="footer__title">{{ 'FOOTER.CONTACT_US' | translate }}</h3>
+			</div>
+
+			<div class="footer__item">
+				<span class="contact-icon contact-icon--circle">
+					<i class="fab fa-whatsapp"></i>
+				</span>
+				<span class="contact-text">
+					<a href="https://wa.me/966559223111">{{ 'FOOTER.PHONE' | translate }}</a>
+				</span>
+			</div>
+
+			<div class="footer__item">
+				<span class="contact-icon contact-icon--circle">
+					<i class="bi bi-geo-alt"></i>
+				</span>
+				<span class="contact-text">
+					{{ 'FOOTER.ADDRESS' | translate }}
+				</span>
+			</div>
+
+			<div class="footer__social">
+				<a href="#" title="LinkedIn" aria-label="LinkedIn">
+					<i class="fa-brands fa-linkedin-in"></i>
+				</a>
+				<a href="#" title="Facebook" aria-label="Facebook">
+					<i class="fa-brands fa-facebook-f"></i>
+				</a>
+				<a href="#" title="Instagram" aria-label="Instagram">
+					<i class="fa-brands fa-instagram"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>

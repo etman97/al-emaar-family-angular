@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { TranslationService } from './core/i18n';
 import { locale as enLang } from './core/i18n/vocabs/en';
 import { locale as arLang } from './core/i18n/vocabs/ar';
-import { LanguageSwitcherComponent } from './language-switcher.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LanguageSwitcherComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

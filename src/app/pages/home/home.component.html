@@ -1,0 +1,107 @@
+<section class="hero-section">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <!-- Text on the left -->
+      <div class="col-lg-6 order-lg-1">
+        <div class="hero-content">
+          <h1 class="hero-title">{{ 'HOME.HERO.TITLE' | translate }}</h1>
+          <h2 class="hero-subtitle">{{ 'HOME.HERO.SUBTITLE' | translate }}</h2>
+          <p class="hero-description">{{ 'HOME.HERO.DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Images on the right -->
+      <div class="col-lg-6 order-lg-2">
+        <div class="image-container">
+          <img src="assets/Rectangle 41.png" alt="Main Building" class="building-img main-img" />
+          <img src="assets/Rectangle 43.png" alt="Top Left Building" class="building-img top-img" />
+          <img src="assets/Rectangle 42.png" alt="Bottom Right Building" class="building-img bottom-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <hr class="section-divider" />
+
+<section class="achievements-section">
+  <div class="achievements-header text-center">
+    <h2 class="achievements-title">{{ 'HOME.ACHIEVEMENTS.TITLE' | translate }}</h2>
+    <p class="achievements-description">{{ 'HOME.ACHIEVEMENTS.DESCRIPTION' | translate }}</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.PROJECTS.VALUE' | translate }}</div>
+      <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.PROJECTS.LABEL' | translate }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.AREA.VALUE' | translate }}</div>
+      <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.AREA.LABEL' | translate }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.CLIENTS.VALUE' | translate }}</div>
+      <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.CLIENTS.LABEL' | translate }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.EXPERIENCE.VALUE' | translate }}</div>
+      <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.EXPERIENCE.LABEL' | translate }}</div>
+    </div>
+  </div>
+</section>
+
+  <section class="call-to-action-section">
+    <div class="cta-container">
+      <!-- Left side: Image with pattern background -->
+      <div class="cta-right">
+        <div class="cta-image-wrapper">
+          <img src="assets/Rectangle 65.png" alt="Call to Action" class="cta-image" />
+        </div>
+      </div>
+
+      <!-- Right side: Content with Logo, Title, Description and Button -->
+      <div class="cta-left">
+        <div class="cta-content">
+          <img src="assets/Rectangle 66.png" alt="Logo" class="cta-logo" />
+          <h2 class="cta-title">{{ 'HOME.CTA.TITLE' | translate }}</h2>
+          <p class="cta-description">{{ 'HOME.CTA.SUBTITLE' | translate }}</p>
+          <button class="cta-button">{{ 'HOME.CTA.BUTTON' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="projects-gallery-section">
+    <div class="gallery-header">
+      <div class="header-content">
+        <h2 class="gallery-section-title">{{ 'HOME.PROJECTS.SECTION_TITLE' | translate }}</h2>
+        <div class="nav-buttons-container">
+          <button 
+            *ngFor="let btn of navigationButtons; let i = index"
+            class="nav-button"
+            [class.active]="activeCategoryIndex === i"
+            (click)="setActiveCategory(i)">
+            {{ btn | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-container">
+      <div 
+        *ngFor="let project of projects; let i = index"
+        class="gallery-item"
+        [class.active]="activeProjectIndex === i"
+        (click)="toggleProject(i)">
+        <img [src]="project.image" [alt]="project.name" class="gallery-image" />
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h3 class="gallery-title">{{ project.title | translate }}</h3>
+            <div class="gallery-footer">
+              <p class="gallery-description">{{ project.description | translate }}</p>
+              <button class="gallery-button">{{ 'HOME.PROJECTS.VIEW_MORE' | translate }}</button>
+            </div>
+          </div>
+          <h3 class="gallery-text-vertical">{{ project.name | translate }}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
