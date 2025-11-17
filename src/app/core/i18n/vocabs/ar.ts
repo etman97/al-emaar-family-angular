@@ -86,7 +86,7 @@ export const locale = {
       CONTACT: 'تواصل معنا',
       CONTACT_US: 'تواصل معنا',
       PHONE: '+966 55 922 3111',
-      ADDRESS: 'Lorem ipsum sit massa nulla quis masa nulla quis.'
+      ADDRESS: 'الرياض، المملكة العربية السعودية'
     },
 
     // Contact Page
@@ -118,7 +118,7 @@ export const locale = {
       },
       OVERLAY: {
         TITLE: 'ابق على تواصل',
-        WHATSAPP: '+966 55 922 3111 ',
+        WHATSAPP: '+966 55 922 3111',
         ADDRESS: 'الرياض، المملكة العربية السعودية'
       }
     }

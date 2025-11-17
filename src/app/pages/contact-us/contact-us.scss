@@ -1,7 +1,7 @@
 // Contact Us page styles
 .contact-us-section {
   background: #ffffff;
-  font-family: 'Alexandria', sans-serif;
+  font-family: 'Alexandria';
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -38,6 +38,14 @@
     font-size: 28px;
   }
 }
+:host-context([dir="rtl"]) .contact-title {
+  text-align: right;
+}
+
+:host-context([dir="ltr"]) .contact-title {
+  text-align: left;
+}
+
 
 .form-subtitle {
   font-size: 18px;
@@ -332,8 +340,8 @@ textarea.custom-input {
   }
 
   .country-dropdown {
-    right: 0;
     left: auto;
+    direction: ltr;
   }
 }
 
@@ -588,4 +596,7 @@ textarea.custom-input {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.whatsapp {
+  direction: ltr;
 }

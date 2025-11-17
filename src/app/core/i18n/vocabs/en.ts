@@ -85,7 +85,7 @@ export const locale = {
       CONTACT: 'Contact Us',
       CONTACT_US: 'Contact Us',
       PHONE: '+966 55 922 3111',
-      ADDRESS: 'Lorem ipsum sit massa nulla quis masa nulla quis.'
+      ADDRESS: 'Riyadh, Kingdom of Saudi Arabia'
     },
 
     // Contact Page
