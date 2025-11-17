@@ -2,6 +2,24 @@
 .contact-us-section {
   background: #ffffff;
   font-family: 'Alexandria', sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/assets/Pattern.svg') center/cover no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > .container-fluid {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 // Typography
@@ -179,6 +197,7 @@ textarea.custom-input {
     border-radius: 0;
     direction: ltr;
     text-align: left;
+    min-width: 0;
   }
 
   .custom-input.placeholder-rtl {
@@ -262,12 +281,39 @@ textarea.custom-input {
   }
 }
 
+@media (max-width: 576px) {
+  .phone-input {
+    .input-group-text {
+      gap: 6px;
+    }
+
+    .country-selector {
+      min-width: auto;
+      padding: 6px 10px;
+      gap: 8px;
+    }
+
+    .country-selector .flag-icon {
+      width: 22px;
+      height: 14px;
+    }
+
+    .country-selector .country-name {
+      display: none;
+    }
+
+    .country-code {
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+  }
+}
+
 [dir='rtl'] .phone-input {
   direction: rtl;
   flex-direction: row-reverse;
 
   .country-selector {
-    border-radius: 0 6px 6px 0;
     border-left: 1px solid #E8E8E8;
     border-right: none;
   }

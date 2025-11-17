@@ -31,12 +31,12 @@
 }
 
 :host-context([dir="rtl"]) .footer__col--logo {
-	align-items: flex-start;
+	align-items: center;
 	text-align: right;
 }
 
 :host-context([dir="ltr"]) .footer__col--logo {
-	align-items: flex-start;
+	align-items: center;
 	text-align: left;
 }
 

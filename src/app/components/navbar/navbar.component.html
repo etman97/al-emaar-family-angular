@@ -25,7 +25,14 @@
           <a class="nav-link" href="#">{{ 'NAVBAR.PROJECTS' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{ 'NAVBAR.CONTACT' | translate }}</a>
+          <a
+            class="nav-link"
+            routerLink="/contact-us"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ 'NAVBAR.CONTACT' | translate }}
+          </a>
         </li>
       </ul>
       
