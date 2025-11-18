@@ -8,6 +8,7 @@ export const locale = {
       ABOUT: 'About Us',
       PROJECTS: 'Our Projects',
       CONTACT: 'Contact Us',
+      OUR_COMPANIES: 'Our Companies'
     },
     
     // Home Page
@@ -76,6 +77,13 @@ export const locale = {
         }
       }
     },
+
+    // Our Companies Page
+    OUR_COMPANIES: {
+      TITLE: 'About Emmar Family',
+      DESCRIPTION: 'The company was established after 30 years of quality and perfection in the field of residential and commercial real estate development'
+    },
+
     // Footer
     FOOTER: {
       QUICK_ACCESS: 'Quick Access',

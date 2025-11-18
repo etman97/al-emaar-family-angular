@@ -8,6 +8,7 @@ export const locale = {
       ABOUT: 'نبذة عنا',
       PROJECTS: 'مشاريعنا',
       CONTACT: 'تواصل معنا',
+      OUR_COMPANIES: 'شركاتنا'
     },
     // Home Page
     HOME: {
@@ -87,6 +88,12 @@ export const locale = {
       CONTACT_US: 'تواصل معنا',
       PHONE: '+966 55 922 3111',
       ADDRESS: 'الرياض، المملكة العربية السعودية'
+    },
+
+    // Our Companies Page
+    OUR_COMPANIES: {
+      TITLE: 'عن عائلة الإعمار',
+      DESCRIPTION: 'تم تأسيس الشركة بعد امتداد خبرة دامت 30 سنة من الجودة والاتقان في مجال التطوير العقاري السكني والتجاري'
     },
 
     // Contact Page
