@@ -84,6 +84,12 @@ export const locale = {
       DESCRIPTION: 'Random introductory text for design random introductory text for design random introductory text for design'
     },
 
+    // About Us Page
+    ABOUT_US: {
+      TITLE: 'About Emmar Family',
+      DESCRIPTION: 'The company was established after 30 years of quality and perfection in the field of residential and commercial real estate development'
+    },
+
     // Footer
     FOOTER: {
       QUICK_ACCESS: 'Quick Access',
