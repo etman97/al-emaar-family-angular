@@ -2,27 +2,90 @@
 	<div class="container-fluid">
 		<div class="row align-items-center our-companies-wrapper">
 			<div class="col-lg-4 col-md-12 order-2 order-lg-2">
-				<div class="our-companies-images" aria-hidden="true">
-					<img
-						src="assets/Companies1.png"
-						alt="مبنى حديث من الزجاج"
-						class="our-companies-image our-companies-image--primary"
-					/>
-					<img
-						src="assets/Companies2.png"
-						alt="منظور لمبنى تجاري"
-						class="our-companies-image our-companies-image--secondary"
-					/>
+				<div class="our-companies-images animate-on-scroll" aria-hidden="true">
+					<img src="assets/Companies1.png" alt="مبنى حديث من الزجاج"
+						class="our-companies-image our-companies-image--primary" />
+					<img src="assets/Companies2.png" alt="منظور لمبنى تجاري"
+						class="our-companies-image our-companies-image--secondary" />
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-12 order-1 order-lg-1">
-				<div class="our-companies-content">
+				<div class="our-companies-content animate-on-scroll">
 					<h2 class="our-companies-title">{{ 'OUR_COMPANIES.TITLE' | translate }}</h2>
 					<p class="our-companies-description">
 						{{ 'OUR_COMPANIES.DESCRIPTION' | translate }}
 					</p>
 				</div>
 			</div>
+
+		</div>
+	</div>
+</section>
+<section class="companies-family-section py-5 mb-4" >
+	<div class="container-fluid">
+		<div class="companies-card">
+
+			<div class="row g-4 align-items-center">
+
+
+				<div class="col-lg-6">
+					<div class="company-intro animate-on-scroll">
+						<h3 class="company-intro-title">الشركة 1</h3>
+						<p class="company-intro-text">
+							نـص افتتاحـي عشوائي للتصميم نـص افتتاحـي عشوائي للتصميم نـص افتتاحـي عشوائي للتصميم</p>
+						<p class="company-intro-text mb-2">
+							نـص افتتاحـي عشوائي للتصميم نـص افتتاحـي عشوائي للتصميم نـص افتتاحـي عشوائي للتصميم</p>
+						<button (click)="toggleContent()" class="company-intro-link" [ngClass]="{'show-less': showMoreContent}">
+							{{ showMoreContent ? 'عرض أقل' : 'عرض المزيد' }}
+						</button>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="companies-logo-box animate-on-scroll">
+						<img src="assets/logoCompanies.png" alt="عائلة الإعمار" class="companies-logo-img" />
+					</div>
+				</div>
+			</div>
+
+			@if (showMoreContent) {
+			<div class="row g-4 align-items-center mt-3 expandable-content" [@expandCollapse]>
+				<div class="col-lg-6">
+					<div class="company-block">
+						<p class="company-block-text">
+							نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم نص افتتاحي
+							عشوائي للتصميم نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم
+							نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="company-block">
+						<img src="assets/Companies4.png" alt="شركة 1" class="company-block-img img-fluid" />
+
+					</div>
+				</div>
+
+
+
+				<div class="col-lg-6">
+					<div class="company-block company-block--right">
+						<img src="assets/Companies3.png" alt="شركة 2" class="company-block-img img-fluid" />
+
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="company-block company-block--right">
+						<p class="company-block-text mb-3">
+							نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم نص افتتاحي
+							عشوائي للتصميم نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم
+							نص افتتاحي عشوائي للتصميم نص افتتاحي عشوائي للتصميم.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			}
 		</div>
 	</div>
 </section>

@@ -80,8 +80,8 @@ export const locale = {
 
     // Our Companies Page
     OUR_COMPANIES: {
-      TITLE: 'About Emmar Family',
-      DESCRIPTION: 'The company was established after 30 years of quality and perfection in the field of residential and commercial real estate development'
+      TITLE: 'Our Companies',
+      DESCRIPTION: 'Random introductory text for design random introductory text for design random introductory text for design'
     },
 
     // Footer
