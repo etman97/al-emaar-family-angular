@@ -1234,7 +1234,12 @@
   .call-to-action-section {
     padding: 24px 16px;
   }
-
+  .hero-section .row {
+    flex-direction: column;
+    gap: 0px !important;
+    align-items: center;
+    text-align: center;
+  }
   .call-to-action-section::before {
     display: none;
   }
@@ -1289,13 +1294,13 @@
 
 @media (max-width: 991px) {
   .hero-section {
-    padding: 32px 16px 40px;
+    padding: 100px 16px 40px;
     min-height: auto;
   }
 
   .hero-section .row {
     flex-direction: column;
-    gap: 24px;
+    gap: 50px;
     align-items: center;
     text-align: center;
   }
@@ -1341,10 +1346,10 @@
 
   :host-context([dir='rtl']) .image-container .main-img,
   :host-context([dir='ltr']) .image-container .main-img {
-    width: 68%;
-    height: 78%;
-    top: 16%;
-    left: 50%;
+    width: 79%;
+    height: 100%;
+    top: 5%;
+    left: 10%;
     right: auto;
     transform: translateX(-50%);
   }
@@ -1354,8 +1359,8 @@
     display: block;
     width: 32%;
     height: 36%;
-    top: 0;
-    left: 8%;
+    top: 51px;
+    left: 3%;
     right: auto;
   }
 
@@ -1364,7 +1369,7 @@
     display: block;
     width: 38%;
     height: 40%;
-    top: 51%;
+    top: 62%;
     right: 6%;
     left: auto;
   }
