@@ -54,4 +54,5 @@ export class OurCompanies implements OnInit, AfterViewInit {
     const animatedElements = this.elementRef.nativeElement.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach((el: Element) => observer.observe(el));
   }
+  
 }

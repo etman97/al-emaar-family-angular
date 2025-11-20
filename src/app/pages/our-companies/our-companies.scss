@@ -21,7 +21,6 @@
   }
 }
 
-/* Scroll Animations */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -521,9 +520,9 @@
 }
 
 .company-intro-link {
+  min-width: 113px;
   width: 113px;
   height: 42px;
-  padding: 10px 14px;
   background: #3f5b91;
   color: #ffffff;
   border: none;
@@ -534,13 +533,15 @@
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0%;
-  text-align: right;
+  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 0 16px;
+  white-space: nowrap;
 
   &.show-less {
     background: transparent;
@@ -559,7 +560,6 @@
   }
 }
 
-/* البلوكات اللي فيها الصور تحت */
 .company-block {
   display: flex;
   flex-direction: column;
@@ -578,7 +578,6 @@
   margin-top: 12px;
 }
 
-/* لو حابب تزود تحكم للبلوك اليمين */
 .company-block--right {
   text-align: right;
 }
@@ -612,8 +611,9 @@
 
   .company-intro-link {
     font-size: 13px;
-    width: 100px;
+    min-width: 100px;
     height: 38px;
+    padding: 0 14px;
   }
 }
 
@@ -640,8 +640,8 @@
 
   .company-intro-link {
     font-size: 12px;
-    width: 90px;
+    min-width: 90px;
     height: 36px;
-    padding: 8px 12px;
+    padding: 0 12px;
   }
 }

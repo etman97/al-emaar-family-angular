@@ -1,0 +1,75 @@
+<section class="hero-search-section">
+  <div class="search-bar">
+    <div class="search-segment search-input-segment">
+      <input type="text" [placeholder]="'OUR_PROJECTS.SEARCH.PLACEHOLDER' | translate" [attr.aria-label]="'OUR_PROJECTS.SEARCH.PLACEHOLDER' | translate" />
+      <span class="search-icon" aria-hidden="true"></span>
+    </div>
+
+    <button class="search-segment" type="button">
+      <span class="segment-label">{{ 'OUR_PROJECTS.SEARCH.PROPERTY_TYPE' | translate }}</span>
+      <span class="caret"></span>
+    </button>
+
+    <button class="search-segment" type="button">
+      <span class="segment-label">{{ 'OUR_PROJECTS.SEARCH.PRICE' | translate }}</span>
+      <span class="caret"></span>
+    </button>
+
+    <button class="search-segment" type="button">
+      <span class="segment-label">{{ 'OUR_PROJECTS.SEARCH.ROOMS_BATHROOMS' | translate }}</span>
+      <span class="caret"></span>
+    </button>
+
+    <button class="search-segment search-button" type="button">{{ 'OUR_PROJECTS.SEARCH.SEARCH_BUTTON' | translate }}</button>
+  </div>
+</section>
+
+<section class="projects-section">
+  <div class="container">
+    <h2 class="projects-title">{{ 'OUR_PROJECTS.TITLE' | translate }}</h2>
+    
+    <div class="tabs">
+      <button 
+        class="tab-button" 
+        [class.active]="activeTab === 'all'"
+        (click)="setTab('all')"
+        type="button">
+        {{ 'OUR_PROJECTS.TABS.ALL' | translate }}
+      </button>
+      <button 
+        class="tab-button" 
+        [class.active]="activeTab === 'current'"
+        (click)="setTab('current')"
+        type="button">
+        {{ 'OUR_PROJECTS.TABS.CURRENT' | translate }}
+      </button>
+      <button 
+        class="tab-button" 
+        [class.active]="activeTab === 'past'"
+        (click)="setTab('past')"
+        type="button">
+        {{ 'OUR_PROJECTS.TABS.PAST' | translate }}
+      </button>
+      <button 
+        class="tab-button" 
+        [class.active]="activeTab === 'upcoming'"
+        (click)="setTab('upcoming')"
+        type="button">
+        {{ 'OUR_PROJECTS.TABS.UPCOMING' | translate }}
+      </button>
+    </div>
+
+    <div class="projects-grid" [@projectsAnimation]="getAnimationState()">
+      @for (project of filteredProjects; track project.id) {
+        <div class="project-card">
+          <img [src]="project.image" [alt]="project.name" />
+          <div class="project-overlay">
+            <h3>{{ 'OUR_PROJECTS.PROJECT_NAME' | translate }}</h3>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+

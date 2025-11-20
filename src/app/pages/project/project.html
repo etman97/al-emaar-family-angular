@@ -1,0 +1,111 @@
+
+
+<div class="project-page container-fluid">
+<a class="back-link" [attr.dir]="lang === 'ar' ? 'rtl' : 'ltr'" [routerLink]="['/our-projects']">
+  <i class="bi" [ngClass]="lang === 'ar' ? 'bi-arrow-right' : 'bi-arrow-left'"></i>
+  <span>{{ 'OUR_PROJECTS.TITLE' | translate }}</span>
+</a>
+	<!-- Hero / Slider -->
+	<section class="hero" 
+	         (touchstart)="onTouchStart($event)" 
+	         (touchend)="onTouchEnd($event)">
+		<button class="nav-arrow prev" 
+		        [attr.aria-label]="'PROJECT.HERO.PREV' | translate"
+		        (click)="prevImage()">
+			<i class="bi bi-chevron-right"></i>
+		</button>
+
+		<img [src]="currentHeroImage" alt="صورة المشروع" class="hero-image" />
+
+		<div class="overlay">
+			<div class="type-badge">{{ 'PROJECT.HERO.TYPE_BADGE' | translate }}</div>
+			<h1 class="title">{{ 'PROJECT.HERO.TITLE' | translate }}</h1>
+			<p class="desc">
+				{{ 'PROJECT.HERO.DESCRIPTION' | translate }}
+			</p>
+		</div>
+
+		<!-- Image indicators -->
+		<div class="hero-indicators">
+			<span *ngFor="let img of heroImages; let i = index" 
+			      class="indicator" 
+			      [class.active]="i === currentImageIndex"
+			      (click)="currentImageIndex = i"></span>
+		</div>
+
+		<button class="nav-arrow next" 
+		        [attr.aria-label]="'PROJECT.HERO.NEXT' | translate"
+		        (click)="nextImage()">
+			<i class="bi bi-chevron-left"></i>
+		</button>
+	</section>
+
+	<!-- Stats / Ruler Row -->
+<section class="stats">
+  <div class="stats-inner">
+    <!-- كروت المكاتب + المواقف (يمين) -->
+    <div class="stat-cards">
+      <div class="stat-card stat-card-primary">
+        <div class="stat-icon">
+          <img src="assets/house.svg" alt="office" />
+        </div>
+        <div class="stat-text">
+          <div class="stat-label">{{ 'PROJECT.STATS.OFFICE' | translate }}</div>
+          <div class="stat-number">{{ officesCount | number }}</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <img src="assets/car.svg" alt="car" />
+        </div>
+        <div class="stat-text">
+          <div class="stat-label">{{ 'PROJECT.STATS.PARKING' | translate }}</div>
+          <div class="stat-number">{{ parkingCount }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- كرت المساحة -->
+    <div class="ruler-card">
+      <div class="ruler-top-row">
+        <span class="ruler-label">{{ 'PROJECT.STATS.TOTAL_AREA' | translate }}</span>
+        <img src="assets/ruler-line.svg" class="ruler-image" alt="ruler" />
+      </div>
+
+      <div class="ruler-bottom-row">
+        <div class="ruler-value-row">
+          <span class="ruler-number">{{ totalArea | number }}</span>
+          <span class="ruler-unit">{{ 'PROJECT.STATS.SQUARE_METER' | translate }}</span>
+        </div>
+
+        <button class="info-btn" type="button">
+          <span>{{ 'PROJECT.STATS.MORE_INFO' | translate }}</span>
+          <i class="bi bi-info-circle"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Units list -->
+<section class="units">
+  <div class="section-head">{{ 'PROJECT.UNITS.SECTION_TITLE' | translate }}</div>
+  <div class="units-list">
+    <div class="unit-card" *ngFor="let u of units; let i = index">
+      <div class="unit-header">
+        <span class="title">{{ getTranslatedValue(u.title) }}</span>
+        <span class="hash">#{{ u.code }}</span>
+      </div>
+      <div class="unit-meta">
+        <div class="meta">
+          {{ u.area }} <img src="assets/measure.svg" [attr.alt]="'PROJECT.UNITS.AREA_ALT' | translate" />
+        </div>
+        <div class="meta">
+          {{ getTranslatedValue(u.floor) }} <img src="assets/Buildings.svg" [attr.alt]="'PROJECT.UNITS.FLOOR_ALT' | translate" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

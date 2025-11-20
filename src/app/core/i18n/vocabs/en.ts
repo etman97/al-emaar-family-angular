@@ -81,13 +81,59 @@ export const locale = {
     // Our Companies Page
     OUR_COMPANIES: {
       TITLE: 'Our Companies',
-      DESCRIPTION: 'Random introductory text for design random introductory text for design random introductory text for design'
+      DESCRIPTION: 'Random introductory text for design random introductory text for design random introductory text for design',
+      COMPANY_1: {
+        TITLE: 'Company 1',
+        INTRO_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design',
+        INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
+        SHOW_MORE: 'Show More',
+        SHOW_LESS: 'Show Less',
+        EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
+        EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+      }
+    },
+
+    // Our Projects Page
+    OUR_PROJECTS: {
+      TITLE: 'Our Projects',
+      TABS: {
+        ALL: 'All Projects',
+        CURRENT: 'Current Projects',
+        PAST: 'Past Projects',
+        UPCOMING: 'Upcoming Projects'
+      },
+      PROJECT_NAME: 'Project Name',
+      SEARCH: {
+        PLACEHOLDER: 'City or Area',
+        PROPERTY_TYPE: 'Property Type',
+        PRICE: 'Price',
+        ROOMS_BATHROOMS: 'Rooms & Bathrooms',
+        SEARCH_BUTTON: 'Search'
+      }
     },
 
     // About Us Page
     ABOUT_US: {
       TITLE: 'About Emmar Family',
-      DESCRIPTION: 'The company was established after 30 years of quality and perfection in the field of residential and commercial real estate development'
+      DESCRIPTION: 'The company was established after 30 years of quality and perfection in the field of residential and commercial real estate development',
+      VALUES: {
+        VISION: {
+          TITLE: 'Vision',
+          DESCRIPTION: 'We aspire to be pioneers in providing the best residential and commercial real estate services to citizens with attention to aesthetic standards and high quality.'
+        },
+        MISSION: {
+          TITLE: 'Mission',
+          DESCRIPTION: 'We work to provide the best services to the client.'
+        },
+        GOAL: {
+          TITLE: 'Goal',
+          DESCRIPTION: 'We aim to meet the needs of citizens and companies with valuable engineering standards and high quality.'
+        },
+        VALUES: {
+          TITLE: 'Values',
+          DESCRIPTION: 'Working professionally and ethically, while driving economic growth.'
+        }
+      }
     },
 
     // Footer
@@ -100,6 +146,29 @@ export const locale = {
       CONTACT_US: 'Contact Us',
       PHONE: '+966 55 922 3111',
       ADDRESS: 'Riyadh, Kingdom of Saudi Arabia'
+    },
+
+    // Project Page
+    PROJECT: {
+      HERO: {
+        TYPE_BADGE: 'Residential',
+        TITLE: 'Project Name',
+        DESCRIPTION: 'The company was established after more than 30 years of quality and perfection in the field of residential and commercial real estate development',
+        PREV: 'Previous',
+        NEXT: 'Next'
+      },
+      STATS: {
+        OFFICE: 'Office',
+        PARKING: 'Parking Spaces',
+        TOTAL_AREA: 'Total Area',
+        SQUARE_METER: 'm²',
+        MORE_INFO: 'More Information'
+      },
+      UNITS: {
+        SECTION_TITLE: 'Available Units in Project',
+        AREA_ALT: 'Area',
+        FLOOR_ALT: 'Floor'
+      }
     },
 
     // Contact Page

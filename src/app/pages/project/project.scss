@@ -1,0 +1,549 @@
+/* =========================================================
+   PROJECT PAGE WRAPPER
+========================================================= */
+.project-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.project-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/assets/Pattern.svg") center/cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+  position: relative;
+  height: 470px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e9edf6;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Indicators */
+.hero-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #fff;
+  width: 24px;
+  border-radius: 5px;
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 24px 28px;
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 70%
+  );
+}
+
+.type-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.overlay .title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.overlay .desc {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  display: grid;
+  place-items: center;
+  color: #3f5b91;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(255,255,255,1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow.prev { right: 16px; }
+.nav-arrow.next { left: 16px; }
+
+/* =========================================================
+   STATS SECTION
+========================================================= */
+.stats {
+  position: relative;
+  z-index: 2;
+}
+
+.stats .stats-inner {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+/* =========================================================
+   BLUE CARDS (ICONS + TEXT)
+========================================================= */
+.stat-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.stat-card {
+  background: #3f5b91;
+  border-radius: 8px;
+  padding: 36px 20px;
+  min-width: 170px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.stat-card-primary {
+  background: #3f5b91;
+}
+
+.stat-icon img {
+  width: 45px;
+  height: 45px;
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.stat-number {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RULER CARD
+========================================================= */
+.ruler-card {
+  flex: 1;
+  background: #f7f8fb;
+  border-radius: 8px;
+  border: 1px solid #dde2f0;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* --- First Row: Text + Ruler Image --- */
+.ruler-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ruler-label {
+  font-size: 24px;
+  font-weight: 400;
+  color: #3f5b91;
+  white-space: nowrap;
+}
+
+.ruler-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-inline-start: 10px;
+}
+
+/* --- Second Row: Total Number + Info Button in one line --- */
+.ruler-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ruler-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: #3f5b91;
+}
+
+.ruler-number {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.ruler-unit {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Info Button */
+.info-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3f5b91;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.info-btn i {
+  font-size: 18px;
+}
+
+/* =========================================================
+   UNITS SECTION
+========================================================= */
+
+.units .section-head {
+  color: #181818;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* بدل ما تبقى سكرول أفقي، هنخليها Grid بتلف تحت بعض */
+.units-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  overflow-x: visible;
+  padding-bottom: 8px;
+}
+
+.unit-card {
+  width: 100%;
+  max-width: 220px;
+  height: 171px;
+  background: #f6f6f6;
+  border: 1px solid #3f5b9108;
+  border-radius: 5px;
+  padding: 14px;
+  opacity: 0.99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.unit-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.unit-header .title {
+  font-weight: 700;
+  color: #3f5b91;
+}
+
+.unit-header .hash {
+  color: #181818;
+  font-size: 12px;
+}
+
+.unit-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #181818;
+  align-items: center;
+}
+
+.unit-meta .meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.unit-meta img {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* --- Tablet (<= 992px) --- */
+@media (max-width: 992px) {
+  .hero {
+    height: 360px;
+  }
+
+  .project-page {
+    gap: 22px;
+  }
+
+  /* Hide navigation arrows on tablet */
+  .nav-arrow {
+    display: none;
+  }
+
+  .stats .stats-inner {
+    flex-direction: column-reverse; /* المساحة فوق والكروت تحتها */
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .ruler-card {
+    width: 100%;
+  }
+
+  .ruler-image {
+    height: 24px;          /* متبقاش مليّة الكرت */
+    margin-right: 8px;
+  }
+
+  .stat-cards {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    flex: 1 1 calc(50% - 8px); /* اتنين في السطر لو في مساحة */
+    min-width: 0;
+  }
+}
+
+/* --- Small Tablet / Large Mobile (<= 768px) --- */
+@media (max-width: 768px) {
+  .hero {
+    height: 320px;
+  }
+
+  .overlay .title {
+    font-size: 22px;
+  }
+
+  .overlay .desc {
+    font-size: 13px;
+  }
+
+  .ruler-label {
+    font-size: 20px;
+  }
+
+  .ruler-number {
+    font-size: 28px;
+  }
+
+  .ruler-image {
+    height: 26px;
+    margin-right: 6px;
+  }
+
+  .stat-card {
+    padding: 14px 16px;
+	align-items: center;
+  }
+
+  .units-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* --- Mobile (<= 576px) --- */
+/* --- Mobile (<= 576px) --- */
+@media (max-width: 576px) {
+  .hero {
+    height: 280px;
+    border-radius: 12px;
+  }
+
+  .stats .stats-inner {
+    gap: 14px;
+  }
+
+  .stat-cards {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    width: 100%;
+  }
+
+  /* نخلي النص + المسطرة في نفس السطر */
+  .ruler-top-row {
+    flex-direction: row;          /* مهم: سطر واحد */
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .ruler-label {
+    font-size: 16px;              /* أصغر شوية للموبايل */
+  }
+
+  .ruler-image {
+    width: 58%;                   /* مسطرة أقصر */
+    height: 14px;                 /* تقليل الارتفاع */
+    margin-right: 0;              /* نشيل المسافة الزيادة */
+    object-fit: contain;
+  }
+
+  .ruler-card {
+    padding: 12px 14px;           /* كرت أقل ارتفاع */
+    gap: 10px;
+  }
+
+  .ruler-bottom-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ruler-number {
+    font-size: 24px;
+  }
+
+  .info-btn {
+    font-size: 14px;
+  }
+
+  .units-list {
+    grid-template-columns: 1fr;   /* كرت واحد في السطر */
+  }
+
+  .unit-card {
+    max-width: 100%;
+  }
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #3F5B91;
+  cursor: pointer;
+  transition: 0.25s ease;
+  user-select: none;
+  flex-direction: row; /* default, flips by [dir] */
+  text-decoration: none; /* remove anchor underline */
+}
+
+.back-link i {
+  font-size: 26px;
+  font-weight: bold;
+  color: #3F5B91;
+  transition: 0.25s ease;
+}
+
+.back-link:hover,
+.back-link:focus,
+.back-link:active {
+  opacity: 0.8;
+  text-decoration: none; /* ensure no underline on interaction */
+}
+
+/* Hover nudge respects element direction */
+.back-link[dir='rtl']:hover i { transform: translateX(-4px); }
+.back-link[dir='ltr']:hover i { transform: translateX(4px); }
