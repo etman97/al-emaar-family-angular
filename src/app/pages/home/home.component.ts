@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -9,9 +9,17 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterViewInit {
   activeProjectIndex: number = 0;
   activeCategoryIndex: number = 0;
+
+  constructor(private elementRef: ElementRef) {}
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.setupScrollAnimations();
+  }
 
   navigationButtons = [
     'HOME.PROJECTS.NAV.CURRENT',
@@ -52,5 +60,24 @@ export class HomeComponent {
 
   setActiveCategory(index: number): void {
     this.activeCategoryIndex = index;
+  }
+
+  private setupScrollAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    const animatedElements = this.elementRef.nativeElement.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach((el: Element) => observer.observe(el));
   }
 }

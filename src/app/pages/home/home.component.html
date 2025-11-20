@@ -25,24 +25,24 @@
   <hr class="section-divider" />
 
 <section class="achievements-section">
-  <div class="achievements-header text-center">
+  <div class="achievements-header text-center animate-on-scroll">
     <h2 class="achievements-title">{{ 'HOME.ACHIEVEMENTS.TITLE' | translate }}</h2>
     <p class="achievements-description">{{ 'HOME.ACHIEVEMENTS.DESCRIPTION' | translate }}</p>
   </div>
   <div class="stats-grid">
-    <div class="stat-card">
+    <div class="stat-card animate-on-scroll" style="transition-delay: 0ms;">
       <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.PROJECTS.VALUE' | translate }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.PROJECTS.LABEL' | translate }}</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card animate-on-scroll" style="transition-delay: 150ms;">
       <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.AREA.VALUE' | translate }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.AREA.LABEL' | translate }}</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card animate-on-scroll" style="transition-delay: 300ms;">
       <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.CLIENTS.VALUE' | translate }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.CLIENTS.LABEL' | translate }}</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card animate-on-scroll" style="transition-delay: 450ms;">
       <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.EXPERIENCE.VALUE' | translate }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.EXPERIENCE.LABEL' | translate }}</div>
     </div>
@@ -52,14 +52,14 @@
   <section class="call-to-action-section">
     <div class="cta-container">
       <!-- Left side: Image with pattern background -->
-      <div class="cta-right">
+      <div class="cta-right animate-on-scroll" style="transition-delay: 200ms;">
         <div class="cta-image-wrapper">
           <img src="assets/Rectangle 65.png" alt="Call to Action" class="cta-image" />
         </div>
       </div>
 
       <!-- Right side: Content with Logo, Title, Description and Button -->
-      <div class="cta-left">
+      <div class="cta-left animate-on-scroll">
         <div class="cta-content">
           <img src="assets/Rectangle 66.png" alt="Logo" class="cta-logo" />
           <h2 class="cta-title">{{ 'HOME.CTA.TITLE' | translate }}</h2>
@@ -71,7 +71,7 @@
   </section>
   <section class="projects-gallery-section">
     <div class="gallery-header">
-      <div class="header-content">
+      <div class="header-content animate-on-scroll">
         <h2 class="gallery-section-title">{{ 'HOME.PROJECTS.SECTION_TITLE' | translate }}</h2>
         <div class="nav-buttons-container">
           <button 
@@ -85,7 +85,7 @@
       </div>
     </div>
     
-    <div class="gallery-container">
+    <div class="gallery-container animate-on-scroll" style="transition-delay: 200ms;">
       <div 
         *ngFor="let project of projects; let i = index"
         class="gallery-item"
