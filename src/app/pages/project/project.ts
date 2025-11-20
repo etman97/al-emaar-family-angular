@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -17,6 +17,40 @@ export class Project implements OnDestroy {
   private langSub: Subscription = this.translate.onLangChange.subscribe(({ lang }) => {
     this.lang = lang;
   });
+  
+  scrollY = 0;
+  isStatsVisible = false;
+  isUnitsVisible = false;
+  
+  ngOnInit(): void {
+    // Trigger animation check on load
+    setTimeout(() => this.checkAnimations(), 100);
+  }
+  
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.scrollY = window.scrollY;
+    this.checkAnimations();
+  }
+  
+  private checkAnimations(): void {
+    const statsSection = document.querySelector('.stats');
+    const unitsSection = document.querySelector('.units');
+    
+    if (statsSection && !this.isStatsVisible) {
+      const rect = statsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        this.isStatsVisible = true;
+      }
+    }
+    
+    if (unitsSection && !this.isUnitsVisible) {
+      const rect = unitsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        this.isUnitsVisible = true;
+      }
+    }
+  }
   
   totalArea = 300000;
   officesCount = 120000;

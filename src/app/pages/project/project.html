@@ -41,7 +41,7 @@
 	</section>
 
 	<!-- Stats / Ruler Row -->
-<section class="stats">
+<section class="stats" [class.animate-in]="isStatsVisible">
   <div class="stats-inner">
     <!-- كروت المكاتب + المواقف (يمين) -->
     <div class="stat-cards">
@@ -89,7 +89,7 @@
 </section>
 
 <!-- Units list -->
-<section class="units">
+<section class="units" [class.animate-in]="isUnitsVisible">
   <div class="section-head">{{ 'PROJECT.UNITS.SECTION_TITLE' | translate }}</div>
   <div class="units-list">
     <div class="unit-card" *ngFor="let u of units; let i = index">
