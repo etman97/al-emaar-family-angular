@@ -16,7 +16,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [firstVisitGuard]
+    // canActivate: [firstVisitGuard]
   },
   {
     path: 'contact-us',
