@@ -5,11 +5,18 @@ import { OurCompanies } from './pages/our-companies/our-companies';
 import { AboutUs } from './pages/about-us/about-us';
 import { OurProjects } from './pages/our-projects/our-projects';
 import { Project } from './pages/project/project';
+import { LoadingComponent } from './pages/loading/loading.component';
+import { firstVisitGuard } from './guards/first-visit.guard';
 
 export const routes: Routes = [
   {
+    path: 'loading',
+    component: LoadingComponent
+  },
+  {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [firstVisitGuard]
   },
   {
     path: 'contact-us',
@@ -36,3 +43,4 @@ export const routes: Routes = [
     redirectTo: ''
   }
 ];
+

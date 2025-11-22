@@ -1,0 +1,78 @@
+/* ====== Fullscreen Loading Container ====== */
+.loading-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+  z-index: 9999;
+}
+
+/* ===== Base Style for All Waves (Circles) ===== */
+.circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+  /* Rotate around bottom-left instead of bottom-right */
+  transform-origin: left bottom;
+
+  opacity: 0;
+
+  animation:
+    riseWave 1s ease-out forwards,
+    rotateLeftBottom 4s ease-out 1s forwards; /* slower + reversed */
+}
+
+/* Layers */
+.circle-1 {
+  background: #D8DEE9;
+  width: 200vw;
+  height: 120vh;
+}
+
+.circle-2 {
+  background: #B2BDD3;
+  width: 150vw;
+  height: 95vh;
+}
+
+.circle-3 {
+  background: #788CB2;
+  width: 127vw;
+  height: 80vh;
+}
+
+.circle-4 {
+  background: #3F5B91;
+  width: 105vw;
+  height: 65vh;
+}
+
+/* Rise animation */
+@keyframes riseWave {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ===== Reversed Rotation (Right → Left) ===== */
+@keyframes rotateLeftBottom {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(-360deg); /* reverse direction */
+  }
+}
