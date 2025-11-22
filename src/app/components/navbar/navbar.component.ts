@@ -30,4 +30,12 @@ export class NavbarComponent {
     const newLang = this.currentLang === 'ar' ? 'en' : 'ar';
     this.switchLanguage(newLang);
   }
+
+  closeNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse?.classList.contains('show')) {
+      const button = document.querySelector('.navbar-toggler') as HTMLElement;
+      button?.click();
+    }
+  }
 }
