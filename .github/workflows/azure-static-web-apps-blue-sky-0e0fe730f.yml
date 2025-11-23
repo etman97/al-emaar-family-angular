@@ -41,7 +41,7 @@ jobs:
           action: "upload"
           app_location: "/"
           api_location: ""
-          output_location: "dist/Emmar"
+          output_location: "dist/al-emaar-family-angular"
         env:
           NODE_VERSION: '20.19.1'
 
