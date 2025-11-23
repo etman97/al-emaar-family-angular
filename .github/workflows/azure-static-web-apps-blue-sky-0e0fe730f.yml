@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.19.0'  # Use a compatible Node.js version
+          node-version: '20.19.1'  # Use a compatible Node.js version
           cache: 'npm'
       
       - name: Install dependencies
@@ -43,7 +43,7 @@ jobs:
           api_location: ""
           output_location: "dist/al-emaar-family-angular"
         env:
-          NODE_VERSION: '20.19.0'
+          NODE_VERSION: '20.19.1'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
