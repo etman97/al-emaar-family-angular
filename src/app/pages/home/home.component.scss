@@ -47,8 +47,7 @@
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
   &.visible {
     opacity: 1;
@@ -1061,11 +1060,11 @@
   }
 
   .cta-description {
-    text-align: right !important;
+    text-align: right ;
   }
 
   .cta-button {
-    align-self: flex-start !important;
+    align-self: flex-start;
   }
 }
 
@@ -1266,6 +1265,7 @@
   .cta-title {
     font-size: 24px;
     text-align: start;
+    text-align: center !important;
   }
 
   .cta-description {
@@ -1278,9 +1278,13 @@
     font-size: 14px;
     max-width: 100px;
     text-align: center;
+    padding: 10px 0px 10px 0px !important;
+  }
+  .gallery-section-title {
+    font-size: 1.6rem;
   }
   .nav-button {
-    font-size: 20px;
+    font-size: 0.8rem;
     margin-top: 2%;
     padding: 9px 6px;
   }
@@ -1290,9 +1294,29 @@
   .achievements-description {
     font-size: 1rem !important;
   }
+  .cta-content {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .cta-description{
+    text-align: center !important;
+  }
+  .cta-button{
+    align-self: center !important;
+  }
 }
 
 @media (max-width: 991px) {
+    .cta-content {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .cta-description{
+    text-align: center !important;
+  }
+  .cta-button{
+    align-self: center !important;
+  }
   .hero-section {
     padding: 100px 16px 40px;
     min-height: auto;

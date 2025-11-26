@@ -9,14 +9,12 @@ export const locale = {
       PROJECTS: 'Our Projects',
       CONTACT: 'Contact Us',
       OUR_COMPANIES: 'Our Companies'
-    },
-    
-    // Home Page
+    },    // Home Page
     HOME: {
       HERO: {
-        TITLE: 'From the Emmar family..',
+        TITLE: 'From Al-Emaar family..',
         SUBTITLE: 'New standards of excellence are born',
-        DESCRIPTION: 'We design residential projects that inspire luxury living, and administrative spaces that redefine the upscale work environment. Each project we carry embodies a vision that balances luxury, performance, and architectural identity.',
+        DESCRIPTION: 'Residential projects that inspire luxury, administrative spaces that elevate work, and commercial hubs that enrich the experience.Every project we create carries a vision that balances elegance, performance, and architectural identity.',
       },
       PROJECTS: {
         SECTION_TITLE: 'Our Featured Projects',
@@ -51,12 +49,12 @@ export const locale = {
       },
       CTA: {
         TITLE: 'Ready to take your first step?',
-        SUBTITLE: 'Whether you\'re building your dream home or your administrative project, we prepare your unit with the highest standards of quality and luxury. Start today with the Emmar family... because every detail of your unit deserves care.',
+        SUBTITLE: 'Whether you\'re building your dream home or your administrative project, we prepare your unit with the highest standards of quality and luxury. Start today with Al-Emaar Family... because every detail of your unit deserves care.',
         BUTTON: 'Start Now',
       },
       ACHIEVEMENTS: {
         TITLE: 'Achievements We Are Proud Of',
-        DESCRIPTION: 'Over years of experience, the Emmar family has established itself as one of the leading real estate developers in the Kingdom. We measure our success by what we build on the ground... and the trust we create with our clients.',
+        DESCRIPTION: 'Over years of experience, Al-Emaar Family has established itself as one of the leading real estate developers in the Kingdom. We measure our success by what we build on the ground... and the trust we create with our clients.',
         STATS: {
           PROJECTS: {
             VALUE: '+100',
@@ -80,17 +78,35 @@ export const locale = {
 
     // Our Companies Page
     OUR_COMPANIES: {
-      TITLE: 'Our Companies',
-      DESCRIPTION: 'Random introductory text for design random introductory text for design random introductory text for design',
-      COMPANY_1: {
-        TITLE: 'Company 1',
-        INTRO_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design',
-        INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
-        SHOW_MORE: 'Show More',
-        SHOW_LESS: 'Show Less',
-        EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
-        EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
-      }
+      TITLE: 'Three companies … one vision.',
+      DESCRIPTION: 'At Al Emaar Family, expertise is combined to deliver comprehensive solutions that make a difference in every project.',
+        COMPANY_1: {
+          TITLE: 'Tfaseel Designs',
+          INTRO_TEXT_1: 'Each project at Tfasel Designs is crafted like a work of art, where creativity meets functionality to create spaces that inspire those who live in them.',
+          INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
+          SHOW_MORE: 'Show More',
+          SHOW_LESS: 'Show Less',
+          EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
+          EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+        },
+        COMPANY_2: {
+          TITLE: 'Urbana Construction',
+          INTRO_TEXT_1: 'Urbana Construction transforms ideas into tangible realities, where precision and quality are reflected in every stone and corner.',
+          INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
+          SHOW_MORE: 'Show More',
+          SHOW_LESS: 'Show Less',
+          EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
+          EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+        },
+        COMPANY_3: {
+          TITLE: 'Jorĕ Developments',
+          INTRO_TEXT_1: 'Jorĕ Developments delivers projects that combine beauty and value, making every investment step a unique experience.',
+          INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
+          SHOW_MORE: 'Show More',
+          SHOW_LESS: 'Show Less',
+          EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
+          EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+        },
     },
 
     // Our Projects Page
@@ -119,19 +135,31 @@ export const locale = {
       VALUES: {
         VISION: {
           TITLE: 'Vision',
-          DESCRIPTION: 'We aspire to be pioneers in providing the best residential and commercial real estate services to citizens with attention to aesthetic standards and high quality.'
+          DESCRIPTION: 'We aspire to be leaders in providing the finest residential and commercial real estate services, with a focus on aesthetic standards and superior quality.'
         },
         MISSION: {
           TITLE: 'Mission',
-          DESCRIPTION: 'We work to provide the best services to the client.'
+          DESCRIPTION: 'We are committed to delivering the best services to our clients.'
         },
         GOAL: {
           TITLE: 'Goal',
-          DESCRIPTION: 'We aim to meet the needs of citizens and companies with valuable engineering standards and high quality.'
+          DESCRIPTION: 'We aim to meet the needs of citizens and businesses with valuable engineering standards and high-quality solutions.'
         },
         VALUES: {
           TITLE: 'Values',
-          DESCRIPTION: 'Working professionally and ethically, while driving economic growth.'
+          DESCRIPTION: 'To operate professionally and ethically while driving economic growth.'
+        }
+      },
+      EMPLOYEES: {
+        CHAIRMAN: {
+          NAME: 'Eng. Fahad Al-Dawood',
+          TITLE: 'Chairman of the Board',
+          MESSAGE: 'At Al-Emaar Family, every project is not just a building, but a story told through time. Experience blends with quality and innovation to make our projects a sustainable foundation that connects our present with the future generations, creating a real difference in the life of the community.'
+        },
+        CEO: {
+          NAME: 'Your brother / Eng. Nawaf Fahad Al-Dawood',
+          TITLE: 'Chief Executive Officer',
+          MESSAGE: 'To our partners in success and esteemed investors, The journey of Al-Emaar Family is a story of vision and ambition, where ideas transform into vibrant communities in the best locations across the Kingdom. Our projects are carefully designed to combine meticulous design with exceptional quality, providing an outstanding and sustainable living experience. Since the company\'s establishment, we have continued strategic expansion aligned with Saudi Arabia\'s Vision 2030, relying on strong partnerships to achieve accomplishments that place us at the forefront of real estate developers. The client is always at the heart of every decision, from planning and construction to delivery and after-sales services, ensuring complete satisfaction and a premium experience. We extend our gratitude to our partners and our creative team for their efforts in shaping a future that meets the aspirations of coming generations.'
         }
       }
     },

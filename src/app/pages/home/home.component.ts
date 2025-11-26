@@ -13,6 +13,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
   activeProjectIndex: number = 0;
   activeCategoryIndex: number = 0;
 
+  // Counter animation properties
+  projectsCount: number = 0;
+  areaCount: number = 0;
+  clientsCount: number = 0;
+  experienceCount: number = 0;
+
+  private readonly finalValues = {
+    projects: 100,
+    area: 2,
+    clients: 200,
+    experience: 30
+  };
+
+  private animationStarted = false;
+
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {}
@@ -68,6 +83,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            
+            // Check if this is the stats grid and start counter animation
+            if (entry.target.classList.contains('stats-grid')) {
+              this.startCounterAnimation();
+            }
           }
         });
       },
@@ -79,5 +99,39 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     const animatedElements = this.elementRef.nativeElement.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach((el: Element) => observer.observe(el));
+  }
+
+  private startCounterAnimation() {
+    if (this.animationStarted) return;
+    this.animationStarted = true;
+
+    const duration = 2000; // 2 seconds
+    const steps = 60; // 60 fps
+    const increment = duration / steps;
+
+    const animateCounter = (startValue: number, endValue: number, updateCallback: (value: number) => void) => {
+      const stepValue = (endValue - startValue) / steps;
+      let currentStep = 0;
+
+      const timer = setInterval(() => {
+        currentStep++;
+        const currentValue = Math.floor(startValue + stepValue * currentStep);
+        updateCallback(currentValue);
+
+        if (currentStep >= steps) {
+          updateCallback(endValue);
+          clearInterval(timer);
+        }
+      }, increment);
+    };
+
+    // Start animations with slight delays
+    setTimeout(() => animateCounter(0, this.finalValues.projects, (value) => this.projectsCount = value), 0);
+    setTimeout(() => animateCounter(0, this.finalValues.area, (value) => this.areaCount = value), 150);
+    setTimeout(() => animateCounter(0, this.finalValues.clients, (value) => this.clientsCount = value), 300);
+    setTimeout(() => animateCounter(0, this.finalValues.experience, (value) => this.experienceCount = value), 450);
+  }
+  navigateToContact(){
+    window.location.href = '/contact-us';
   }
 }

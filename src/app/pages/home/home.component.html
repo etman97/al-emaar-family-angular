@@ -13,9 +13,9 @@
       <!-- Images on the right -->
       <div class="col-lg-6 order-lg-2">
         <div class="image-container">
-          <img src="assets/Rectangle 41.png" alt="Main Building" class="building-img main-img" />
-          <img src="assets/Rectangle 43.png" alt="Top Left Building" class="building-img top-img" />
-          <img src="assets/Rectangle 42.png" alt="Bottom Right Building" class="building-img bottom-img" />
+          <img src="assets/Main-Home.jpg" alt="Main Building" class="building-img main-img" />
+          <img src="assets/Top-Left-Home.jpg" alt="Top Left Building" class="building-img top-img" />
+          <img src="assets/Bottom-Right-Home.jpg" alt="Bottom Right Building" class="building-img bottom-img" />
         </div>
       </div>
     </div>
@@ -29,21 +29,21 @@
     <h2 class="achievements-title">{{ 'HOME.ACHIEVEMENTS.TITLE' | translate }}</h2>
     <p class="achievements-description">{{ 'HOME.ACHIEVEMENTS.DESCRIPTION' | translate }}</p>
   </div>
-  <div class="stats-grid">
+  <div class="stats-grid animate-on-scroll">
     <div class="stat-card animate-on-scroll" style="transition-delay: 0ms;">
-      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.PROJECTS.VALUE' | translate }}</div>
+      <div class="stat-value">+{{ projectsCount }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.PROJECTS.LABEL' | translate }}</div>
     </div>
     <div class="stat-card animate-on-scroll" style="transition-delay: 150ms;">
-      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.AREA.VALUE' | translate }}</div>
+      <div class="stat-value">+{{ areaCount }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.AREA.LABEL' | translate }}</div>
     </div>
     <div class="stat-card animate-on-scroll" style="transition-delay: 300ms;">
-      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.CLIENTS.VALUE' | translate }}</div>
+      <div class="stat-value">+{{ clientsCount }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.CLIENTS.LABEL' | translate }}</div>
     </div>
     <div class="stat-card animate-on-scroll" style="transition-delay: 450ms;">
-      <div class="stat-value">{{ 'HOME.ACHIEVEMENTS.STATS.EXPERIENCE.VALUE' | translate }}</div>
+      <div class="stat-value">+{{ experienceCount }}</div>
       <div class="stat-label">{{ 'HOME.ACHIEVEMENTS.STATS.EXPERIENCE.LABEL' | translate }}</div>
     </div>
   </div>
@@ -64,7 +64,7 @@
           <img src="assets/Rectangle 66.png" alt="Logo" class="cta-logo" />
           <h2 class="cta-title">{{ 'HOME.CTA.TITLE' | translate }}</h2>
           <p class="cta-description">{{ 'HOME.CTA.SUBTITLE' | translate }}</p>
-          <button class="cta-button">{{ 'HOME.CTA.BUTTON' | translate }}</button>
+          <button class="cta-button" (click)="navigateToContact()">{{ 'HOME.CTA.BUTTON' | translate }}</button>
         </div>
       </div>
     </div>

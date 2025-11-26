@@ -33,8 +33,6 @@
 						<h3 class="company-intro-title">{{ 'OUR_COMPANIES.COMPANY_1.TITLE' | translate }}</h3>
 						<p class="company-intro-text">
 							{{ 'OUR_COMPANIES.COMPANY_1.INTRO_TEXT_1' | translate }}</p>
-						<p class="company-intro-text mb-2">
-							{{ 'OUR_COMPANIES.COMPANY_1.INTRO_TEXT_2' | translate }}</p>
 						<button (click)="toggleContent()" class="company-intro-link" [ngClass]="{'show-less': showMoreContent}">
 							{{ showMoreContent ? ('OUR_COMPANIES.COMPANY_1.SHOW_LESS' | translate) : ('OUR_COMPANIES.COMPANY_1.SHOW_MORE' | translate) }}
 						</button>
@@ -76,6 +74,130 @@
 					<div class="company-block company-block--right">
 						<p class="company-block-text mb-3">
 							{{ 'OUR_COMPANIES.COMPANY_1.EXTENDED_TEXT_2' | translate }}
+						</p>
+					</div>
+				</div>
+			</div>
+
+			}
+		</div>
+	</div>
+</section>
+<section class="companies-family-section py-5 mb-4" >
+	<div class="container-fluid">
+		<div class="companies-card">
+
+			<div class="row g-4 align-items-center">
+
+
+				<div class="col-lg-6">
+					<div class="company-intro animate-on-scroll">
+						<h3 class="company-intro-title">{{ 'OUR_COMPANIES.COMPANY_2.TITLE' | translate }}</h3>
+						<p class="company-intro-text">
+							{{ 'OUR_COMPANIES.COMPANY_2.INTRO_TEXT_1' | translate }}</p>
+						<button (click)="toggleContent()" class="company-intro-link" [ngClass]="{'show-less': showMoreContent}">
+							{{ showMoreContent ? ('OUR_COMPANIES.COMPANY_2.SHOW_LESS' | translate) : ('OUR_COMPANIES.COMPANY_2.SHOW_MORE' | translate) }}
+						</button>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="companies-logo-box animate-on-scroll">
+						<img src="assets/logoCompanies.png" alt="عائلة الإعمار" class="companies-logo-img" />
+					</div>
+				</div>
+			</div>
+
+			@if (showMoreContent) {
+			<div class="row g-4 align-items-center mt-3 expandable-content" [@expandCollapse]>
+				<div class="col-lg-6">
+					<div class="company-block">
+						<p class="company-block-text">
+							{{ 'OUR_COMPANIES.COMPANY_2.EXTENDED_TEXT_1' | translate }}
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="company-block">
+						<img src="assets/Companies4.png" alt="{{ 'OUR_COMPANIES.COMPANY_2.TITLE' | translate }}" class="company-block-img img-fluid" />
+
+					</div>
+				</div>
+
+
+
+				<div class="col-lg-6">
+					<div class="company-block company-block--right">
+						<img src="assets/Companies3.png" alt="{{ 'OUR_COMPANIES.COMPANY_2.TITLE' | translate }}" class="company-block-img img-fluid" />
+
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="company-block company-block--right">
+						<p class="company-block-text mb-3">
+							{{ 'OUR_COMPANIES.COMPANY_2.EXTENDED_TEXT_2' | translate }}
+						</p>
+					</div>
+				</div>
+			</div>
+
+			}
+		</div>
+	</div>
+</section>
+<section class="companies-family-section py-5 mb-4" >
+	<div class="container-fluid">
+		<div class="companies-card">
+
+			<div class="row g-4 align-items-center">
+
+
+				<div class="col-lg-6">
+					<div class="company-intro animate-on-scroll">
+						<h3 class="company-intro-title">{{ 'OUR_COMPANIES.COMPANY_3.TITLE' | translate }}</h3>
+						<p class="company-intro-text">
+							{{ 'OUR_COMPANIES.COMPANY_3.INTRO_TEXT_1' | translate }}</p>
+						<button (click)="toggleContent()" class="company-intro-link" [ngClass]="{'show-less': showMoreContent}">
+							{{ showMoreContent ? ('OUR_COMPANIES.COMPANY_3.SHOW_LESS' | translate) : ('OUR_COMPANIES.COMPANY_3.SHOW_MORE' | translate) }}
+						</button>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="companies-logo-box animate-on-scroll">
+						<img src="assets/logoCompanies.png" alt="عائلة الإعمار" class="companies-logo-img" />
+					</div>
+				</div>
+			</div>
+
+			@if (showMoreContent) {
+			<div class="row g-4 align-items-center mt-3 expandable-content" [@expandCollapse]>
+				<div class="col-lg-6">
+					<div class="company-block">
+						<p class="company-block-text">
+							{{ 'OUR_COMPANIES.COMPANY_3.EXTENDED_TEXT_1' | translate }}
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="company-block">
+						<img src="assets/Companies4.png" alt="{{ 'OUR_COMPANIES.COMPANY_3.TITLE' | translate }}" class="company-block-img img-fluid" />
+
+					</div>
+				</div>
+
+
+
+				<div class="col-lg-6">
+					<div class="company-block company-block--right">
+						<img src="assets/Companies3.png" alt="{{ 'OUR_COMPANIES.COMPANY_3.TITLE' | translate }}" class="company-block-img img-fluid" />
+
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="company-block company-block--right">
+						<p class="company-block-text mb-3">
+							{{ 'OUR_COMPANIES.COMPANY_3.EXTENDED_TEXT_2' | translate }}
 						</p>
 					</div>
 				</div>
