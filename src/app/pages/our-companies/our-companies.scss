@@ -10,7 +10,7 @@
     position: fixed;
     inset: 0;
     background: url('/assets/Pattern.svg') center/cover no-repeat;
-    opacity: 0.06;
+    opacity: 0.04;
     pointer-events: none;
     z-index: 0;
   }
@@ -442,21 +442,6 @@
 .companies-family-section {
   padding: 48px 0;
   position: relative;
-
-  &::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: url('/assets/Pattern.svg') center/cover no-repeat;
-    opacity: 0.06;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  > .container-fluid {
-    position: relative;
-    z-index: 1;
-  }
 }
 
 /* الكارد الأساسي */
