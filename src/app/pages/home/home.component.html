@@ -87,20 +87,20 @@
     
     <div class="gallery-container animate-on-scroll" style="transition-delay: 200ms;">
       <div 
-        *ngFor="let project of projects; let i = index"
+        *ngFor="let project of displayedProjects; let i = index"
         class="gallery-item"
         [class.active]="activeProjectIndex === i"
         (click)="toggleProject(i)">
-        <img [src]="project.image" [alt]="project.name" class="gallery-image" />
+        <img [src]="project.images && project.images.length > 0 ? project.images[0] : project.image" [alt]="project.name[currentLang]" class="gallery-image" />
         <div class="gallery-overlay">
           <div class="gallery-content">
-            <h3 class="gallery-title">{{ project.title | translate }}</h3>
+            <h3 class="gallery-title">{{ project.name[currentLang] }}</h3>
             <div class="gallery-footer">
-              <p class="gallery-description">{{ project.description | translate }}</p>
-              <button class="gallery-button">{{ 'HOME.PROJECTS.VIEW_MORE' | translate }}</button>
+              <p class="gallery-description">{{ project.description[currentLang] || project.location[currentLang] }}</p>
+              <button class="gallery-button" (click)="viewProjectDetails(project); $event.stopPropagation()">{{ 'HOME.PROJECTS.VIEW_MORE' | translate }}</button>
             </div>
           </div>
-          <h3 class="gallery-text-vertical">{{ project.name | translate }}</h3>
+          <h3 class="gallery-text-vertical">{{ project.name[currentLang] }}</h3>
         </div>
       </div>
     </div>

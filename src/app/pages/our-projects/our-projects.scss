@@ -10,6 +10,8 @@
   justify-content: center;
   padding: 0 32px;
   animation: fadeIn 1s ease-out, panBackground 20s ease-in-out infinite;
+  overflow: visible !important;
+  z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -41,9 +43,11 @@
   align-items: stretch;
   font-family: 'Alexandria', sans-serif;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 4px 18px rgba(0,0,0,0.25);
   animation: slideUpFade 0.8s cubic-bezier(0.35, 0, 0.25, 1) 0.2s both;
+  position: relative;
+  z-index: 10;
 }
 
 @keyframes slideUpFade {
@@ -55,6 +59,144 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.dropdown-wrapper {
+  position: relative !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  overflow: visible !important;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 280px !important;
+  max-width: 350px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%) !important;
+  border: 1px solid rgba(63, 91, 145, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 40px rgba(63, 91, 145, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  z-index: 999999 !important;
+  max-height: 400px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  margin-top: 8px !important;
+  animation: dropdownSlide 0.3s ease-out forwards !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: block !important;
+  width: 100% !important;
+  padding: 12px 20px !important;
+  background: transparent !important;
+  border: none !important;
+  text-align: left !important;
+  color: #3f5b91 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  line-height: 1.6 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  border-radius: 6px !important;
+  margin: 3px 8px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.dropdown-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(135deg, #3f5b91, #5a7ab8);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+:host-context([dir='rtl']) .dropdown-item::before {
+  left: auto;
+  right: 0;
+}
+
+:host-context([dir='rtl']) .dropdown-item {
+  text-align: right !important;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(90deg, rgba(63, 91, 145, 0.08), rgba(63, 91, 145, 0.04)) !important;
+  color: #2d4373 !important;
+  transform: scale(1.02) !important;
+  box-shadow: 0 2px 8px rgba(63, 91, 145, 0.15) !important;
+}
+
+.dropdown-item:hover::before {
+  transform: scaleY(1);
+}
+
+.dropdown-item:active {
+  transform: scale(0.98) !important;
+}
+
+.dropdown-item i {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover i {
+  transform: scale(1.1);
+}
+
+
+.dropdown-item.clear-option {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+  border-radius: 6px !important;
+  margin: 8px !important;
+  padding: 12px 20px !important;
+  text-align: center !important;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3) !important;
+  order: -1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.dropdown-item.clear-option::before {
+  display: none;
+}
+
+.dropdown-item.clear-option:hover {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.4), 0 5px 20px rgba(231, 76, 60, 0.6) !important;
+}
+
+.dropdown-item.clear-option:active {
+  transform: scale(0.98) !important;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.3), 0 2px 8px rgba(231, 76, 60, 0.4) !important;
 }
 
 .search-segment {
@@ -74,6 +216,11 @@
   white-space: nowrap;
   transition: background 0.25s ease;
   cursor: pointer;
+  z-index: 1;
+}
+
+.dropdown-wrapper .search-segment {
+  overflow: visible;
 }
 
 .search-segment:hover:not(.search-button) { 
@@ -229,7 +376,7 @@
   .search-segment,
   .search-button {
     flex: 1 1 100%;
-    padding: 0 24px !important;
+    padding: 0 50.8px !important;
     height: 50px !important;
   }
 

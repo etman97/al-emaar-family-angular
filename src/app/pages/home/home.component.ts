@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { ProjectsService, Project } from '../../core/services/projects.service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +14,8 @@ import { TranslateModule } from '@ngx-translate/core';
 export class HomeComponent implements OnInit, AfterViewInit {
   activeProjectIndex: number = 0;
   activeCategoryIndex: number = 0;
+  allProjects: Project[] = [];
+  displayedProjects: Project[] = [];
 
   // Counter animation properties
   projectsCount: number = 0;
@@ -28,9 +32,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   private animationStarted = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private projectsService: ProjectsService,
+    private router: Router,
+    private translate: TranslateService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.allProjects = this.projectsService.getAllProjects();
+    this.filterProjectsByCategory();
+  }
 
   ngAfterViewInit() {
     this.setupScrollAnimations();
@@ -42,32 +54,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     'HOME.PROJECTS.NAV.COMPLETED'
   ];
 
-  projects = [
-    { 
-      name: 'HOME.PROJECTS.DETAILS.PROJECT_1.TITLE',
-      title: 'HOME.PROJECTS.DETAILS.PROJECT_1.TITLE',
-      description: 'HOME.PROJECTS.DETAILS.PROJECT_1.DESCRIPTION',
-      image: 'assets/image1.png'
-    },
-    { 
-      name: 'HOME.PROJECTS.DETAILS.PROJECT_2.TITLE',
-      title: 'HOME.PROJECTS.DETAILS.PROJECT_2.TITLE',
-      description: 'HOME.PROJECTS.DETAILS.PROJECT_2.DESCRIPTION',
-      image: 'assets/image2.png'
-    },
-    { 
-      name: 'HOME.PROJECTS.DETAILS.PROJECT_3.TITLE',
-      title: 'HOME.PROJECTS.DETAILS.PROJECT_3.TITLE',
-      description: 'HOME.PROJECTS.DETAILS.PROJECT_3.DESCRIPTION',
-      image: 'assets/image3.png'
-    },
-    { 
-      name: 'HOME.PROJECTS.DETAILS.PROJECT_4.TITLE',
-      title: 'HOME.PROJECTS.DETAILS.PROJECT_4.TITLE',
-      description: 'HOME.PROJECTS.DETAILS.PROJECT_4.DESCRIPTION',
-      image: 'assets/image4.png'
-    }
-  ];
+  get currentLang(): 'en' | 'ar' {
+    return (this.translate.currentLang === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
+  }
 
   toggleProject(index: number): void {
     this.activeProjectIndex = index;
@@ -75,6 +64,32 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   setActiveCategory(index: number): void {
     this.activeCategoryIndex = index;
+    this.activeProjectIndex = 0;
+    this.filterProjectsByCategory();
+  }
+
+  filterProjectsByCategory(): void {
+    let filtered: Project[] = [];
+    
+    switch (this.activeCategoryIndex) {
+      case 0: // Current (ongoing)
+        filtered = this.allProjects.filter(p => p.category === 'ongoing');
+        break;
+      case 1: // Previous (completed)
+        filtered = this.allProjects.filter(p => p.category === 'completed');
+        break;
+      case 2: // Upcoming
+        filtered = this.allProjects.filter(p => p.category === 'upcoming');
+        break;
+    }
+    
+    // Limit to maximum 4 projects
+    this.displayedProjects = filtered.slice(0, 4);
+  }
+
+  viewProjectDetails(project: Project): void {
+    this.projectsService.setSelectedProject(project);
+    this.router.navigate(['/project']);
   }
 
   private setupScrollAnimations() {

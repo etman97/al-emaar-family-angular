@@ -8,7 +8,7 @@ export const locale = {
       ABOUT: 'About Us',
       PROJECTS: 'Our Projects',
       CONTACT: 'Contact Us',
-      OUR_COMPANIES: 'Our Companies'
+      OUR_COMPANIES: 'Our Partners'
     },    // Home Page
     HOME: {
       HERO: {
@@ -121,10 +121,12 @@ export const locale = {
       PROJECT_NAME: 'Project Name',
       SEARCH: {
         PLACEHOLDER: 'City or Area',
+        LOCATION: 'Location',
         PROPERTY_TYPE: 'Property Type',
         PRICE: 'Price',
         ROOMS_BATHROOMS: 'Rooms & Bathrooms',
-        SEARCH_BUTTON: 'Search'
+        SEARCH_BUTTON: 'Search',
+        CLEAR: 'Clear'
       }
     },
 

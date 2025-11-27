@@ -8,7 +8,7 @@ export const locale = {
       ABOUT: 'نبذة عنا',
       PROJECTS: 'مشاريعنا',
       CONTACT: 'تواصل معنا',
-      OUR_COMPANIES: 'شركاتنا'
+      OUR_COMPANIES: 'شركائنا'
     },
     // Home Page
     HOME: {
@@ -135,10 +135,12 @@ export const locale = {
       PROJECT_NAME: 'اسم المشروع',
       SEARCH: {
         PLACEHOLDER: 'المدينة أو المنطقة',
+        LOCATION: 'الموقع',
         PROPERTY_TYPE: 'نوع العقار',
         PRICE: 'السعر',
         ROOMS_BATHROOMS: 'غرف وحمامات',
-        SEARCH_BUTTON: 'بحث'
+        SEARCH_BUTTON: 'بحث',
+        CLEAR: 'مسح'
       }
     },
 

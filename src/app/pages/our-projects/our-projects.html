@@ -1,26 +1,66 @@
 <section class="hero-search-section">
   <div class="search-bar">
     <div class="search-segment search-input-segment">
-      <input type="text" [placeholder]="'OUR_PROJECTS.SEARCH.PLACEHOLDER' | translate" [attr.aria-label]="'OUR_PROJECTS.SEARCH.PLACEHOLDER' | translate" />
+      <input 
+        type="text" 
+        [(ngModel)]="searchText"
+        [placeholder]="'OUR_PROJECTS.SEARCH.PLACEHOLDER' | translate" 
+        [attr.aria-label]="'OUR_PROJECTS.SEARCH.PLACEHOLDER' | translate" 
+      />
       <span class="search-icon" aria-hidden="true"></span>
     </div>
 
-    <button class="search-segment" type="button">
-      <span class="segment-label">{{ 'OUR_PROJECTS.SEARCH.PROPERTY_TYPE' | translate }}</span>
-      <span class="caret"></span>
-    </button>
+    <div class="dropdown-wrapper">
+      <button class="search-segment" type="button" (click)="toggleLocationDropdown($event)">
+        <span class="segment-label">{{ selectedLocation || ('OUR_PROJECTS.SEARCH.LOCATION' | translate) }}</span>
+        <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu" *ngIf="showLocationDropdown" style="display: flex !important; flex-direction: column !important;">
+        <button 
+          *ngIf="selectedLocation" 
+          class="dropdown-item clear-option" 
+          type="button"
+          (click)="clearLocationFilter(); $event.stopPropagation()">
+          <i class="bi bi-x-circle" style="margin-inline-end: 6px;"></i>
+          {{ 'OUR_PROJECTS.SEARCH.CLEAR' | translate }}
+        </button>
+        <button 
+          *ngFor="let location of uniqueLocations" 
+          class="dropdown-item" 
+          type="button"
+          (click)="selectLocation(location); $event.stopPropagation()">
+          <i class="bi bi-geo-alt" style="margin-inline-end: 8px; opacity: 0.6;"></i>
+          {{ currentLang === 'ar' ? location.ar : location.en }}
+        </button>
+      </div>
+    </div>
 
-    <button class="search-segment" type="button">
-      <span class="segment-label">{{ 'OUR_PROJECTS.SEARCH.PRICE' | translate }}</span>
-      <span class="caret"></span>
-    </button>
+    <div class="dropdown-wrapper">
+      <button class="search-segment" type="button" (click)="togglePropertyTypeDropdown($event)">
+        <span class="segment-label">{{ selectedPropertyType || ('OUR_PROJECTS.SEARCH.PROPERTY_TYPE' | translate) }}</span>
+        <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu" *ngIf="showPropertyTypeDropdown" style="display: flex !important; flex-direction: column !important;">
+        <button 
+          *ngIf="selectedPropertyType" 
+          class="dropdown-item clear-option" 
+          type="button"
+          (click)="clearPropertyTypeFilter(); $event.stopPropagation()">
+          <i class="bi bi-x-circle" style="margin-inline-end: 6px;"></i>
+          {{ 'OUR_PROJECTS.SEARCH.CLEAR' | translate }}
+        </button>
+        <button 
+          *ngFor="let type of uniquePropertyTypes" 
+          class="dropdown-item" 
+          type="button"
+          (click)="selectPropertyType(type); $event.stopPropagation()">
+          <i class="bi bi-building" style="margin-inline-end: 8px; opacity: 0.6;"></i>
+          {{ currentLang === 'ar' ? type.ar : type.en }}
+        </button>
+      </div>
+    </div>
 
-    <button class="search-segment" type="button">
-      <span class="segment-label">{{ 'OUR_PROJECTS.SEARCH.ROOMS_BATHROOMS' | translate }}</span>
-      <span class="caret"></span>
-    </button>
-
-    <button class="search-segment search-button" type="button">{{ 'OUR_PROJECTS.SEARCH.SEARCH_BUTTON' | translate }}</button>
+    <button class="search-segment search-button" type="button" (click)="performSearch()">{{ 'OUR_PROJECTS.SEARCH.SEARCH_BUTTON' | translate }}</button>
   </div>
 </section>
 
