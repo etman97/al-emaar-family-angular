@@ -248,26 +248,6 @@
 .stats {
   position: relative;
   z-index: 2;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.stats.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stats.animate-in .stat-card:nth-child(1) {
-  animation: scaleIn 0.5s ease-out 0.1s both;
-}
-
-.stats.animate-in .stat-card:nth-child(2) {
-  animation: scaleIn 0.5s ease-out 0.2s both;
-}
-
-.stats.animate-in .ruler-card {
-  animation: slideInRight 0.6s ease-out 0.3s both;
 }
 
 .stats .stats-inner {
@@ -314,6 +294,11 @@
 .stat-icon img {
   width: 45px;
   height: 45px;
+}
+
+/* Make Buildings.svg icon white */
+.stat-icon img[src$="Buildings.svg"] {
+  filter: brightness(0) invert(1);
 }
 
 .stat-text {
@@ -436,27 +421,19 @@
 ========================================================= */
 
 .units {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.units.animate-in {
-  opacity: 1;
-  transform: translateY(0);
+  position: relative;
 }
 
 .units .section-head {
   color: #181818;
   font-weight: 700;
   margin-bottom: 30px;
-  animation: slideInLeft 0.6s ease-out both;
 }
 
 /* بدل ما تبقى سكرول أفقي، هنخليها Grid بتلف تحت بعض */
 .units-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
   gap: 12px;
   overflow-x: visible;
   padding-bottom: 8px;
@@ -464,7 +441,6 @@
 
 .unit-card {
   width: 100%;
-  max-width: 220px;
   height: 171px;
   background: #f6f6f6;
   border: 1px solid #3f5b9108;
@@ -479,18 +455,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-
-.units.animate-in .unit-card {
-  animation: scaleIn 0.5s ease-out both;
-}
-
-.units.animate-in .unit-card:nth-child(1) { animation-delay: 0.1s; }
-.units.animate-in .unit-card:nth-child(2) { animation-delay: 0.15s; }
-.units.animate-in .unit-card:nth-child(3) { animation-delay: 0.2s; }
-.units.animate-in .unit-card:nth-child(4) { animation-delay: 0.25s; }
-.units.animate-in .unit-card:nth-child(5) { animation-delay: 0.3s; }
-.units.animate-in .unit-card:nth-child(6) { animation-delay: 0.35s; }
-.units.animate-in .unit-card:nth-child(7) { animation-delay: 0.4s; }
 
 .unit-card:hover {
   transform: translateY(-10px) rotate(2deg);

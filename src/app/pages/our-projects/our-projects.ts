@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+import { ProjectsService, Project } from '../../core/services/projects.service';
 
 type ProjectStatus = 'all' | 'current' | 'past' | 'upcoming';
 
-interface Project {
-  id: number;
-  name: string;
-  image: string;
-  status: ProjectStatus;
-}
 @Component({
   selector: 'app-our-projects',
   imports: [TranslateModule, CommonModule],
@@ -32,32 +28,49 @@ interface Project {
   ]
 })
 export class OurProjects implements OnInit {
-activeTab: ProjectStatus = 'all';
+  activeTab: ProjectStatus = 'all';
   isAnimating = false;
 
-  projects: Project[] = [
-    { id: 1, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p1.png', status: 'current' },
-    { id: 2, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p2.png', status: 'current' },
-    { id: 3, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p3.png', status: 'past' },
-    { id: 4, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p4.png', status: 'past' },
-    { id: 5, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p5.png', status: 'upcoming' },
-    { id: 6, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p1.png', status: 'upcoming' },
-    { id: 7, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p4.png', status: 'current' },
-    { id: 8, name: 'OUR_PROJECTS.PROJECT_NAME', image: 'assets/p3.png', status: 'past' }
-  ];
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private projectsService: ProjectsService
+  ) {}
+
+  projects: Project[] = [];
 
   ngOnInit(): void {
+    // Load projects from service
+    this.projects = this.projectsService.getAllProjects();
+    
     // Trigger initial animation
     setTimeout(() => {
       this.isAnimating = true;
     }, 100);
   }
 
+  get currentLang(): 'en' | 'ar' {
+    return (this.translate.currentLang === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
+  }
+
+  getStatus(category: string): ProjectStatus {
+    switch (category) {
+      case 'ongoing':
+        return 'current';
+      case 'completed':
+        return 'past';
+      case 'upcoming':
+        return 'upcoming';
+      default:
+        return 'all';
+    }
+  }
+
   get filteredProjects(): Project[] {
     if (this.activeTab === 'all') {
       return this.projects;
     }
-    return this.projects.filter(p => p.status === this.activeTab);
+    return this.projects.filter(p => this.getStatus(p.category) === this.activeTab);
   }
 
   setTab(tab: ProjectStatus): void {
@@ -77,5 +90,10 @@ activeTab: ProjectStatus = 'all';
 
   getAnimationState(): string {
     return `${this.activeTab}-${this.isAnimating}`;
+  }
+
+  onProjectClick(project: Project): void {
+    this.projectsService.setSelectedProject(project);
+    this.router.navigate(['/project']);
   }
 }

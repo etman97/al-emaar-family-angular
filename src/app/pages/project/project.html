@@ -18,10 +18,15 @@
 		<img [src]="currentHeroImage" alt="صورة المشروع" class="hero-image" />
 
 		<div class="overlay">
-			<div class="type-badge">{{ 'PROJECT.HERO.TYPE_BADGE' | translate }}</div>
-			<h1 class="title">{{ 'PROJECT.HERO.TITLE' | translate }}</h1>
+			<div class="type-badge">{{ getProjectValue(projectType) || ('PROJECT.HERO.TYPE_BADGE' | translate) }}</div>
+			<h1 class="title" style="cursor: pointer; margin-bottom: 0.5rem;" (click)="openLocation()">
+				{{ getProjectValue(projectName) }}
+			</h1>
+			<h2 class="location-subtitle" style="font-size: 1.2rem; font-weight: 400; margin: 0 0 1rem 0; opacity: 0.9;">
+				{{ getProjectValue(projectLocation) }}
+			</h2>
 			<p class="desc">
-				{{ 'PROJECT.HERO.DESCRIPTION' | translate }}
+				{{ getProjectValue(projectDescription) || ('PROJECT.HERO.DESCRIPTION' | translate) }}
 			</p>
 		</div>
 
@@ -40,34 +45,25 @@
 		</button>
 	</section>
 
-	<!-- Stats / Ruler Row -->
-<section class="stats" [class.animate-in]="isStatsVisible">
+<section class="stats">
   <div class="stats-inner">
-    <!-- كروت المكاتب + المواقف (يمين) -->
-    <div class="stat-cards">
-      <div class="stat-card stat-card-primary">
+    <!-- Dynamic stat cards -->
+    <div class="stat-cards" *ngIf="visibleStats.length > 0">
+      <div class="stat-card" 
+           *ngFor="let stat of visibleStats; let first = first"
+           [class.stat-card-primary]="first">
         <div class="stat-icon">
-          <img src="assets/house.svg" alt="office" />
+          <img [src]="'assets/' + stat.icon" [alt]="stat.label" />
         </div>
         <div class="stat-text">
-          <div class="stat-label">{{ 'PROJECT.STATS.OFFICE' | translate }}</div>
-          <div class="stat-number">{{ officesCount | number }}</div>
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-icon">
-          <img src="assets/car.svg" alt="car" />
-        </div>
-        <div class="stat-text">
-          <div class="stat-label">{{ 'PROJECT.STATS.PARKING' | translate }}</div>
-          <div class="stat-number">{{ parkingCount }}</div>
+          <div class="stat-label">{{ 'PROJECT.STATS.' + stat.label | translate }}</div>
+          <div class="stat-number">{{ stat.value | number }}</div>
         </div>
       </div>
     </div>
 
-    <!-- كرت المساحة -->
-    <div class="ruler-card">
+    <!-- Total area card -->
+    <div class="ruler-card" *ngIf="totalArea && totalArea !== '0'">
       <div class="ruler-top-row">
         <span class="ruler-label">{{ 'PROJECT.STATS.TOTAL_AREA' | translate }}</span>
         <img src="assets/ruler-line.svg" class="ruler-image" alt="ruler" />
@@ -75,11 +71,11 @@
 
       <div class="ruler-bottom-row">
         <div class="ruler-value-row">
-          <span class="ruler-number">{{ totalArea | number }}</span>
+          <span class="ruler-number">{{ totalArea }}</span>
           <span class="ruler-unit">{{ 'PROJECT.STATS.SQUARE_METER' | translate }}</span>
         </div>
 
-        <button class="info-btn" type="button">
+        <button class="info-btn" type="button" *ngIf="projectLocationUrl" (click)="openLocation()">
           <span>{{ 'PROJECT.STATS.MORE_INFO' | translate }}</span>
           <i class="bi bi-info-circle"></i>
         </button>
@@ -89,20 +85,20 @@
 </section>
 
 <!-- Units list -->
-<section class="units" [class.animate-in]="isUnitsVisible">
+<section class="units" *ngIf="units && units.length > 0">
   <div class="section-head">{{ 'PROJECT.UNITS.SECTION_TITLE' | translate }}</div>
   <div class="units-list">
     <div class="unit-card" *ngFor="let u of units; let i = index">
       <div class="unit-header">
-        <span class="title">{{ getTranslatedValue(u.title) }}</span>
-        <span class="hash">#{{ u.code }}</span>
+        <span class="title">{{ getProjectValue(u.name) }}</span>
+        <span class="hash">#{{ u.unitId }}</span>
       </div>
       <div class="unit-meta">
         <div class="meta">
           {{ u.area }} <img src="assets/measure.svg" [attr.alt]="'PROJECT.UNITS.AREA_ALT' | translate" />
         </div>
-        <div class="meta">
-          {{ getTranslatedValue(u.floor) }} <img src="assets/Buildings.svg" [attr.alt]="'PROJECT.UNITS.FLOOR_ALT' | translate" />
+        <div class="meta" *ngIf="u.floor && u.floor !== '0'">
+          {{ u.floor }} <img src="assets/Buildings.svg" [attr.alt]="'PROJECT.UNITS.FLOOR_ALT' | translate" />
         </div>
       </div>
     </div>

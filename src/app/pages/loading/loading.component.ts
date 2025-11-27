@@ -13,6 +13,12 @@ export class LoadingComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Loading page stays frozen - no navigation
+    // Set flag before navigation
+    sessionStorage.setItem('fromLoading', 'true');
+    
+    // Navigate to home page after animation completes (3 seconds)
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 3000);
   }
 }

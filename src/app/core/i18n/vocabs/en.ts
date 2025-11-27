@@ -188,6 +188,11 @@ export const locale = {
       STATS: {
         OFFICE: 'Office',
         PARKING: 'Parking Spaces',
+        VILLAS: 'Villas',
+        MODELS: 'Models',
+        UNITS: 'Units',
+        SHOWROOMS: 'Showrooms',
+        FLOORS: 'Floors',
         TOTAL_AREA: 'Total Area',
         SQUARE_METER: 'm²',
         MORE_INFO: 'More Information'

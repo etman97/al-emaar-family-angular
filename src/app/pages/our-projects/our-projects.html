@@ -61,10 +61,10 @@
 
     <div class="projects-grid" [@projectsAnimation]="getAnimationState()">
       @for (project of filteredProjects; track project.id) {
-        <div class="project-card">
-          <img [src]="project.image" [alt]="project.name" />
+        <div class="project-card" (click)="onProjectClick(project)" style="cursor: pointer;">
+          <img [src]="project.images && project.images.length > 0 ? project.images[0] : project.image" [alt]="project.name[currentLang]" />
           <div class="project-overlay">
-            <h3>{{ 'OUR_PROJECTS.PROJECT_NAME' | translate }}</h3>
+            <h3>{{ project.name[currentLang] }}</h3>
           </div>
         </div>
       }

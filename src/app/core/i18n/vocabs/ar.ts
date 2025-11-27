@@ -190,6 +190,11 @@ export const locale = {
       STATS: {
         OFFICE: 'مكتب',
         PARKING: 'مواقف سيارات',
+        VILLAS: 'فلل',
+        MODELS: 'نماذج',
+        UNITS: 'وحدات',
+        SHOWROOMS: 'صالات عرض',
+        FLOORS: 'طوابق',
         TOTAL_AREA: 'المساحة الإجمالية',
         SQUARE_METER: 'م²',
         MORE_INFO: 'معلومات إضافية'

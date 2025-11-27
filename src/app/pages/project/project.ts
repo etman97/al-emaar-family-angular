@@ -1,8 +1,9 @@
-import { Component, inject, OnDestroy, HostListener } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { ProjectsService, Project as ProjectData, ProjectUnit } from '../../core/services/projects.service';
 
 @Component({
   selector: 'app-project',
@@ -11,57 +12,66 @@ import { Subscription } from 'rxjs';
   templateUrl: './project.html',
   styleUrl: './project.scss',
 })
-export class Project implements OnDestroy {
+export class Project implements OnDestroy, OnInit {
   private translate = inject(TranslateService);
+  private projectsService = inject(ProjectsService);
+  
   lang: string = this.translate.currentLang || 'ar';
   private langSub: Subscription = this.translate.onLangChange.subscribe(({ lang }) => {
     this.lang = lang;
   });
   
-  scrollY = 0;
-  isStatsVisible = false;
-  isUnitsVisible = false;
+  // Project data
+  selectedProject: ProjectData | null = null;
+  projectName: { en: string; ar: string } = { en: '', ar: '' };
+  projectLocation: { en: string; ar: string } = { en: '', ar: '' };
+  projectLocationUrl: string = '';
+  projectType: { en: string; ar: string } = { en: '', ar: '' };
+  projectDescription: { en: string; ar: string } = { en: '', ar: '' };
+  totalArea: string = '0';
+  
+  // Dynamic stats
+  get visibleStats() {
+    if (!this.selectedProject) return [];
+    const stats = this.selectedProject.stats;
+    const result = [];
+    
+    if (stats.offices > 0) result.push({ label: 'OFFICE', value: stats.offices, icon: 'house.svg' });
+    if (stats.parkings > 0) result.push({ label: 'PARKING', value: stats.parkings, icon: 'car.svg' });
+    if (stats.villas > 0) result.push({ label: 'VILLAS', value: stats.villas, icon: 'house.svg' });
+    if (stats.models > 0) result.push({ label: 'MODELS', value: stats.models, icon: 'house.svg' });
+    if (stats.units > 0) result.push({ label: 'UNITS', value: stats.units, icon: 'house.svg' });
+    if (stats.exhibitionsShowrooms > 0) result.push({ label: 'SHOWROOMS', value: stats.exhibitionsShowrooms, icon: 'house.svg' });
+    if (stats.floors > 0) result.push({ label: 'FLOORS', value: stats.floors, icon: 'Buildings.svg' });
+    
+    return result;
+  }
+  
+  units: ProjectUnit[] = [];
   
   ngOnInit(): void {
-    // Trigger animation check on load
-    setTimeout(() => this.checkAnimations(), 100);
-  }
-  
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    this.scrollY = window.scrollY;
-    this.checkAnimations();
-  }
-  
-  private checkAnimations(): void {
-    const statsSection = document.querySelector('.stats');
-    const unitsSection = document.querySelector('.units');
+    // Load selected project
+    this.selectedProject = this.projectsService.getSelectedProject();
     
-    if (statsSection && !this.isStatsVisible) {
-      const rect = statsSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        this.isStatsVisible = true;
-      }
-    }
-    
-    if (unitsSection && !this.isUnitsVisible) {
-      const rect = unitsSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        this.isUnitsVisible = true;
+    if (this.selectedProject) {
+      this.projectName = this.selectedProject.name;
+      this.projectLocation = this.selectedProject.location;
+      this.projectLocationUrl = this.selectedProject.locationUrl;
+      this.projectType = this.selectedProject.type;
+      this.projectDescription = this.selectedProject.description;
+      this.totalArea = this.selectedProject.area;
+      this.units = this.selectedProject.Units;
+      
+      // Set hero images if available
+      if (this.selectedProject.images && this.selectedProject.images.length > 0) {
+        this.heroImages = this.selectedProject.images;
+      } else if (this.selectedProject.image) {
+        this.heroImages = [this.selectedProject.image];
       }
     }
   }
   
-  totalArea = 300000;
-  officesCount = 120000;
-  parkingCount = 9;
-  
-  heroImages = [
-    'assets/project.png',
-    'assets/p1.png',
-    'assets/project.png',
-    'assets/p2.png'
-  ];
+  heroImages: string[] = ['assets/project.png'];
   currentImageIndex = 0;
   isTransitioning = false;
   
@@ -119,56 +129,17 @@ export class Project implements OnDestroy {
     }
   }
   
-  units = [
-    { 
-      title: { ar: 'مكتب 1', en: 'Office 1' }, 
-      code: '12345789', 
-      area: 100, 
-      floor: { ar: 'الأول', en: 'First' }
-    },
-    { 
-      title: { ar: 'مكتب 2', en: 'Office 2' }, 
-      code: '12345790', 
-      area: 120, 
-      floor: { ar: 'الثاني', en: 'Second' }
-    },
-    { 
-      title: { ar: 'مكتب 3', en: 'Office 3' }, 
-      code: '12345791', 
-      area: 150, 
-      floor: { ar: 'الثالث', en: 'Third' }
-    },
-    { 
-      title: { ar: 'مكتب 4', en: 'Office 4' }, 
-      code: '12345792', 
-      area: 100, 
-      floor: { ar: 'الأول', en: 'First' }
-    },
-    { 
-      title: { ar: 'مكتب 5', en: 'Office 5' }, 
-      code: '12345793', 
-      area: 130, 
-      floor: { ar: 'الثاني', en: 'Second' }
-    },
-    { 
-      title: { ar: 'مكتب 6', en: 'Office 6' }, 
-      code: '12345794', 
-      area: 140, 
-      floor: { ar: 'الثالث', en: 'Third' }
-    },
-    { 
-      title: { ar: 'مكتب 7', en: 'Office 7' }, 
-      code: '12345795', 
-      area: 110, 
-      floor: { ar: 'الأول', en: 'First' }
+  openLocation(): void {
+    if (this.projectLocationUrl) {
+      window.open(this.projectLocationUrl, '_blank');
     }
-  ];
-
-  getTranslatedValue(value: { ar: string; en: string }): string {
-    const lang = this.translate.currentLang || 'ar';
-    return value[lang as 'ar' | 'en'] || value.ar;
   }
-
+  
+  getProjectValue(obj: { en: string; ar: string }): string {
+    const currentLang = this.lang as 'en' | 'ar';
+    return obj[currentLang] || obj.ar || obj.en;
+  }
+  
   ngOnDestroy(): void {
     if (this.langSub) {
       this.langSub.unsubscribe();

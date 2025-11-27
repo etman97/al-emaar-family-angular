@@ -10,33 +10,38 @@ import { firstVisitGuard } from './guards/first-visit.guard';
 
 export const routes: Routes = [
   {
-    path: 'loading',
+    path: '',
     component: LoadingComponent
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
-    // canActivate: [firstVisitGuard]
+    canActivate: [firstVisitGuard]
   },
   {
     path: 'contact-us',
-    component: ContactUs
+    component: ContactUs,
+    canActivate: [firstVisitGuard]
   },
   {
     path: 'our-companies',
-    component: OurCompanies
+    component: OurCompanies,
+    canActivate: [firstVisitGuard]
   },
   {
     path: 'about-us',
-    component: AboutUs
+    component: AboutUs,
+    canActivate: [firstVisitGuard]
   },
   {
     path: 'our-projects',
-    component: OurProjects
+    component: OurProjects,
+    canActivate: [firstVisitGuard]
   },
   {
     path: 'project',
-    component: Project
+    component: Project,
+    canActivate: [firstVisitGuard]
   },
   {
     path: '**',
