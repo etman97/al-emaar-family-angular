@@ -119,10 +119,12 @@ export class OurProjects implements OnInit {
   // Clear filters
   clearLocationFilter(): void {
     this.selectedLocation = '';
+    this.showLocationDropdown = false;
   }
 
   clearPropertyTypeFilter(): void {
     this.selectedPropertyType = '';
+    this.showPropertyTypeDropdown = false;
   }
 
   // Search functionality
