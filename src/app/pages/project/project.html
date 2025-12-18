@@ -15,16 +15,23 @@
 			<i class="bi bi-chevron-right"></i>
 		</button>
 
-		<img [src]="currentHeroImage" alt="صورة المشروع" class="hero-image" />
+		<img [src]="currentHeroImage" 
+		     alt="صورة المشروع" 
+		     class="hero-image" 
+		     (click)="openLightbox(currentImageIndex)"
+		     style="cursor: pointer;" />
 
 		<div class="overlay">
 			<div class="type-badge">{{ getProjectValue(projectType) || ('PROJECT.HERO.TYPE_BADGE' | translate) }}</div>
-			<h1 class="title" style="cursor: pointer; margin-bottom: 0.5rem;" (click)="openLocation()">
+			<h1 class="title">
 				{{ getProjectValue(projectName) }}
 			</h1>
-			<h2 class="location-subtitle" style="font-size: 1.2rem; font-weight: 400; margin: 0 0 1rem 0; opacity: 0.9;">
-				{{ getProjectValue(projectLocation) }}
-			</h2>
+			<div class="location-container" (click)="openLocation()">
+				<i class="bi bi-geo-alt"></i>
+				<h2 class="location-subtitle">
+					{{ getProjectValue(projectLocation) }}
+				</h2>
+			</div>
 			<p class="desc">
 				{{ getProjectValue(projectDescription) || ('PROJECT.HERO.DESCRIPTION' | translate) }}
 			</p>
@@ -105,3 +112,38 @@
   </div>
 </section>
 </div>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" *ngIf="isLightboxOpen" (click)="closeLightbox()">
+  <button class="lightbox-close" (click)="closeLightbox()">
+    <i class="bi bi-x-lg"></i>
+  </button>
+  
+  <button class="lightbox-nav lightbox-prev" 
+          *ngIf="heroImages.length > 1"
+          (click)="prevLightboxImage(); $event.stopPropagation()">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+  
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <img [src]="heroImages[lightboxImageIndex]" alt="صورة المشروع" />
+    <div class="lightbox-counter" *ngIf="heroImages.length > 1">
+      {{ lightboxImageIndex + 1 }} / {{ heroImages.length }}
+    </div>
+  </div>
+  
+  <button class="lightbox-nav lightbox-next" 
+          *ngIf="heroImages.length > 1"
+          (click)="nextLightboxImage(); $event.stopPropagation()">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  
+  <!-- Thumbnails -->
+  <div class="lightbox-thumbnails" *ngIf="heroImages.length > 1">
+    <div class="thumbnail" 
+         *ngFor="let img of heroImages; let i = index"
+         [class.active]="i === lightboxImageIndex"
+         (click)="lightboxImageIndex = i; $event.stopPropagation()">
+      <img [src]="img" alt="صورة مصغرة" />
+    </div>
+  </div>

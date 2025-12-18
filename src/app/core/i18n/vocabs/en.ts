@@ -14,7 +14,8 @@ export const locale = {
       HERO: {
         TITLE: 'From Al-Emaar family..',
         SUBTITLE: 'New standards of excellence are born',
-        DESCRIPTION: 'Residential projects that inspire luxury, administrative spaces that elevate work, and commercial hubs that enrich the experience.Every project we create carries a vision that balances elegance, performance, and architectural identity.',
+        DESCRIPTION: 'Residential projects that inspire luxury, administrative spaces that elevate work, and commercial hubs that enrich the experience.',
+        DESCRIPTION_2: 'Every project we create carries a vision that balances elegance, performance, and architectural identity.',
       },
       PROJECTS: {
         SECTION_TITLE: 'Our Featured Projects',

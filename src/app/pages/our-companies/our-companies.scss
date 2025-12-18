@@ -213,7 +213,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 24px;
+  gap: 0px;
   text-align: right;
   margin: 0;
 }
@@ -462,7 +462,7 @@
 
 .companies-logo-img {
   width: 100%;
-  max-width: 584px;
+  max-width: 350px;
   border-radius: 6px;
   height: auto;
   display: block;

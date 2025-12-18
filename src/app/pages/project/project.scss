@@ -96,7 +96,7 @@
 ========================================================= */
 .hero {
   position: relative;
-  height: 470px;
+  height: 750px;
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
@@ -208,7 +208,27 @@
 .overlay .title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+
+  i {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}
+
+.location-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.9;
 }
 
 .overlay .desc {
@@ -273,7 +293,7 @@
 
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   gap: 12px;
 
   color: #ffffff;
@@ -426,7 +446,8 @@
 
 .units .section-head {
   color: #181818;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 20px;
   margin-bottom: 30px;
 }
 
@@ -549,7 +570,7 @@
 /* --- Small Tablet / Large Mobile (<= 768px) --- */
 @media (max-width: 768px) {
   .hero {
-    height: 320px;
+    height: 470px;
   }
 
   .overlay .title {
@@ -681,3 +702,233 @@
 /* Hover nudge respects element direction */
 .back-link[dir='rtl']:hover i { transform: translateX(-4px); }
 .back-link[dir='ltr']:hover i { transform: translateX(4px); }
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10001;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+  }
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 36px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10001;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &.lightbox-prev {
+    right: 20px;
+  }
+
+  &.lightbox-next {
+    left: 20px;
+  }
+}
+
+.lightbox-thumbnails {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  max-width: 90vw;
+  overflow-x: auto;
+  z-index: 10000;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &.active {
+    opacity: 1;
+    border-color: #ffffff;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Mobile responsiveness for lightbox */
+@media (max-width: 767px) {
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .lightbox-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+
+    &.lightbox-prev {
+      right: 10px;
+    }
+
+    &.lightbox-next {
+      left: 10px;
+    }
+  }
+
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 70vh;
+
+    img {
+      max-height: 70vh;
+    }
+  }
+
+  .lightbox-thumbnails {
+    bottom: 10px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 45px;
+  }
+}
+@media (max-width: 1024px) {
+    .footer__col--logo {
+        grid-column: 1 / -1;
+        align-items: center !important;
+        text-align: center;
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}

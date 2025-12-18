@@ -49,8 +49,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   navigationButtons = [
-    'HOME.PROJECTS.NAV.CURRENT',
     'HOME.PROJECTS.NAV.PREVIOUS',
+    'HOME.PROJECTS.NAV.CURRENT',
     'HOME.PROJECTS.NAV.COMPLETED'
   ];
 
@@ -72,11 +72,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     let filtered: Project[] = [];
     
     switch (this.activeCategoryIndex) {
-      case 0: // Current (ongoing)
-        filtered = this.allProjects.filter(p => p.category === 'ongoing');
-        break;
-      case 1: // Previous (completed)
+      case 0: // Previous (completed)
         filtered = this.allProjects.filter(p => p.category === 'completed');
+        break;
+      case 1: // Current (ongoing)
+        filtered = this.allProjects.filter(p => p.category === 'ongoing');
         break;
       case 2: // Upcoming
         filtered = this.allProjects.filter(p => p.category === 'upcoming');

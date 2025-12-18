@@ -101,6 +101,21 @@
 }
 
 @media (max-width: 991px) {
+  .navbar {
+    &::before {
+      width: 230%;
+      height: 121%;
+    }
+  }
+
+  :host-context([dir="ltr"]) .navbar::before {
+    left: -9px;
+  }
+
+  :host-context([dir="rtl"]) .navbar::before {
+    right: -129%;
+  }
+
   .navbar-nav {
     gap: 1rem;
     margin-top: 1rem;
@@ -113,5 +128,51 @@
 
   .logo {
     height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    &::before {
+      width: 238%;
+      height: 119%;
+    }
+  }
+
+  .logo {
+    height: 45px;
+  }
+    :host-context([dir="ltr"]) .navbar::before {
+    left: -29px;
+  }
+
+  :host-context([dir="rtl"]) .navbar::before {
+    right: -134%;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    &::before {
+      width: 318%;
+      height: 87%;
+    }
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+  :host-context([dir="ltr"]) .navbar::before {
+    left: -21px;
+    top : 23%;
+  }
+
+  :host-context([dir="rtl"]) .navbar::before {
+    right: -180%;
+    top : 23%;
   }
 }

@@ -75,6 +75,10 @@ export class Project implements OnDestroy, OnInit {
   currentImageIndex = 0;
   isTransitioning = false;
   
+  // Lightbox state
+  isLightboxOpen = false;
+  lightboxImageIndex = 0;
+  
   // Touch swipe handling
   private touchStartX = 0;
   private touchEndX = 0;
@@ -107,6 +111,16 @@ export class Project implements OnDestroy, OnInit {
   
   onTouchEnd(event: TouchEvent): void {
     this.touchEndX = event.changedTouches[0].clientX;
+    const swipeDistance = Math.abs(this.touchStartX - this.touchEndX);
+    const touchDuration = Date.now() - this.touchStartTime;
+    
+    // If it's a tap (minimal movement and quick), open lightbox
+    if (swipeDistance < 10 && touchDuration < 300) {
+      this.openLightbox(this.currentImageIndex);
+      return;
+    }
+    
+    // Otherwise handle as swipe
     this.handleSwipe();
   }
   
@@ -132,6 +146,49 @@ export class Project implements OnDestroy, OnInit {
   openLocation(): void {
     if (this.projectLocationUrl) {
       window.open(this.projectLocationUrl, '_blank');
+    }
+  }
+  
+  // Lightbox methods
+  openLightbox(index: number): void {
+    this.lightboxImageIndex = index;
+    this.isLightboxOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+  
+  closeLightbox(): void {
+    this.isLightboxOpen = false;
+    document.body.style.overflow = '';
+  }
+  
+  nextLightboxImage(): void {
+    this.lightboxImageIndex = (this.lightboxImageIndex + 1) % this.heroImages.length;
+  }
+  
+  prevLightboxImage(): void {
+    this.lightboxImageIndex = this.lightboxImageIndex === 0 
+      ? this.heroImages.length - 1 
+      : this.lightboxImageIndex - 1;
+  }
+  
+  @HostListener('document:keydown.escape')
+  handleEscape(): void {
+    if (this.isLightboxOpen) {
+      this.closeLightbox();
+    }
+  }
+  
+  @HostListener('document:keydown.arrowleft')
+  handleArrowLeft(): void {
+    if (this.isLightboxOpen) {
+      this.nextLightboxImage();
+    }
+  }
+  
+  @HostListener('document:keydown.arrowright')
+  handleArrowRight(): void {
+    if (this.isLightboxOpen) {
+      this.prevLightboxImage();
     }
   }
   
