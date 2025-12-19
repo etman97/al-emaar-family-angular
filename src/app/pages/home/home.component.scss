@@ -1330,7 +1330,7 @@
 
 @media (max-width: 576px) {
   .call-to-action-section {
-    padding: 24px 16px;
+    padding: 165px 16px;
   }
   .hero-section .row {
     flex-direction: column;
@@ -1339,7 +1339,9 @@
     text-align: center;
   }
   .call-to-action-section::before {
-    display: none;
+    display: block;
+    width: 150%;
+    top: 17rem;
   }
 
   .cta-container {
@@ -1402,6 +1404,73 @@
   }
   .cta-button{
     align-self: center !important;
+  }
+}
+
+// iPad Pro specific styles (834px - 1024px)
+@media (min-width: 834px) and (max-width: 1024px) {
+  .hero-section .row {
+    gap: 50px;
+  }
+
+  .hero-section .col-lg-6 {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .hero-section .col-lg-6:first-child {
+    order: 1 !important;
+  }
+
+  .hero-section .col-lg-6:last-child {
+    order: 2 !important;
+  }
+  :host-context([dir='rtl']) .hero-content {
+    text-align: right;
+  }
+
+  :host-context([dir='ltr']) .hero-content {
+    text-align: left;
+  }
+
+  :host-context([dir='rtl']) .hero-title {
+    margin-top: 5%;
+    text-align: right;
+  }
+
+  :host-context([dir='ltr']) .hero-title {
+    margin-top: 5%;
+    text-align: left;
+  }
+
+  :host-context([dir='rtl']) .hero-subtitle {
+    text-align: right;
+  }
+
+  :host-context([dir='ltr']) .hero-subtitle {
+    text-align: left;
+  }
+
+  :host-context([dir='rtl']) .hero-description {
+    text-align: right;
+  }
+
+  :host-context([dir='ltr']) .hero-description {
+    text-align: left;
+  }
+
+  .image-container {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .top-img{
+    left: -30% !important;
+  }
+  .main-img{
+    left: -51px !important;
+  }
+  .bottom-img{
+    left: 355px !important;
   }
 }
 
@@ -1499,6 +1568,153 @@
 }
 
 @media (max-width: 576px) {
+  .hero-section {
+    padding: 24px 12px 32px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .image-container {
+    max-width: 100%;
+    height: 400px;
+  }
+
+  :host-context([dir='rtl']) .image-container .main-img,
+  :host-context([dir='ltr']) .image-container .main-img {
+    width: 76%;
+    height: 70%;
+    top: 18%;
+  }
+
+  :host-context([dir='rtl']) .image-container .top-img,
+  :host-context([dir='ltr']) .image-container .top-img {
+    width: 34%;
+    height: 34%;
+    top: 23%;
+    left: 3%;
+  }
+
+  :host-context([dir='rtl']) .image-container .bottom-img,
+  :host-context([dir='ltr']) .image-container .bottom-img {
+    width: 39%;
+    top: 52%;
+    height: 33%;
+    right: 6%;
+  }
+}
+
+// iPhone 14 Pro Max specific styles (430px width)
+@media (max-width: 430px) and (min-width: 391px) {
+  .hero-section {
+    padding: 24px 12px 32px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .image-container {
+    max-width: 100%;
+    height: 400px;
+  }
+
+  :host-context([dir='rtl']) .image-container .main-img,
+  :host-context([dir='ltr']) .image-container .main-img {
+    width: 76%;
+    height: 93%;
+    top: 18%;
+  }
+
+  :host-context([dir='rtl']) .image-container .top-img,
+  :host-context([dir='ltr']) .image-container .top-img {
+    width: 34%;
+    height: 34%;
+    top: 23%;
+    left: 3%;
+  }
+
+  :host-context([dir='rtl']) .image-container .bottom-img,
+  :host-context([dir='ltr']) .image-container .bottom-img {
+    width: 39%;
+    top: 77%;
+    height: 33%;
+    right: 6%;
+  }
+}
+
+// iPhone 14 specific styles (390px width)
+@media (max-width: 390px) and (min-width: 376px) {
+  .hero-section {
+    padding: 24px 12px 32px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .image-container {
+    max-width: 100%;
+    height: 400px;
+  }
+
+  :host-context([dir='rtl']) .image-container .main-img,
+  :host-context([dir='ltr']) .image-container .main-img {
+    width: 76%;
+    height: 93%;
+    top: 18%;
+  }
+
+  :host-context([dir='rtl']) .image-container .top-img,
+  :host-context([dir='ltr']) .image-container .top-img {
+    width: 34%;
+    height: 34%;
+    top: 23%;
+    left: 3%;
+  }
+
+  :host-context([dir='rtl']) .image-container .bottom-img,
+  :host-context([dir='ltr']) .image-container .bottom-img {
+    width: 39%;
+    top: 77%;
+    height: 33%;
+    right: 6%;
+  }
+}
+
+// iPhone SE specific styles (375px width)
+@media (max-width: 375px) {
   .hero-section {
     padding: 24px 12px 32px;
   }

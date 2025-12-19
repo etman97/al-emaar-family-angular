@@ -352,7 +352,7 @@
   :host-context([dir='ltr']) .our-companies-description,
   :host-context([dir='rtl']) .our-companies-title,
   :host-context([dir='rtl']) .our-companies-description {
-    text-align: center;
+    text-align: start;
   }
 
   .our-companies-images {

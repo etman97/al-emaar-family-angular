@@ -378,7 +378,6 @@
 
   .footer__links {
     align-items: center;
-    gap: 8px;
   }
 
   .footer__links li {
@@ -411,10 +410,6 @@
 
 /* Small Mobile Responsive Design */
 @media (max-width: 480px) {
-  .footer__container {
-    gap: 25px;
-    padding: 0 20px;
-  }
 
   .footer__title-wrapper {
     display: flex;
@@ -423,7 +418,7 @@
   }
 
   .footer__title {
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -459,11 +454,11 @@
 
   .footer__links a,
   .contact-text {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .contact-icon {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .footer {
