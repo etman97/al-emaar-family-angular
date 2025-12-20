@@ -434,7 +434,18 @@ textarea.custom-input {
   @media (max-width: 576px) {
     min-height: 300px;
     max-height: 400px;
+  }
 
+  // iPhone 14 Pro Max (430px width)
+  @media (max-width: 430px) and (min-width: 391px) {
+    min-height: 500px;
+    max-height: 600px;
+  }
+
+  // iPhone SE (375px width)
+  @media (max-width: 390px) {
+    min-height: 450px;
+    max-height: 550px;
   }
 }
 
@@ -510,6 +521,30 @@ textarea.custom-input {
     padding: 20px;
     max-width: 90%;
   }
+
+  // iPhone 14 Pro Max (430px width) - Center overlay on image
+  @media (max-width: 430px) and (min-width: 391px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 86%;
+    max-width: calc(100% - 40px);
+    margin: 0;
+    padding: 18px;
+  }
+
+  // iPhone SE (375px width) - Center overlay on image
+  @media (max-width: 390px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: calc(100% - 40px);
+    margin: 0;
+    padding: 16px;
+  }
 }
 
 
@@ -564,6 +599,16 @@ textarea.custom-input {
   span {
     font-size: 18px;
   }
+
+  // Mobile: Only stack the info-item that has social icons
+  &:has(.social-icons) {
+    @media (max-width: 576px) {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      gap: 16px;
+    }
+  }
 }
 
 .social-icons {
@@ -578,6 +623,12 @@ textarea.custom-input {
     &:hover {
       opacity: 0.7;
     }
+  }
+
+  // Mobile: Full width for social icons
+  @media (max-width: 576px) {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
@@ -619,6 +670,16 @@ textarea.custom-input {
       // iPad Mini (768px x 1024px)
       @media (min-width: 744px) and (max-width: 768px) {
         min-height: 376px;
+      }
+
+      // iPhone 14 Pro Max (430px width)
+      @media (max-width: 430px) and (min-width: 391px) {
+        min-height: 330px;
+      }
+
+      // iPhone SE (375px width)
+      @media (max-width: 390px) {
+        min-height: 350px;
       }
     }
   }

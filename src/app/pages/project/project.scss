@@ -454,7 +454,7 @@
 /* بدل ما تبقى سكرول أفقي، هنخليها Grid بتلف تحت بعض */
 .units-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 233px));
   gap: 12px;
   overflow-x: visible;
   padding-bottom: 8px;
@@ -608,7 +608,7 @@
 /* --- Mobile (<= 576px) --- */
 @media (max-width: 576px) {
   .hero {
-    height: 280px;
+    height: 505px;
     border-radius: 12px;
   }
 
@@ -617,11 +617,15 @@
   }
 
   .stat-cards {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .stat-card {
-    width: 100%;
+    flex: 0 0 calc(50% - 8px);
+    width: calc(50% - 8px);
+    min-width: 0;
   }
 
   /* نخلي النص + المسطرة في نفس السطر */
@@ -663,11 +667,16 @@
   }
 
   .units-list {
-    grid-template-columns: 1fr;   /* كرت واحد في السطر */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .unit-card {
     max-width: 100%;
+  }
+
+  .unit-card:nth-child(even) {
+    margin-top: 20%;
   }
 }
 .back-link {

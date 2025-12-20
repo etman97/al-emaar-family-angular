@@ -138,7 +138,7 @@ export const locale = {
       VALUES: {
         VISION: {
           TITLE: 'Vision',
-          DESCRIPTION: 'We aspire to be leaders in providing the finest residential and commercial real estate services, with a focus on aesthetic standards and superior quality.'
+          DESCRIPTION: 'Aspiring to lead in delivering high-quality residential and commercial real estate services that combine beauty and excellence to meet the aspirations of citizens.'
         },
         MISSION: {
           TITLE: 'Mission',

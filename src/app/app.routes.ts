@@ -24,7 +24,7 @@ export const routes: Routes = [
     canActivate: [firstVisitGuard]
   },
   {
-    path: 'our-companies',
+    path: 'our-partners',
     component: OurCompanies,
     canActivate: [firstVisitGuard]
   },
