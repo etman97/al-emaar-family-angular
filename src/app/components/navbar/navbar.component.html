@@ -5,9 +5,11 @@
       <img src="assets/logo white.png" alt="{{ 'NAVBAR.BRAND' | translate }}" class="logo" />
     </a>
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </button>
     
     <!-- Menu in the center -->
@@ -25,7 +27,7 @@
           <a class="nav-link" routerLink="/our-projects" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()">{{ 'NAVBAR.PROJECTS' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/our-companies" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()">{{ 'NAVBAR.OUR_COMPANIES' | translate }}</a>
+          <a class="nav-link" routerLink="/our-partners" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()">{{ 'NAVBAR.OUR_COMPANIES' | translate }}</a>
         </li>
         <li class="nav-item">
           <a

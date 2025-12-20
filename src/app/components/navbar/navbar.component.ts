@@ -29,6 +29,7 @@ export class NavbarComponent {
   toggleLanguage() {
     const newLang = this.currentLang === 'ar' ? 'en' : 'ar';
     this.switchLanguage(newLang);
+    this.closeNavbar();
   }
 
   closeNavbar() {
