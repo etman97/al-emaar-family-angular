@@ -124,3 +124,35 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2d4570;
 }
+
+/* Custom Cursor Effect */
+.cursor-circle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #2d4570;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.5s ease, background-color 0.3s ease;
+}
+
+.cursor-circle.cursor-visible {
+  opacity: 0.7;
+}
+
+/* Hover effect */
+.cursor-circle.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #2d4570;
+  opacity: 0.5;
+}
+
+/* Hide custom cursor on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-circle {
+    display: none;
+  }
+  }
