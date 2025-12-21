@@ -8,7 +8,7 @@ export const locale = {
       ABOUT: 'نبذة عنا',
       PROJECTS: 'مشاريعنا',
       CONTACT: 'تواصل معنا',
-      OUR_COMPANIES: 'شركائنا'
+      OUR_COMPANIES: 'شركاؤنا'
     },
     // Home Page
     HOME: {
