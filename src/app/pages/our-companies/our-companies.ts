@@ -22,7 +22,9 @@ import { trigger, style, transition, animate } from '@angular/animations';
   ]
 })
 export class OurCompanies implements OnInit, AfterViewInit {
-  showMoreContent = false;
+  showMoreContent1 = false;
+  showMoreContent2 = false;
+  showMoreContent3 = false;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -32,8 +34,14 @@ export class OurCompanies implements OnInit, AfterViewInit {
     this.setupScrollAnimations();
   }
 
-  toggleContent() {
-    this.showMoreContent = !this.showMoreContent;
+  toggleContent(companyNumber: number) {
+    if (companyNumber === 1) {
+      this.showMoreContent1 = !this.showMoreContent1;
+    } else if (companyNumber === 2) {
+      this.showMoreContent2 = !this.showMoreContent2;
+    } else if (companyNumber === 3) {
+      this.showMoreContent3 = !this.showMoreContent3;
+    }
   }
 
   private setupScrollAnimations() {

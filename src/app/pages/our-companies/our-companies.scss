@@ -570,6 +570,14 @@
   text-align: right;
 }
 
+:host-context([dir='ltr']) .company-block--right {
+  text-align: left;
+}
+
+:host-context([dir='rtl']) .company-block--right {
+  text-align: right;
+}
+
 /* Responsiveness */
 @media (max-width: 991.98px) {
   .companies-logo-box {

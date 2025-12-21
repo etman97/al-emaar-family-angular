@@ -82,31 +82,31 @@ export const locale = {
       TITLE: 'Three companies … one vision.',
       DESCRIPTION: 'At Al Emaar Family, expertise is combined to deliver comprehensive solutions that make a difference in every project.',
         COMPANY_1: {
-          TITLE: 'Tfaseel Designs',
-          INTRO_TEXT_1: 'Each project at Tfasel Designs is crafted like a work of art, where creativity meets functionality to create spaces that inspire those who live in them.',
+          TITLE: 'Axis Design',
+          INTRO_TEXT_1: 'At Axis Design, every project is treated as a unique masterpiece. They masterfully blend artistic vision with practical utility, ensuring that architecture is not just built, but sculpted to inspire those who dwell within it.',
           INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
           SHOW_MORE: 'Show More',
           SHOW_LESS: 'Show Less',
           EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
-          EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+          EXTENDED_TEXT_2: 'Beyond the visual appeal, Axis creates environments where creativity meets functionality in perfect harmony. Their approach turns standard spaces into livable art, carefully considering light, flow, and emotion. The result is a bespoke home that does not merely accommodate your daily routine but elevates it, offering a sanctuary that is as comfortable as it is breathtaking.'
         },
         COMPANY_2: {
-          TITLE: 'Urbana Construction',
-          INTRO_TEXT_1: 'Urbana Construction transforms ideas into tangible realities, where precision and quality are reflected in every stone and corner.',
+          TITLE: 'Al-Itqan & Al-Quwwa Contracting',
+          INTRO_TEXT_1: 'Al-Itqan & Al-Quwwa Contracting specializes in transforming ambitious concepts into tangible realities. With an unwavering commitment to excellence, they ensure that absolute precision and superior quality are reflected in every single stone and corner of the structure.',
           INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
           SHOW_MORE: 'Show More',
           SHOW_LESS: 'Show Less',
           EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
-          EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+          EXTENDED_TEXT_2: 'They are the bridge between architectural dreams and solid ground. Urbana employs rigorous engineering standards and meticulous attention to detail to execute every phase of the build. From the foundational concrete to the finest finishing touches, their expertise guarantees a property that stands the test of time, giving you the confidence that your home is built on a legacy of durability and trust.'
         },
         COMPANY_3: {
-          TITLE: 'Jorĕ Developments',
-          INTRO_TEXT_1: 'Jorĕ Developments delivers projects that combine beauty and value, making every investment step a unique experience.',
+          TITLE: 'Basma Zarqaa',
+          INTRO_TEXT_1: 'Basma Zarqaa delivers exceptional projects that seamlessly combine aesthetic beauty with tangible financial value. They are dedicated to making every investment step a unique, rewarding experience that secures both your future and your lifestyle.',
           INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
           SHOW_MORE: 'Show More',
           SHOW_LESS: 'Show Less',
           EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
-          EXTENDED_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.'
+          EXTENDED_TEXT_2: 'Their philosophy centers on the belief that a property should be a wise asset as well as a beautiful home. Jorĕ guides clients through a journey of discovery, offering developments that promise high returns and sophisticated living. By focusing on prime locations and superior standards, they turn the complex process of real estate investment into a smooth, transparent, and satisfying achievement.'
         },
     },
 
