@@ -85,7 +85,7 @@
 
 .about-us-image--primary {
   width: 524px;
-  height: 524px;
+  height: 650px;
   max-width: 100%;
 }
 
@@ -257,7 +257,10 @@
   .about-us-image--primary {
     width: 100%;
     max-width: 400px;
-    height: auto;
+    height: 400px;
+  }
+  .about-us-wrapper{
+    gap : 0px !important;
   }
 
   .about-us-image--secondary {
@@ -306,6 +309,7 @@
 
   .about-us-image--primary {
     max-width: 280px;
+    max-height: 290px;
   }
 
   .about-us-image--secondary {

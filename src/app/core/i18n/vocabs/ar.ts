@@ -224,8 +224,21 @@ export const locale = {
         MESSAGE_PLACEHOLDER: 'اكتب رسالتك',
         SELECT_COUNTRY: 'اختر رمز الدولة',
         SUBMIT: 'إرسال',
+        SENDING: 'جاري الإرسال...',
         SUBMIT_ICON_ALT: 'إرسال الرسالة',
-        SUCCESS: 'تم إرسال رسالتك بنجاح!'
+        SUCCESS: 'تم إرسال الرسالة بنجاح! سنتواصل معك قريباً.'
+      },
+      ERRORS: {
+        FIRSTNAME_REQUIRED: 'الاسم الأول مطلوب',
+        FIRSTNAME_INVALID: 'الاسم الأول يجب أن يكون 2-50 حرفاً',
+        LASTNAME_REQUIRED: 'الاسم الآخر مطلوب',
+        LASTNAME_INVALID: 'الاسم الآخر يجب أن يكون 2-50 حرفاً',
+        PHONE_REQUIRED: 'رقم الجوال مطلوب',
+        PHONE_INVALID: 'الرجاء إدخال رقم جوال صحيح',
+        MESSAGE_REQUIRED: 'الرسالة مطلوبة',
+        MESSAGE_INVALID: 'الرسالة يجب أن تكون 10 أحرف على الأقل',
+        FORM_INVALID: 'الرجاء إصلاح الأخطاء في النموذج',
+        SEND_FAILED: 'فشل إرسال الرسالة. الرجاء المحاولة مرة أخرى.'
       },
       COUNTRIES: {
         SA: 'السعودية',

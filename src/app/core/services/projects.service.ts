@@ -40,204 +40,6 @@ export class ProjectsService {
 
   projects: Project[] = [
     {
-      id: "project1",
-      category: "ongoing",
-      name: { en: "Emaar Villas", ar: "فلل الإعمار" },
-      description: {
-        en: "Elegant villas combining luxury, technology, and comprehensive services.",
-        ar: "فلل فاخرة تجمع بين الفخامة، التكنولوجيا، والخدمات المتكاملة."
-      },
-      type: { en: "Residential", ar: "سكني" },
-      location: { en: "Al-Narjis District", ar: "حي النرجس" },
-      locationUrl: "https://www.google.com/maps?q=RAJB2980%D8%8C+2980+%D9%85%D8%AD%D9%85%D8%AF+%D8%A3%D8%A8%D9%8A+%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A7%D8%AA+%D8%A7%D9%84%D8%B7%D8%A8%D8%B1%D9%8A%D8%8C+6883%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D9%86%D8%B1%D8%AC%D8%B3%D8%8C+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+13339&ftid=0x3e2eef8760436c87:0x2e6cf8799a5edf01",
-      area: "7182",
-      stats: { offices: 0, parkings: 0, villas: 14, models: 2, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [
-        { unitId: 1, name: { en: "Model 1", ar: "نموذج 1" }, area: "364", floor: "0" },
-        { unitId: 2, name: { en: "Model 2", ar: "نموذج 2" }, area: "351", floor: "0" }
-      ],
-      images: [
-        "assets/emmar/emaar-v-1-main.jpg",
-        "assets/emmar/emaar-v-2.jpg",
-        "assets/emmar/emaar-v-3.jpg",
-        "assets/emmar/emaar-v-4.jpg",
-        "assets/emmar/emaar-v-5.jpg",
-        "assets/emmar/emaar-v-6.jpg",
-        "assets/emmar/emaar-v-7.jpg",
-        "assets/emmar/emaar-v-8.jpg",
-        "assets/emmar/emaar-v-9.jpg",
-        "assets/emmar/emaar-v-10.jpg",
-        "assets/emmar/emaar-v-11.jpg",
-        "assets/emmar/emaar-v-12.jpg",
-        "assets/emmar/emaar-v-13.jpg",
-        "assets/emmar/emaar-v-14.jpg",
-        "assets/emmar/emaar-v-15.jpg",
-        "assets/emmar/emaar-v-16.jpg",
-        "assets/emmar/emaar-v-17.jpg",
-        "assets/emmar/emaar-v-18.jpg",
-        "assets/emmar/emaar-v-19.jpg"
-      ]
-    },
-    {
-      id: "project4",
-      category: "ongoing",
-      name: { en: "Al Falah", ar: "الفلاح" },
-      description: { en: "", ar: "" },
-      type: { en: "Administrative", ar: "إداري" },
-      location: { en: "Al-Falah District", ar: "حي الفلاح" },
-      locationUrl: "https://maps.app.goo.gl/8r5CFYFCgUUjZpUF8",
-      area: "8353",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
-      images: [
-        "assets/Al Falah/falah-1-main.jpg",
-        "assets/Al Falah/falah-2.jpg",
-        "assets/Al Falah/falah-3.jpg",
-        "assets/Al Falah/falah-4.jpg",
-        "assets/Al Falah/falah-5.jpg",
-        "assets/Al Falah/falah-6.jpg",
-        "assets/Al Falah/falah-7.jpg",
-        "assets/Al Falah/falah-8.jpg",
-        "assets/Al Falah/falah-9.jpg"
-      ]
-    },
-    {
-      id: "project3",
-      category: "ongoing",
-      name: { en: "Al Nozha", ar: "النزهة" },
-      description: { en: "", ar: "" },
-      type: { en: "Administrative", ar: "إداري" },
-      location: { en: "Al-Nozha District", ar: "حي النزهة" },
-      locationUrl: "https://maps.app.goo.gl/wT4f3zM4zchXsYZW9",
-      area: "1,638",
-      stats: { offices: 8, parkings: 78, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
-      images: [
-        "assets/Al Nozha/nozha-1-main.jpg",
-        "assets/Al Nozha/nozha-2.jpg",
-        "assets/Al Nozha/nozha-3.jpg",
-        "assets/Al Nozha/nozha-4.jpg",
-        "assets/Al Nozha/nozha-5.jpg",
-        "assets/Al Nozha/nozha-6.jpg"
-      ]
-    },
-    {
-      id: "project5",
-      category: "ongoing",
-      name: { en: "Al Narjis 2", ar: "النرجس 2" },
-      description: { en: "", ar: "" },
-      type: { en: "Administrative", ar: "إداري" },
-      location: { en: "Al-Narjis District", ar: "حي النرجس" },
-      locationUrl: "https://www.google.com/maps?q=24.865398,46.633610",
-      area: "1850",
-      stats: { offices: 10, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
-      images: [
-        "assets/Al Narjis 2/narjis-o-1-main.jpg",
-        "assets/Al Narjis 2/narjis-o-2.jpg",
-        "assets/Al Narjis 2/narjis-o-3.jpg",
-        "assets/Al Narjis 2/narjis-o-4.jpg"
-      ]
-    },
-    {
-      id: "project2",
-      category: "ongoing",
-      name: { en: "Al Narjis 1", ar: "النرجس 1" },
-      description: { en: "", ar: "" },
-      type: { en: "Commercial", ar: "تجاري" },
-      location: { en: "Al-Narjis District", ar: "حي النرجس" },
-      locationUrl: "http://google.com/maps?q=24.865398,46.633610",
-      area: "8070",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 24, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [
-        { unitId: 1, name: { en: "Showroom 1", ar: "معرض 1" }, area: "1730", floor: "0" },
-        { unitId: 2, name: { en: "Office 1", ar: "مكتب 1" }, area: "300", floor: "1" },
-        { unitId: 3, name: { en: "Office 1", ar: "مكتب 1" }, area: "260", floor: "1" },
-        { unitId: 4, name: { en: "Office 2", ar: "مكتب 2" }, area: "260", floor: "1" },
-        { unitId: 5, name: { en: "Office 3", ar: "مكتب 3" }, area: "260", floor: "1" },
-        { unitId: 6, name: { en: "Office 4", ar: "مكتب 4" }, area: "160", floor: "1" },
-        { unitId: 7, name: { en: "Office 5", ar: "مكتب 5" }, area: "210", floor: "1" },
-        { unitId: 8, name: { en: "Office 6", ar: "مكتب 6" }, area: "200", floor: "1" },
-        { unitId: 9, name: { en: "Office 15", ar: "مكتب 15" }, area: "100", floor: "2" },
-        { unitId: 10, name: { en: "Office 16", ar: "مكتب 16" }, area: "200", floor: "2" },
-        { unitId: 11, name: { en: "Office 17", ar: "مكتب 17" }, area: "210", floor: "2" },
-        { unitId: 12, name: { en: "Office 18", ar: "مكتب 18" }, area: "145", floor: "2" },
-        { unitId: 13, name: { en: "Showroom 1", ar: "معرض 1" }, area: "1730", floor: "0" },
-        { unitId: 14, name: { en: "Office 8", ar: "مكتب 8" }, area: "200", floor: "1" },
-        { unitId: 15, name: { en: "Office 9", ar: "مكتب 9" }, area: "210", floor: "1" },
-        { unitId: 16, name: { en: "Office 10", ar: "مكتب 10" }, area: "160", floor: "1" },
-        { unitId: 17, name: { en: "Office 11", ar: "مكتب 11" }, area: "300", floor: "1" },
-        { unitId: 18, name: { en: "Office 12", ar: "مكتب 12" }, area: "260", floor: "1" },
-        { unitId: 19, name: { en: "Office 13", ar: "مكتب 13" }, area: "260", floor: "1" },
-        { unitId: 20, name: { en: "Office 14", ar: "مكتب 14" }, area: "260", floor: "1" },
-        { unitId: 21, name: { en: "Office 19", ar: "مكتب 19" }, area: "200", floor: "2" },
-        { unitId: 22, name: { en: "Office 20", ar: "مكتب 20" }, area: "100", floor: "2" },
-        { unitId: 23, name: { en: "Office 21", ar: "مكتب 21" }, area: "210", floor: "2" },
-        { unitId: 24, name: { en: "Office 22", ar: "مكتب 22" }, area: "145", floor: "2" }
-      ],
-      images: [
-        "assets/Al Narjis 1/narjis-m-1-main.jpg",
-        "assets/Al Narjis 1/narjis-m-2.jpg",
-        "assets/Al Narjis 1/narjis-m-3.jpg",
-        "assets/Al Narjis 1/narjis-m-4.jpg",
-        "assets/Al Narjis 1/narjis-m-5.jpg",
-        "assets/Al Narjis 1/narjis-m-6.jpg"
-      ]
-    },
-    {
-      id: "project6",
-      category: "ongoing",
-      name: { en: "Ejada", ar: "إجادة" },
-      description: { en: "", ar: "" },
-      type: { en: "Administrative", ar: "إداري" },
-      location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
-      locationUrl: "https://maps.app.goo.gl/9jjU4Ez3Rb315DPm6",
-      area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
-      images: [
-        "assets/Ejada/ejada-1-main.jpg",
-        "assets/Ejada/ejada-2.jpg",
-        "assets/Ejada/ejada-3.jpg",
-        "assets/Ejada/egada-4.jpg"
-      ]
-    },
-    {
-      id: "project7",
-      category: "completed",
-      name: { en: "Binyah", ar: "بنية" },
-      description: { en: "", ar: "" },
-      type: { en: "Administrative", ar: "إداري" },
-      location: { en: "Al-Nada District", ar: "حي الندى" },
-      locationUrl: "https://maps.app.goo.gl/4ibW1VPLBmzZFjSx5",
-      area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
-      images: [
-        "assets/Binyah/binyah-1-main.jpg",
-        "assets/Binyah/binyah-2.jpg",
-        "assets/Binyah/binyah-3.jpg",
-        "assets/Binyah/binyah-4.jpg"
-      ]
-    },
-    {
-      id: "project8",
-      category: "completed",
-      name: { en: "Mitsubishi Electric", ar: "ميتسوبيشي إلكتريك" },
-      description: { en: "", ar: "" },
-      type: { en: "Administrative", ar: "إداري" },
-      location: { en: "Al-Wurud District", ar: "حي الورود" },
-      locationUrl: "https://maps.app.goo.gl/F6ptepzNJFS2cv8c6",
-      area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
-      images: [
-        "assets/Mitsubishi Electric/Mitsubishi-1-main.jpg",
-        "assets/Mitsubishi Electric/Mitsubishi-2.jpg",
-        "assets/Mitsubishi Electric/Mitsubishi-3.jpg"
-      ]
-    },
-    {
       id: "project9",
       category: "upcoming",
       name: { en: "VERTICA Mall", ar: "ڤيرتيكا مول" },
@@ -355,11 +157,50 @@ export class ProjectsService {
       image: "assets/project.png"
     },
     {
+      id: "project1",
+      category: "ongoing",
+      name: { en: "Emaar Villas", ar: "فلل الإعمار" },
+      description: {
+        en: "Elegant villas combining luxury, technology, and comprehensive services.",
+        ar: "فلل فاخرة تجمع بين الفخامة، التكنولوجيا، والخدمات المتكاملة."
+      },
+      type: { en: "Residential", ar: "سكني" },
+      location: { en: "Al-Narjis District", ar: "حي النرجس" },
+      locationUrl: "https://www.google.com/maps?q=RAJB2980%D8%8C+2980+%D9%85%D8%AD%D9%85%D8%AF+%D8%A3%D8%A8%D9%8A+%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A7%D8%AA+%D8%A7%D9%84%D8%B7%D8%A8%D8%B1%D9%8A%D8%8C+6883%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D9%86%D8%B1%D8%AC%D8%B3%D8%8C+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+13339&ftid=0x3e2eef8760436c87:0x2e6cf8799a5edf01",
+      area: "7182",
+      stats: { offices: 0, parkings: 0, villas: 14, models: 2, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [
+        { unitId: 1, name: { en: "Model 1", ar: "نموذج 1" }, area: "364", floor: "0" },
+        { unitId: 2, name: { en: "Model 2", ar: "نموذج 2" }, area: "351", floor: "0" }
+      ],
+      images: [
+        "assets/emmar/emaar-v-1-main.jpg",
+        "assets/emmar/emaar-v-2.jpg",
+        "assets/emmar/emaar-v-3.jpg",
+        "assets/emmar/emaar-v-4.jpg",
+        "assets/emmar/emaar-v-5.jpg",
+        "assets/emmar/emaar-v-6.jpg",
+        "assets/emmar/emaar-v-7.jpg",
+        "assets/emmar/emaar-v-8.jpg",
+        "assets/emmar/emaar-v-9.jpg",
+        "assets/emmar/emaar-v-10.jpg",
+        "assets/emmar/emaar-v-11.jpg",
+        "assets/emmar/emaar-v-12.jpg",
+        "assets/emmar/emaar-v-13.jpg",
+        "assets/emmar/emaar-v-14.jpg",
+        "assets/emmar/emaar-v-15.jpg",
+        "assets/emmar/emaar-v-16.jpg",
+        "assets/emmar/emaar-v-17.jpg",
+        "assets/emmar/emaar-v-18.jpg",
+        "assets/emmar/emaar-v-19.jpg"
+      ]
+    },
+    {
       "id": "project12",
       "category": "ongoing",
       "name": {
-        "en": "Al Quds 1 Twin Tower",
-        "ar": "القدس 1 برج التوأم"
+        "en": "Twin Tower 3",
+        "ar": "برج التوأم 3"
       },
       "description": {
         "en": "",
@@ -688,13 +529,27 @@ export class ProjectsService {
           "floor": "0"
         }
       ],
-      "images": [],
+      "images": [
+        "assets/quds1-1-main.jpg",
+        "assets/quds1-2.jpg",
+        "assets/quds1-3.jpg",
+        "assets/quds1-4.jpg",
+        "assets/quds1-5.jpg",
+        "assets/quds1-6.jpg",
+        "assets/quds1-7.jpg",
+        "assets/quds1-8.jpg",
+        "assets/quds1-9.jpg",
+        "assets/quds1-10.jpg",
+        "assets/quds1-11.jpg",
+        "assets/quds1-12.jpg",
+        "assets/quds1-13.jpg",
+      ],
       "image": ""
     },
     {
       id: "project13",
       category: "ongoing",
-      name: { en: "Al Masif Neo", ar: "المصيف الجديد" },
+      name: { en: "The Avenue Square", ar: "أفينيو سكوير" },
       description: {
         en: "",
         ar: ""
@@ -895,9 +750,276 @@ export class ProjectsService {
           "floor": "Annex"
         }
       ],
-      images: [],
+      images: [
+        "assets/masifn-1-main.jpg",
+        "assets/masifn-2.jpg",
+        "assets/masifn-3.jpg",
+        "assets/masifn-4.jpg",
+        "assets/masifn-5.jpg",
+        "assets/masifn-6.jpg",
+        'assets/masifn-7.jpg',
+        'assets/masifn-8.jpg',
+        'assets/masifn-9.jpg',
+        'assets/masifn-10.jpg',
+        'assets/masifn-11.jpg',
+        'assets/masifn-12.jpg',
+        'assets/masifn-13.jpg',
+        'assets/masifn-14.jpg',
+        'assets/masifn-15.jpg',
+        'assets/masifn-16.jpg',
+        'assets/masifn-17.jpg',
+        'assets/masifn-18.jpg',
+        'assets/masifn-19.jpg',
+      ],
       image: ""
-    }
+    },
+    {
+      id: "project4",
+      category: "ongoing",
+      name: { en: "Aala Alemar Avenue", ar: "عائلة الإعمار أفنيو" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Falah District", ar: "حي الفلاح" },
+      locationUrl: "https://maps.app.goo.gl/8r5CFYFCgUUjZpUF8",
+      area: "8353",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/Al Falah/falah-1-main.jpg",
+        "assets/Al Falah/falah-2.jpg",
+        "assets/Al Falah/falah-3.jpg",
+        "assets/Al Falah/falah-4.jpg",
+        "assets/Al Falah/falah-5.jpg",
+        "assets/Al Falah/falah-6.jpg",
+        "assets/Al Falah/falah-7.jpg",
+        "assets/Al Falah/falah-8.jpg",
+        "assets/Al Falah/falah-9.jpg"
+      ]
+    },
+    {
+      id: "project3",
+      category: "ongoing",
+      name: { en: "Al Nozha", ar: "النزهة" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Nozha District", ar: "حي النزهة" },
+      locationUrl: "https://maps.app.goo.gl/wT4f3zM4zchXsYZW9",
+      area: "1,638",
+      stats: { offices: 8, parkings: 78, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/Al Nozha/nozha-1-main.jpg",
+        "assets/Al Nozha/nozha-2.jpg",
+        "assets/Al Nozha/nozha-3.jpg",
+        "assets/Al Nozha/nozha-4.jpg",
+        "assets/Al Nozha/nozha-5.jpg",
+        "assets/Al Nozha/nozha-6.jpg"
+      ]
+    },
+    {
+      id: "project2",
+      category: "completed",
+      name: { en: "Al Narjis 1", ar: "النرجس 1" },
+      description: { en: "", ar: "" },
+      type: { en: "Commercial", ar: "تجاري" },
+      location: { en: "Al-Narjis District", ar: "حي النرجس" },
+      locationUrl: "http://google.com/maps?q=24.865398,46.633610",
+      area: "8070",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 24, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [
+        { unitId: 1, name: { en: "Showroom 1", ar: "معرض 1" }, area: "1730", floor: "0" },
+        { unitId: 2, name: { en: "Office 1", ar: "مكتب 1" }, area: "300", floor: "1" },
+        { unitId: 3, name: { en: "Office 1", ar: "مكتب 1" }, area: "260", floor: "1" },
+        { unitId: 4, name: { en: "Office 2", ar: "مكتب 2" }, area: "260", floor: "1" },
+        { unitId: 5, name: { en: "Office 3", ar: "مكتب 3" }, area: "260", floor: "1" },
+        { unitId: 6, name: { en: "Office 4", ar: "مكتب 4" }, area: "160", floor: "1" },
+        { unitId: 7, name: { en: "Office 5", ar: "مكتب 5" }, area: "210", floor: "1" },
+        { unitId: 8, name: { en: "Office 6", ar: "مكتب 6" }, area: "200", floor: "1" },
+        { unitId: 9, name: { en: "Office 15", ar: "مكتب 15" }, area: "100", floor: "2" },
+        { unitId: 10, name: { en: "Office 16", ar: "مكتب 16" }, area: "200", floor: "2" },
+        { unitId: 11, name: { en: "Office 17", ar: "مكتب 17" }, area: "210", floor: "2" },
+        { unitId: 12, name: { en: "Office 18", ar: "مكتب 18" }, area: "145", floor: "2" },
+        { unitId: 13, name: { en: "Showroom 1", ar: "معرض 1" }, area: "1730", floor: "0" },
+        { unitId: 14, name: { en: "Office 8", ar: "مكتب 8" }, area: "200", floor: "1" },
+        { unitId: 15, name: { en: "Office 9", ar: "مكتب 9" }, area: "210", floor: "1" },
+        { unitId: 16, name: { en: "Office 10", ar: "مكتب 10" }, area: "160", floor: "1" },
+        { unitId: 17, name: { en: "Office 11", ar: "مكتب 11" }, area: "300", floor: "1" },
+        { unitId: 18, name: { en: "Office 12", ar: "مكتب 12" }, area: "260", floor: "1" },
+        { unitId: 19, name: { en: "Office 13", ar: "مكتب 13" }, area: "260", floor: "1" },
+        { unitId: 20, name: { en: "Office 14", ar: "مكتب 14" }, area: "260", floor: "1" },
+        { unitId: 21, name: { en: "Office 19", ar: "مكتب 19" }, area: "200", floor: "2" },
+        { unitId: 22, name: { en: "Office 20", ar: "مكتب 20" }, area: "100", floor: "2" },
+        { unitId: 23, name: { en: "Office 21", ar: "مكتب 21" }, area: "210", floor: "2" },
+        { unitId: 24, name: { en: "Office 22", ar: "مكتب 22" }, area: "145", floor: "2" }
+      ],
+      images: [
+        "assets/Al Narjis 1/narjis-m-1-main.jpg",
+        "assets/Al Narjis 1/narjis-m-2.jpg",
+        "assets/Al Narjis 1/narjis-m-3.jpg",
+        "assets/Al Narjis 1/narjis-m-4.jpg",
+        "assets/Al Narjis 1/narjis-m-5.jpg",
+        "assets/Al Narjis 1/narjis-m-6.jpg"
+      ]
+    },
+    {
+      id: "project5",
+      category: "completed",
+      name: { en: "Al Narjis 2", ar: "النرجس 2" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Narjis District", ar: "حي النرجس" },
+      locationUrl: "https://www.google.com/maps?q=24.865398,46.633610",
+      area: "1850",
+      stats: { offices: 10, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/Al Narjis 2/narjis-o-1-main.jpg",
+        "assets/Al Narjis 2/narjis-o-2.jpg",
+        "assets/Al Narjis 2/narjis-o-3.jpg",
+        "assets/Al Narjis 2/narjis-o-4.jpg"
+      ]
+    },
+    {
+      id: "project6",
+      category: "completed",
+      name: { en: "Ejada", ar: "إجادة" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
+      locationUrl: "https://maps.app.goo.gl/9jjU4Ez3Rb315DPm6",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/Ejada/ejada-1-main.jpg",
+        "assets/Ejada/ejada-2.jpg",
+        "assets/Ejada/ejada-3.jpg",
+        "assets/Ejada/egada-4.jpg"
+      ]
+    },
+    {
+      id: "project7",
+      category: "completed",
+      name: { en: "Binyah", ar: "بنية" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Nada District", ar: "حي الندى" },
+      locationUrl: "https://maps.app.goo.gl/4ibW1VPLBmzZFjSx5",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/Binyah/binyah-1-main.jpg",
+        "assets/Binyah/binyah-2.jpg",
+        "assets/Binyah/binyah-3.jpg",
+        "assets/Binyah/binyah-4.jpg"
+      ]
+    },
+    {
+      id: "project8",
+      category: "completed",
+      name: { en: "Mitsubishi Electric", ar: "ميتسوبيشي إلكتريك" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Wurud District", ar: "حي الورود" },
+      locationUrl: "https://maps.app.goo.gl/F6ptepzNJFS2cv8c6",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/Mitsubishi Electric/Mitsubishi-1-main.jpg",
+        "assets/Mitsubishi Electric/Mitsubishi-2.jpg",
+        "assets/Mitsubishi Electric/Mitsubishi-3.jpg"
+      ]
+    },
+    {
+      id: "project14",
+      category: "completed",
+      name: { en: "Twin Tower King", ar: "برج التوأم الملك" },
+      description: { en: "", ar: "" },
+      type: { en: "Administrative", ar: "إداري" },
+      location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
+      locationUrl: "https://maps.app.goo.gl/BBCJaKDUQATKsRus5",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/ttk-1-main.jpg",
+        "assets/ttk-2.jpg",
+        "assets/ttk-3.jpg",
+        "assets/ttk-4.jpg"
+      ]
+    },
+    {
+      id: "project16",
+      category: "completed",
+      name: { en: "Al-Arid Apartments 1", ar: "شقق العارض 1" },
+      description: { en: "", ar: "" },
+      type: { en: "Residential", ar: "سكني" },
+      location: { en: "Al-Arid District", ar: "حي العارض" },
+      locationUrl: "https://maps.app.goo.gl/FuRrjmqsUq2APsQf7",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/aaridf1-1-main.jpg",
+        "assets/aaridf1-2.jpg",
+        "assets/aaridf1-3.jpg",
+        "assets/aaridf1-4.jpg",
+        "assets/aaridf1-5.jpg"
+      ]
+    },
+    {
+      id: "project15",
+      category: "completed",
+      name: { en: "Al-Arid Apartments 2", ar: "شقق العارض 2" },
+      description: { en: "", ar: "" },
+      type: { en: "Residential", ar: "سكني" },
+      location: { en: "Al-Arid District", ar: "حي العارض" },
+      locationUrl: "https://maps.app.goo.gl/FuRrjmqsUq2APsQf7",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/aaridf2-1-main.jpg",
+        "assets/aaridf2-2.jpg",
+        "assets/aaridf2-3.jpg",
+      ]
+    },
+    {
+      id: "project17",
+      category: "completed",
+      name: { en: "Al-Masif 1", ar: "المصيف 1" },
+      description: { en: "", ar: "" },
+      type: { en: "Residential", ar: "سكني" },
+      location: { en: "Al-Masif District", ar: "حي المصيف" },
+      locationUrl: "https://maps.app.goo.gl/C4pERhxF9qBfEypg9",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/masif1-1-main.jpg",
+        "assets/masif1-2.jpg",
+      ]
+    },
+    {
+      id: "project18",
+      category: "completed",
+      name: { en: "Al-Izdihar 1", ar: "الإزدهار 1" },
+      description: { en: "", ar: "" },
+      type: { en: "Residential", ar: "سكني" },
+      location: { en: "Al-Izdihar District", ar: "حي الإزدهار" },
+      locationUrl: "https://maps.app.goo.gl/gE8jBctGcQnp8R5r8",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [],
+      images: [
+        "assets/izdihar-1-main.jpg",
+        "assets/izdihar-2.jpg",
+        "assets/izdihar-3.jpg",
+        "assets/izdihar-4.jpg"
+      ]
+    },
   ];
 
 

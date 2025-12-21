@@ -134,6 +134,35 @@
     color: #a2a2a2;
     opacity: 1;
   }
+
+  &.error {
+    border-color: #dc3545;
+    
+    &:focus {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+    }
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .custom-input[dir='rtl'] {
@@ -357,7 +386,7 @@ textarea.custom-input {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 112.63px;
+  min-width: 112.63px;
   height: 42px;
   justify-content: center;
 
@@ -374,6 +403,25 @@ textarea.custom-input {
     background: #6c757d;
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  .loading-spinner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+    i {
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

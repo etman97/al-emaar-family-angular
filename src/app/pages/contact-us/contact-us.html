@@ -24,14 +24,18 @@
                 <input
                   type="text"
                   class="form-control form-control-lg custom-input"
+                  [class.error]="errors.firstName"
                   id="firstName"
                   name="firstName"
                   [(ngModel)]="formData.firstName"
+                  (blur)="validateField('firstName')"
+                  (input)="clearError('firstName')"
                   [attr.aria-label]="'CONTACT.FORM.FIRST_NAME_LABEL' | translate"
                   [placeholder]="'CONTACT.FORM.FIRST_NAME_PLACEHOLDER' | translate"
                   [attr.dir]="direction"
                   required
                 />
+                <div class="error-message" *ngIf="errors.firstName">{{ errors.firstName }}</div>
               </div>
               <div class="col-12 col-md-12">
                 <label for="lastName" class="form-label visually-hidden">{{
@@ -40,14 +44,18 @@
                 <input
                   type="text"
                   class="form-control form-control-lg custom-input"
+                  [class.error]="errors.lastName"
                   id="lastName"
                   name="lastName"
                   [(ngModel)]="formData.lastName"
+                  (blur)="validateField('lastName')"
+                  (input)="clearError('lastName')"
                   [attr.aria-label]="'CONTACT.FORM.LAST_NAME_LABEL' | translate"
                   [placeholder]="'CONTACT.FORM.LAST_NAME_PLACEHOLDER' | translate"
                   [attr.dir]="direction"
                   required
                 />
+                <div class="error-message" *ngIf="errors.lastName">{{ errors.lastName }}</div>
               </div>
             </div>
 
@@ -98,16 +106,19 @@
                   <input
                     type="tel"
                     class="form-control form-control-lg custom-input"
-                    [ngClass]="{ 'placeholder-rtl': direction === 'rtl' }"
+                    [ngClass]="{ 'placeholder-rtl': direction === 'rtl', 'error': errors.phone }"
                     id="phone"
                     name="phone"
                     [(ngModel)]="formData.phone"
+                    (blur)="validateField('phone')"
+                    (input)="clearError('phone')"
                     inputmode="tel"
                     [attr.aria-label]="'CONTACT.FORM.PHONE_LABEL' | translate"
                     [placeholder]="'CONTACT.FORM.PHONE_PLACEHOLDER' | translate"
                     required
                   />
                 </div>
+                <div class="error-message" *ngIf="errors.phone">{{ errors.phone }}</div>
               </div>
             </div>
 
@@ -118,22 +129,29 @@
                 }}</label>
                 <textarea
                   class="form-control form-control-lg custom-input"
+                  [class.error]="errors.message"
                   id="message"
                   name="message"
                   [(ngModel)]="formData.message"
+                  (blur)="validateField('message')"
+                  (input)="clearError('message')"
                   rows="4"
                   [attr.aria-label]="'CONTACT.FORM.MESSAGE_LABEL' | translate"
                   [placeholder]="'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate"
                   [attr.dir]="direction"
                   required
                 ></textarea>
+                <div class="error-message" *ngIf="errors.message">{{ errors.message }}</div>
               </div>
             </div>
 
             <div class="d-flex justify-content-end mt-2">
-              <button type="submit" class="submit-button" [disabled]="!contactForm.valid">
-                <span class="submit-text">{{ 'CONTACT.FORM.SUBMIT' | translate }}</span>
-                <span class="submit-icon">
+              <button type="submit" class="submit-button" [disabled]="isSubmitting">
+                <span class="submit-text" *ngIf="!isSubmitting">{{ 'CONTACT.FORM.SUBMIT' | translate }}</span>
+                <span class="loading-spinner" *ngIf="isSubmitting">
+                  <i class="bi bi-hourglass-split"></i> {{ 'CONTACT.FORM.SENDING' | translate }}
+                </span>
+                <span class="submit-icon" *ngIf="!isSubmitting">
                   <img
                     src="assets/iconMessage.png"
                     [attr.alt]="'CONTACT.FORM.SUBMIT_ICON_ALT' | translate"
@@ -195,14 +213,6 @@
                       aria-label="LinkedIn"
                     >
                       <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                     <a
-                      href="https://x.com/aala_al_emar"
-                      target="_blank"
-                      title="Facebook"
-                      aria-label="Facebook"
-                    >
-                      <i class="fa-brands fa-facebook-f"></i>
                     </a>
                     <a
                       href="https://x.com/aala_al_emar"

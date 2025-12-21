@@ -13,7 +13,7 @@ import { ProjectsService, Project } from '../../core/services/projects.service';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   activeProjectIndex: number = 0;
-  activeCategoryIndex: number = 0;
+  activeCategoryIndex: number = 1;
   allProjects: Project[] = [];
   displayedProjects: Project[] = [];
 

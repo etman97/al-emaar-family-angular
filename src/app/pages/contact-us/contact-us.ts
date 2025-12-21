@@ -5,6 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { TranslationModule } from '../../core/i18n/translation.module';
 import { Subscription } from 'rxjs';
 import { animate, group, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
+import { EmailJSService } from '../../core/services/emailjs.service';
+
+declare const Toastify: any;
 
 @Component({
   selector: 'app-contact-us',
@@ -118,8 +121,26 @@ export class ContactUs implements OnInit, OnDestroy {
   private langChangeSub: Subscription;
   formAnimationState: 'hidden' | 'visible' = 'hidden';
   imageAnimationState: 'hidden' | 'visible' = 'hidden';
+  isSubmitting = false;
 
-  constructor(private translate: TranslateService) {
+  // Validation patterns
+  private validationPatterns = {
+    name: /^[a-zA-Z\u0600-\u06FF\s]{2,50}$/,
+    phone: /^[+]?[0-9\s\-()]{10,20}$/,
+  };
+
+  // Error states
+  errors = {
+    firstName: '',
+    lastName: '',
+    phone: '',
+    message: ''
+  };
+
+  constructor(
+    private translate: TranslateService,
+    private emailService: EmailJSService
+  ) {
     this.direction = this.getDirection(this.translate.currentLang || this.translate.getDefaultLang());
     this.langChangeSub = this.translate.onLangChange.subscribe(({ lang }) => {
       this.direction = this.getDirection(lang);
@@ -158,24 +179,122 @@ export class ContactUs implements OnInit, OnDestroy {
     countryCode: this.selectedCountry.code
   };
 
-  onSubmit() {
-    const { firstName, lastName, phone, message } = this.formData;
-    if (firstName && lastName && phone && message) {
-      const payload = {
-        firstName,
-        lastName,
-        fullName: `${firstName} ${lastName}`.trim(),
-        phone: `${this.selectedCountry.dialCode} ${phone}`.trim(),
-        rawPhone: phone,
-        country: this.selectedCountry.code,
-        countryName: this.translate.instant(this.selectedCountry.nameKey),
-        message
-      };
+  // Validation methods
+  validateField(fieldName: 'firstName' | 'lastName' | 'phone' | 'message'): boolean {
+    const value = this.formData[fieldName];
+    let isValid = true;
 
-      console.log('Form submitted:', payload);
-      // Here you can add your API call to send the data
-      alert(this.translate.instant('CONTACT.FORM.SUCCESS'));
-      this.resetForm();
+    if (!value.trim()) {
+      this.errors[fieldName] = this.translate.instant(`CONTACT.ERRORS.${fieldName.toUpperCase()}_REQUIRED`);
+      isValid = false;
+    } else {
+      switch (fieldName) {
+        case 'firstName':
+        case 'lastName':
+          if (!this.validationPatterns.name.test(value.trim())) {
+            this.errors[fieldName] = this.translate.instant(`CONTACT.ERRORS.${fieldName.toUpperCase()}_INVALID`);
+            isValid = false;
+          } else {
+            this.errors[fieldName] = '';
+          }
+          break;
+        case 'phone':
+          if (!this.validationPatterns.phone.test(value.trim())) {
+            this.errors[fieldName] = this.translate.instant('CONTACT.ERRORS.PHONE_INVALID');
+            isValid = false;
+          } else {
+            this.errors[fieldName] = '';
+          }
+          break;
+        case 'message':
+          if (value.trim().length < 10) {
+            this.errors[fieldName] = this.translate.instant('CONTACT.ERRORS.MESSAGE_INVALID');
+            isValid = false;
+          } else {
+            this.errors[fieldName] = '';
+          }
+          break;
+      }
+    }
+
+    return isValid;
+  }
+
+  validateForm(): boolean {
+    const fields: ('firstName' | 'lastName' | 'phone' | 'message')[] = ['firstName', 'lastName', 'phone', 'message'];
+    let isFormValid = true;
+
+    fields.forEach(field => {
+      if (!this.validateField(field)) {
+        isFormValid = false;
+      }
+    });
+
+    return isFormValid;
+  }
+
+  clearError(fieldName: 'firstName' | 'lastName' | 'phone' | 'message'): void {
+    this.errors[fieldName] = '';
+  }
+
+  showToast(message: string, type: 'success' | 'error' = 'success'): void {
+    if (typeof Toastify !== 'undefined') {
+      Toastify({
+        text: message,
+        duration: 5000,
+        gravity: 'top',
+        position: 'right',
+        stopOnFocus: true,
+        close: false,
+        className: type,
+        style: {
+          background: type === 'success' 
+            ? 'linear-gradient(to right, #00b09b, #96c93d)' 
+            : 'linear-gradient(to right, #ff5f6d, #ffc371)'
+        }
+      }).showToast();
+    }
+  }
+
+  async onSubmit() {
+    if (!this.validateForm()) {
+      this.showToast(
+        this.translate.instant('CONTACT.ERRORS.FORM_INVALID'),
+        'error'
+      );
+      return;
+    }
+
+    if (this.isSubmitting) return;
+
+    this.isSubmitting = true;
+
+    const { firstName, lastName, phone, message } = this.formData;
+    const emailData = {
+      from_name: `${firstName} ${lastName}`.trim(),
+      phone: `${this.selectedCountry.dialCode} ${phone}`.trim(),
+      message: message
+    };
+
+    try {
+      const result = await this.emailService.sendEmail(emailData);
+
+      if (result.success) {
+        this.showToast(
+          this.translate.instant('CONTACT.FORM.SUCCESS'),
+          'success'
+        );
+        this.resetForm();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      this.showToast(
+        this.translate.instant('CONTACT.ERRORS.SEND_FAILED'),
+        'error'
+      );
+    } finally {
+      this.isSubmitting = false;
     }
   }
 

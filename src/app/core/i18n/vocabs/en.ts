@@ -222,8 +222,21 @@ export const locale = {
         MESSAGE_PLACEHOLDER: 'Write your message',
         SELECT_COUNTRY: 'Select country code',
         SUBMIT: 'Send',
+        SENDING: 'Sending...',
         SUBMIT_ICON_ALT: 'Send message',
-        SUCCESS: 'Your message has been sent successfully!'
+        SUCCESS: 'Message sent successfully! We\'ll get back to you soon.'
+      },
+      ERRORS: {
+        FIRSTNAME_REQUIRED: 'First name is required',
+        FIRSTNAME_INVALID: 'First name must be 2-50 characters, letters only',
+        LASTNAME_REQUIRED: 'Last name is required',
+        LASTNAME_INVALID: 'Last name must be 2-50 characters, letters only',
+        PHONE_REQUIRED: 'Phone number is required',
+        PHONE_INVALID: 'Please enter a valid phone number',
+        MESSAGE_REQUIRED: 'Message is required',
+        MESSAGE_INVALID: 'Message must be at least 10 characters',
+        FORM_INVALID: 'Please fix the errors in the form',
+        SEND_FAILED: 'Failed to send message. Please try again.'
       },
       COUNTRIES: {
         SA: 'Saudi Arabia',
