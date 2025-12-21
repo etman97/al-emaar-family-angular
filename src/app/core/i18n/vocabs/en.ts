@@ -54,7 +54,7 @@ export const locale = {
         BUTTON: 'Start Now',
       },
       ACHIEVEMENTS: {
-        TITLE: 'Achievements We Are Proud Of',
+        TITLE: 'Achievements We Are Proud',
         DESCRIPTION: 'Over years of experience, Al-Emaar Family has established itself as one of the leading real estate developers in the Kingdom. We measure our success by what we build on the ground... and the trust we create with our clients.',
         STATS: {
           PROJECTS: {
