@@ -148,7 +148,7 @@ export const locale = {
     // About Us Page
     ABOUT_US: {
       TITLE: 'عن عائلة الإعمار',
-      DESCRIPTION: 'تم تأسيس الشركة بعد امتداد خبرة دامت 30 سنة من الجودة والاتقان في مجال التطوير العقاري السكني والتجاري',
+      DESCRIPTION: '',
       VALUES: {
         VISION: {
           TITLE: 'الرؤية',
@@ -186,7 +186,7 @@ export const locale = {
       HERO: {
         TYPE_BADGE: 'سكني',
         TITLE: 'اسم المشروع',
-        DESCRIPTION: 'تم تأسيس الشركة بعد امتداد خبرة امتدت لأكثر من 30 سنة من الجودة والاتقان في مجال التطوير العقاري السكني والتجاري',
+        DESCRIPTION: '',
         PREV: 'السابق',
         NEXT: 'التالي'
       },

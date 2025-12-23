@@ -184,7 +184,7 @@ export const locale = {
       HERO: {
         TYPE_BADGE: 'Residential',
         TITLE: 'Project Name',
-        DESCRIPTION: 'The company was established after more than 30 years of quality and perfection in the field of residential and commercial real estate development',
+        DESCRIPTION: '',
         PREV: 'Previous',
         NEXT: 'Next'
       },
