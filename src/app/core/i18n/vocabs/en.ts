@@ -97,16 +97,16 @@ export const locale = {
           SHOW_MORE: 'Show More',
           SHOW_LESS: 'Show Less',
           EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
-          EXTENDED_TEXT_2: 'They are the bridge between architectural dreams and solid ground. Urbana employs rigorous engineering standards and meticulous attention to detail to execute every phase of the build. From the foundational concrete to the finest finishing touches, their expertise guarantees a property that stands the test of time, giving you the confidence that your home is built on a legacy of durability and trust.'
+          EXTENDED_TEXT_2: 'They are the bridge connecting architectural dreams to solid ground. The Mastery and Strength Foundation applies stringent engineering standards and meticulous attention to detail to execute every phase of construction. From the foundational concrete to the finest finishing touches, their expertise ensures a property that endures the test of time, giving you absolute confidence that your home is built on a legacy of durability and executional integrity.'
         },
         COMPANY_3: {
           TITLE: 'Basma Zarqaa',
-          INTRO_TEXT_1: 'Basma Zarqaa delivers exceptional projects that seamlessly combine aesthetic beauty with tangible financial value. They are dedicated to making every investment step a unique, rewarding experience that secures both your future and your lifestyle.',
+          INTRO_TEXT_1: 'Basma Zarqaa offers exceptional marketing solutions and real estate consultations, where we meticulously select opportunities for our clients that seamlessly blend architectural beauty and tangible investment value. We dedicate our efforts to ensure every step you take with us is a considered and rewarding experience, guaranteeing you secure your future and elevate your lifestyle simultaneously.',
           INTRO_TEXT_2: 'Random introductory text for design random introductory text for design random introductory text for design',
           SHOW_MORE: 'Show More',
           SHOW_LESS: 'Show Less',
           EXTENDED_TEXT_1: 'Random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design random introductory text for design.',
-          EXTENDED_TEXT_2: 'Their philosophy centers on the belief that a property should be a wise asset as well as a beautiful home. Jorĕ guides clients through a journey of discovery, offering developments that promise high returns and sophisticated living. By focusing on prime locations and superior standards, they turn the complex process of real estate investment into a smooth, transparent, and satisfying achievement.'
+          EXTENDED_TEXT_2: 'Our philosophy is centered on the belief that our role extends beyond mere brokerage; we are your gateway to intelligent assets and distinguished homes. Blue Imprint guides its clients on a trusted journey, placing within their reach elite projects that promise high returns. Through our expertise in securing prime locations and commitment to superior standards, we transform the real estate search and investment journey into an achievement marked by ease, transparency, and complete satisfaction.'
         },
     },
 
@@ -134,11 +134,11 @@ export const locale = {
     // About Us Page
     ABOUT_US: {
       TITLE: 'About Emmar Family',
-      DESCRIPTION: 'The company was established after 30 years of quality and perfection in the field of residential and commercial real estate development',
+      DESCRIPTION: 'The company was established after 30 years of experience in quality and excellence in the field of residential and commercial real estate development. Through it, we aspire to lead in crafting residential and commercial concepts that combine sophistication and distinction, keeping in mind to meet your needs with the highest levels of quality. Our constant goal is to exceed expectations with a real estate product of genuine value, reflecting our ethical identity and supporting the advancement of our community.',
       VALUES: {
         VISION: {
           TITLE: 'Vision',
-          DESCRIPTION: 'Aspiring to lead in delivering high-quality residential and commercial real estate services that combine beauty and excellence to meet the aspirations of citizens.'
+          DESCRIPTION: 'Aspires to lead in providing high-quality residential and commercial real estate services, combining beauty and distinction to meet the aspirations of the Saudi citizen.'
         },
         MISSION: {
           TITLE: 'Mission',
@@ -176,7 +176,7 @@ export const locale = {
       CONTACT: 'Contact Us',
       CONTACT_US: 'Contact Us',
       PHONE: '+966 55 922 3111',
-      ADDRESS: 'Riyadh, Kingdom of Saudi Arabia'
+      ADDRESS: 'Al-Izdihar, Riyadh, Kingdom of Saudi Arabia'
     },
 
     // Project Page
@@ -244,13 +244,13 @@ export const locale = {
         AE: 'United Arab Emirates'
       },
       MAP: {
-        TITLE: 'Visit the nearest branch',
+        TITLE: 'Our Location on Map',
         IFRAME_TITLE: 'Riyadh map location'
       },
       OVERLAY: {
         TITLE: 'Stay in touch',
         WHATSAPP: '+966 55 922 3111',
-        ADDRESS: 'Riyadh, Kingdom of Saudi Arabia'
+        ADDRESS: 'Al-Izdihar, Riyadh, Kingdom of Saudi Arabia'
       }
     }
   },

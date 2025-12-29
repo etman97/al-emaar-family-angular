@@ -42,7 +42,7 @@ export class ProjectsService {
     {
       id: "project9",
       category: "upcoming",
-      name: { en: "VERTICA Mall", ar: "ڤيرتيكا مول" },
+      name: { en: "VERTICA", ar: "ڤيرتيكا" },
       description: {
         en: "A modern shopping experience full of fun and inspiration.",
         ar: "تجربة تسوق عصرية، مليئة بالمرح والإلهام."
@@ -86,7 +86,7 @@ export class ProjectsService {
     {
       id: "project10",
       category: "upcoming",
-      name: { en: "ARVY", ar: "آرڤي" },
+      name: { en: "ARVY Tower", ar: "برج آرڤي" },
       description: {
         en: "Your workspace, with modern inspiration and a unique experience.",
         ar: "مساحة عملك، بإلهام عصري وتجربة مختلفة."
@@ -782,7 +782,7 @@ export class ProjectsService {
       location: { en: "Al-Falah District", ar: "حي الفلاح" },
       locationUrl: "https://maps.app.goo.gl/8r5CFYFCgUUjZpUF8",
       area: "8353",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 30, parkings: 300, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
       Units: [],
       images: [
         "assets/Al Falah/falah-1-main.jpg",
@@ -804,8 +804,8 @@ export class ProjectsService {
       type: { en: "Administrative", ar: "إداري" },
       location: { en: "Al-Nozha District", ar: "حي النزهة" },
       locationUrl: "https://maps.app.goo.gl/wT4f3zM4zchXsYZW9",
-      area: "1,638",
-      stats: { offices: 8, parkings: 78, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      area: "1,715",
+      stats: { offices: 6, parkings: 78, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 2, floors: 0 },
       Units: [],
       images: [
         "assets/Al Nozha/nozha-1-main.jpg",
@@ -882,7 +882,7 @@ export class ProjectsService {
     {
       id: "project6",
       category: "completed",
-      name: { en: "Ejada", ar: "إجادة" },
+      name: { en: "King Abdullah Tower", ar: "برج الملك عبدالله" },
       description: { en: "", ar: "" },
       type: { en: "Administrative", ar: "إداري" },
       location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
@@ -935,7 +935,7 @@ export class ProjectsService {
     {
       id: "project14",
       category: "completed",
-      name: { en: "Twin Tower King", ar: "برج التوأم الملك" },
+      name: { en: "Twin Tower 2", ar: "برج التوأم 2" },
       description: { en: "", ar: "" },
       type: { en: "Administrative", ar: "إداري" },
       location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
@@ -978,8 +978,8 @@ export class ProjectsService {
       location: { en: "Al-Arid District", ar: "حي العارض" },
       locationUrl: "https://maps.app.goo.gl/FuRrjmqsUq2APsQf7",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
-      Units: [],
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 50, exhibitionsShowrooms: 0, floors: 0 },
+      Units: [ ],
       images: [
         "assets/aaridf2-1-main.jpg",
         "assets/aaridf2-2.jpg",
@@ -989,13 +989,13 @@ export class ProjectsService {
     {
       id: "project17",
       category: "completed",
-      name: { en: "Al-Masif 1", ar: "المصيف 1" },
+      name: { en: " Al-Masif Apartments", ar: "شقق المصيف" },
       description: { en: "", ar: "" },
       type: { en: "Residential", ar: "سكني" },
       location: { en: "Al-Masif District", ar: "حي المصيف" },
       locationUrl: "https://maps.app.goo.gl/C4pERhxF9qBfEypg9",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 10, exhibitionsShowrooms: 0, floors: 0 },
       Units: [],
       images: [
         "assets/masif1-1-main.jpg",
@@ -1005,13 +1005,13 @@ export class ProjectsService {
     {
       id: "project18",
       category: "completed",
-      name: { en: "Al-Izdihar 1", ar: "الإزدهار 1" },
+      name: { en: "Al-Izdihar 3(othman ibn afan)", ar: "الإزدهار 3 (عثمان بن عفان)" },
       description: { en: "", ar: "" },
-      type: { en: "Residential", ar: "سكني" },
+      type: { en: "Commercial", ar: "تجاري" },
       location: { en: "Al-Izdihar District", ar: "حي الإزدهار" },
       locationUrl: "https://maps.app.goo.gl/gE8jBctGcQnp8R5r8",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 18, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 5, floors: 0 },
       Units: [],
       images: [
         "assets/izdihar-1-main.jpg",

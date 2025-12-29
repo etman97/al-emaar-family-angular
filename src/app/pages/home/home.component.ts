@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   experienceCount: number = 0;
 
   private readonly finalValues = {
-    projects: 100,
+    projects: 30,
     area: 2,
     clients: 200,
     experience: 30

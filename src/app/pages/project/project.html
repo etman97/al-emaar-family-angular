@@ -1,116 +1,103 @@
-
-
 <div class="project-page container-fluid">
-<a class="back-link" [attr.dir]="lang === 'ar' ? 'rtl' : 'ltr'" [routerLink]="['/our-projects']">
-  <i class="bi" [ngClass]="lang === 'ar' ? 'bi-arrow-right' : 'bi-arrow-left'"></i>
-  <span>{{ 'OUR_PROJECTS.TITLE' | translate }}</span>
-</a>
-	<!-- Hero / Slider -->
-	<section class="hero" 
-	         (touchstart)="onTouchStart($event)" 
-	         (touchend)="onTouchEnd($event)">
-		<button class="nav-arrow prev" 
-		        [attr.aria-label]="'PROJECT.HERO.PREV' | translate"
-		        (click)="prevImage()">
-			<i class="bi bi-chevron-right"></i>
-		</button>
+  <a class="back-link" [attr.dir]="lang === 'ar' ? 'rtl' : 'ltr'" [routerLink]="['/our-projects']">
+    <i class="bi" [ngClass]="lang === 'ar' ? 'bi-arrow-right' : 'bi-arrow-left'"></i>
+    <span>{{ 'OUR_PROJECTS.TITLE' | translate }}</span>
+  </a>
+  <!-- Hero / Slider -->
+  <section class="hero" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <button class="nav-arrow prev" [attr.aria-label]="'PROJECT.HERO.PREV' | translate" (click)="prevImage()">
+      <i class="bi bi-chevron-right"></i>
+    </button>
 
-		<img [src]="currentHeroImage" 
-		     alt="صورة المشروع" 
-		     class="hero-image" 
-		     (click)="openLightbox(currentImageIndex)"
-		     style="cursor: pointer;" />
+    <img [src]="currentHeroImage" alt="صورة المشروع" class="hero-image" (click)="openLightbox(currentImageIndex)"
+      style="cursor: pointer;" />
 
-		<div class="overlay">
-			<div class="type-badge">{{ getProjectValue(projectType) || ('PROJECT.HERO.TYPE_BADGE' | translate) }}</div>
-			<h1 class="title">
-				{{ getProjectValue(projectName) }}
-			</h1>
-			<div class="location-container" (click)="openLocation()">
-				<i class="bi bi-geo-alt"></i>
-				<h2 class="location-subtitle">
-					{{ getProjectValue(projectLocation) }}
-				</h2>
-			</div>
-			<p class="desc">
-				{{ getProjectValue(projectDescription) || ('PROJECT.HERO.DESCRIPTION' | translate) }}
-			</p>
-		</div>
+    <div class="overlay">
+      <div class="type-badge">{{ getProjectValue(projectType) || ('PROJECT.HERO.TYPE_BADGE' | translate) }}</div>
+      <h1 class="title">
+        {{ getProjectValue(projectName) }}
+      </h1>
+      <div class="location-container" (click)="openLocation()">
+        <i class="bi bi-geo-alt"></i>
+        <h2 class="location-subtitle">
+          {{ getProjectValue(projectLocation) }}
+        </h2>
+      </div>
+      <p class="desc">
+        {{ getProjectValue(projectDescription) || ('PROJECT.HERO.DESCRIPTION' | translate) }}
+      </p>
+    </div>
 
-		<!-- Image indicators -->
-		<div class="hero-indicators">
-			<span *ngFor="let img of heroImages; let i = index" 
-			      class="indicator" 
-			      [class.active]="i === currentImageIndex"
-			      (click)="currentImageIndex = i"></span>
-		</div>
+    <!-- Image indicators -->
+    <div class="hero-indicators">
+      <span *ngFor="let img of heroImages; let i = index" class="indicator" [class.active]="i === currentImageIndex"
+        (click)="currentImageIndex = i"></span>
+    </div>
 
-		<button class="nav-arrow next" 
-		        [attr.aria-label]="'PROJECT.HERO.NEXT' | translate"
-		        (click)="nextImage()">
-			<i class="bi bi-chevron-left"></i>
-		</button>
-	</section>
+    <button class="nav-arrow next" [attr.aria-label]="'PROJECT.HERO.NEXT' | translate" (click)="nextImage()">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+  </section>
 
-<section class="stats">
-  <div class="stats-inner">
-    <!-- Dynamic stat cards -->
-    <div class="stat-cards" *ngIf="visibleStats.length > 0">
-      <div class="stat-card" 
-           *ngFor="let stat of visibleStats; let first = first"
-           [class.stat-card-primary]="first">
-        <div class="stat-icon">
-          <img [src]="'assets/' + stat.icon" [alt]="stat.label" />
+  <section class="stats">
+    <div class="stats-inner">
+      <!-- Dynamic stat cards -->
+      <div class="stat-cards" *ngIf="visibleStats.length > 0">
+        <div class="stat-card" *ngFor="let stat of visibleStats; let first = first" [class.stat-card-primary]="first">
+          <div class="stat-icon">
+            <img [src]="'assets/' + stat.icon" [alt]="stat.label" />
+          </div>
+          <div class="stat-text">
+            <div class="stat-label">{{ 'PROJECT.STATS.' + stat.label | translate }}</div>
+            <div class="stat-number">{{ stat.value | number }}</div>
+          </div>
         </div>
-        <div class="stat-text">
-          <div class="stat-label">{{ 'PROJECT.STATS.' + stat.label | translate }}</div>
-          <div class="stat-number">{{ stat.value | number }}</div>
+      </div>
+
+      <!-- Total area card -->
+      <div class="ruler-card" *ngIf="totalArea && totalArea !== '0'">
+        <div class="ruler-top-row">
+          <span class="ruler-label">{{ 'PROJECT.STATS.TOTAL_AREA' | translate }}</span>
+          <img src="assets/ruler-line.svg" class="ruler-image" alt="ruler" />
+        </div>
+
+        <div class="ruler-bottom-row">
+          <div class="ruler-value-row">
+            <span class="ruler-number">{{ totalArea }}</span>
+            <span class="ruler-unit">{{ 'PROJECT.STATS.SQUARE_METER' | translate }}</span>
+          </div>
+
+          <button class="info-btn" type="button" *ngIf="projectLocationUrl" (click)="openLocation()">
+            <span>{{ 'PROJECT.STATS.MORE_INFO' | translate }}</span>
+            <i class="bi bi-info-circle"></i>
+          </button>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Total area card -->
-    <div class="ruler-card" *ngIf="totalArea && totalArea !== '0'">
-      <div class="ruler-top-row">
-        <span class="ruler-label">{{ 'PROJECT.STATS.TOTAL_AREA' | translate }}</span>
-        <img src="assets/ruler-line.svg" class="ruler-image" alt="ruler" />
-      </div>
-
-      <div class="ruler-bottom-row">
-        <div class="ruler-value-row">
-          <span class="ruler-number">{{ totalArea }}</span>
-          <span class="ruler-unit">{{ 'PROJECT.STATS.SQUARE_METER' | translate }}</span>
+  <!-- Units list -->
+  <section class="units" *ngIf="units && units.length > 0">
+    <div class="section-head">{{ 'PROJECT.UNITS.SECTION_TITLE' | translate }}</div>
+    <div class="units-list">
+      <div class="unit-card" *ngFor="let u of units; let i = index">
+        <div class="unit-header">
+          <span class="title">{{ getProjectValue(u.name) }}</span>
+          <span class="hash">#{{ u.unitId }}</span>
         </div>
-
-        <button class="info-btn" type="button" *ngIf="projectLocationUrl" (click)="openLocation()">
-          <span>{{ 'PROJECT.STATS.MORE_INFO' | translate }}</span>
-          <i class="bi bi-info-circle"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Units list -->
-<section class="units" *ngIf="units && units.length > 0">
-  <div class="section-head">{{ 'PROJECT.UNITS.SECTION_TITLE' | translate }}</div>
-  <div class="units-list">
-    <div class="unit-card" *ngFor="let u of units; let i = index">
-      <div class="unit-header">
-        <span class="title">{{ getProjectValue(u.name) }}</span>
-        <span class="hash">#{{ u.unitId }}</span>
-      </div>
-      <div class="unit-meta">
-        <div class="meta">
-          {{ u.area }} <img src="assets/measure.svg" [attr.alt]="'PROJECT.UNITS.AREA_ALT' | translate" />
-        </div>
-        <div class="meta" *ngIf="u.floor && u.floor !== '0'">
-          {{ u.floor }} <img src="assets/Buildings.svg" [attr.alt]="'PROJECT.UNITS.FLOOR_ALT' | translate" />
+        <div class="unit-meta">
+          <div class="meta">
+            {{ u.area }}
+            <span class="ruler-unit">{{ 'PROJECT.STATS.SQUARE_METER' | translate }}</span>
+            <img src="assets/measure.svg" [attr.alt]="'PROJECT.UNITS.AREA_ALT' | translate" />
+          </div>
+          <div class="meta" *ngIf="u.floor">
+            {{ u.floor }} <img src="assets/Buildings.svg" [attr.alt]="'PROJECT.UNITS.FLOOR_ALT' | translate" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </div>
 
 <!-- Lightbox -->
@@ -118,32 +105,28 @@
   <button class="lightbox-close" (click)="closeLightbox()">
     <i class="bi bi-x-lg"></i>
   </button>
-  
-  <button class="lightbox-nav lightbox-prev" 
-          *ngIf="heroImages.length > 1"
-          (click)="prevLightboxImage(); $event.stopPropagation()">
+
+  <button class="lightbox-nav lightbox-prev" *ngIf="heroImages.length > 1"
+    (click)="prevLightboxImage(); $event.stopPropagation()">
     <i class="bi bi-chevron-right"></i>
   </button>
-  
+
   <div class="lightbox-content" (click)="$event.stopPropagation()">
     <img [src]="heroImages[lightboxImageIndex]" alt="صورة المشروع" />
     <div class="lightbox-counter" *ngIf="heroImages.length > 1">
       {{ lightboxImageIndex + 1 }} / {{ heroImages.length }}
     </div>
   </div>
-  
-  <button class="lightbox-nav lightbox-next" 
-          *ngIf="heroImages.length > 1"
-          (click)="nextLightboxImage(); $event.stopPropagation()">
+
+  <button class="lightbox-nav lightbox-next" *ngIf="heroImages.length > 1"
+    (click)="nextLightboxImage(); $event.stopPropagation()">
     <i class="bi bi-chevron-left"></i>
   </button>
-  
+
   <!-- Thumbnails -->
   <div class="lightbox-thumbnails" *ngIf="heroImages.length > 1">
-    <div class="thumbnail" 
-         *ngFor="let img of heroImages; let i = index"
-         [class.active]="i === lightboxImageIndex"
-         (click)="lightboxImageIndex = i; $event.stopPropagation()">
+    <div class="thumbnail" *ngFor="let img of heroImages; let i = index" [class.active]="i === lightboxImageIndex"
+      (click)="lightboxImageIndex = i; $event.stopPropagation()">
       <img [src]="img" alt="صورة مصغرة" />
     </div>
   </div>
