@@ -39,57 +39,26 @@
 <section class="employees-section py-5">
   <div class="container-fluid">
     <div class="row align-items-center gy-5 employee-row mt-5">
-      <div class="col-lg-3 order-lg-1 order-1">
-        <div class="employee-photo-wrapper employee-photo-left animate-on-scroll" style="transition-delay: 0ms;">
-          <img
-            src="assets/employee1.png"
-            alt="الموظف"
-            class="employee-photo"
-          />
-        </div>
-      </div>
-
-      <div class="col-lg-7 order-lg-2 order-2">
-        <div class="employee-text employee-text-right animate-on-scroll" style="transition-delay: 200ms;">
+      <div class="col-lg-12 order-lg-1 order-1">
+        <div class="employee-text animate-on-scroll" [class.employee-text-right]="currentLang === 'ar'" [class.employee-text-left]="currentLang === 'en'" style="transition-delay: 200ms;">
           <h3 class="employee-name">{{ 'ABOUT_US.EMPLOYEES.CHAIRMAN.NAME' | translate }}</h3>
           <p class="employee-title">{{ 'ABOUT_US.EMPLOYEES.CHAIRMAN.TITLE' | translate }}</p>
 
           <p class="employee-paragraph">
             {{ 'ABOUT_US.EMPLOYEES.CHAIRMAN.MESSAGE' | translate }}
           </p>
-          <img
-            src="assets/signature1.png"
-            alt="توقيع"
-            class="employee-signature"
-          />
         </div>
       </div>
     </div>
  <div class="row align-items-center gy-5 employee-row">
-    <div class="col-lg-2"></div>
-      <div class="col-lg-7 order-lg-1 order-2">
-        <div class="employee-text employee-text-left animate-on-scroll" style="transition-delay: 0ms;">
+      <div class="col-lg-12 order-lg-1 order-1">
+        <div class="employee-text animate-on-scroll" [class.employee-text-right]="currentLang === 'ar'" [class.employee-text-left]="currentLang === 'en'" style="transition-delay: 0ms;">
           <h3 class="employee-name">{{ 'ABOUT_US.EMPLOYEES.CEO.NAME' | translate }}</h3>
           <p class="employee-title">{{ 'ABOUT_US.EMPLOYEES.CEO.TITLE' | translate }}</p>
 
           <p class="employee-paragraph">
             {{ 'ABOUT_US.EMPLOYEES.CEO.MESSAGE' | translate }}
           </p>
-          <img
-            src="assets/signature2.png"
-            alt="توقيع"
-            class="employee-signature"
-          />
-        </div>
-      </div>
-
-      <div class="col-lg-3 order-lg-2 order-1">
-        <div class="employee-photo-wrapper employee-photo-right animate-on-scroll" style="transition-delay: 200ms;">
-          <img
-            src="assets/employee2.png"
-            alt="الموظف"
-            class="employee-photo"
-          />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,9 +9,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about-us.scss',
 })
 export class AboutUs implements OnInit, AfterViewInit {
-  constructor(private elementRef: ElementRef) {}
+  currentLang: string = 'ar';
 
-  ngOnInit() {}
+  constructor(private elementRef: ElementRef, private translate: TranslateService) {}
+
+  ngOnInit() {
+    this.currentLang = this.translate.currentLang || this.translate.defaultLang || 'ar';
+    this.translate.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+    });
+  }
 
   ngAfterViewInit() {
     this.setupScrollAnimations();

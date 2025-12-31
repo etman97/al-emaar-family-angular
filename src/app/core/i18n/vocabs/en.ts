@@ -160,7 +160,7 @@ export const locale = {
           MESSAGE: 'At Al-Emaar Family, every project is not just a building, but a story told through time. Experience blends with quality and innovation to make our projects a sustainable foundation that connects our present with the future generations, creating a real difference in the life of the community.'
         },
         CEO: {
-          NAME: 'Your brother / Eng. Nawaf Fahad Al-Dawood',
+          NAME: 'Eng. Nawaf Fahad Al-Dawood',
           TITLE: 'Chief Executive Officer',
           MESSAGE: 'To our partners in success and esteemed investors, The journey of Al-Emaar Family is a story of vision and ambition, where ideas transform into vibrant communities in the best locations across the Kingdom. Our projects are carefully designed to combine meticulous design with exceptional quality, providing an outstanding and sustainable living experience. Since the company\'s establishment, we have continued strategic expansion aligned with Saudi Arabia\'s Vision 2030, relying on strong partnerships to achieve accomplishments that place us at the forefront of real estate developers. The client is always at the heart of every decision, from planning and construction to delivery and after-sales services, ensuring complete satisfaction and a premium experience. We extend our gratitude to our partners and our creative team for their efforts in shaping a future that meets the aspirations of coming generations.'
         }

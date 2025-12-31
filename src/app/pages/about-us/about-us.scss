@@ -501,6 +501,16 @@
   text-align: right;
 }
 
+.employee-text-right {
+  text-align: right;
+  direction: rtl;
+}
+
+.employee-text-left {
+  text-align: left;
+  direction: ltr;
+}
+
 .employee-name {
   font-size: 22px;
   font-weight: 600;
