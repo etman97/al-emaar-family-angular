@@ -196,6 +196,7 @@ export const locale = {
         UNITS: 'Units',
         SHOWROOMS: 'Showrooms',
         FLOORS: 'Floors',
+        ELEVATORS: 'Elevators',
         TOTAL_AREA: 'Total Area',
         SQUARE_METER: 'm²',
         MORE_INFO: 'More Information'

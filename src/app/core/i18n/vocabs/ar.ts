@@ -198,6 +198,7 @@ export const locale = {
         UNITS: 'وحدات',
         SHOWROOMS: 'صالات عرض',
         FLOORS: 'طوابق',
+        ELEVATORS: ' المصاعد',
         TOTAL_AREA: 'المساحة الإجمالية',
         SQUARE_METER: 'م²',
         MORE_INFO: 'معلومات إضافية'

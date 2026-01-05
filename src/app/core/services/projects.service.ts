@@ -8,6 +8,7 @@ export interface ProjectStats {
   units: number;
   exhibitionsShowrooms: number;
   floors: number;
+  elevators: number;
 }
 
 export interface ProjectUnit {
@@ -51,7 +52,7 @@ export class ProjectsService {
       location: { en: "Al-Falah District", ar: "حي الفلاح" },
       locationUrl: "https://www.google.com/maps?q=24.7988593,46.7184883",
       area: "5046",
-      stats: { offices: 14, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 6, floors: 0 },
+      stats: { offices: 14, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 6, floors: 0, elevators: 0 },
       Units: [
         { unitId: 1, name: { en: "Showroom 01", ar: "معرض 01" }, area: "198", floor: "0" },
         { unitId: 2, name: { en: "Showroom 02", ar: "معرض 02" }, area: "198", floor: "0" },
@@ -95,7 +96,7 @@ export class ProjectsService {
       location: { en: "Al-Quds District", ar: "حي القدس" },
       locationUrl: "https://www.google.com/maps?q=RAJA6499%D8%8C+6499",
       area: "4634",
-      stats: { offices: 10, parkings: 102, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 2, floors: 5 },
+      stats: { offices: 10, parkings: 102, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 2, floors: 5, elevators: 0 },
       Units: [
         { unitId: 1, name: { en: "Showroom 01", ar: "معرض 01" }, area: "421", floor: "0" },
         { unitId: 2, name: { en: "Showroom 02", ar: "معرض 02" }, area: "421", floor: "0" },
@@ -128,7 +129,7 @@ export class ProjectsService {
       location: { en: "Al-Narjis District", ar: "حي النرجس" },
       locationUrl: "https://www.google.com/maps?q=RAJA6499%D8%8C+6499",
       area: "6043",
-      stats: { offices: 0, parkings: 0, villas: 18, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 18, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [
         { unitId: 1, name: { en: "Villa 1", ar: "فيلا 1" }, area: "349", floor: "0" },
         { unitId: 2, name: { en: "Villa 2", ar: "فيلا 2" }, area: "333", floor: "0" },
@@ -168,7 +169,7 @@ export class ProjectsService {
       location: { en: "Al-Narjis District", ar: "حي النرجس" },
       locationUrl: "https://www.google.com/maps?q=RAJB2980%D8%8C+2980+%D9%85%D8%AD%D9%85%D8%AF+%D8%A3%D8%A8%D9%8A+%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D8%AF%D8%A7%D8%AA+%D8%A7%D9%84%D8%B7%D8%A8%D8%B1%D9%8A%D8%8C+6883%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D9%86%D8%B1%D8%AC%D8%B3%D8%8C+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+13339&ftid=0x3e2eef8760436c87:0x2e6cf8799a5edf01",
       area: "7182",
-      stats: { offices: 0, parkings: 0, villas: 14, models: 2, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 14, models: 2, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [
         { unitId: 1, name: { en: "Model 1", ar: "نموذج 1" }, area: "364", floor: "0" },
         { unitId: 2, name: { en: "Model 2", ar: "نموذج 2" }, area: "351", floor: "0" }
@@ -223,7 +224,8 @@ export class ProjectsService {
         "models": 0,
         "units": 0,
         "exhibitionsShowrooms": 5,
-        "floors": 0
+        "floors": 0,
+        "elevators": 0
       },
       "Units": [
         { "unitId": 1, "name": { "en": "Exhibition 1", "ar": "معرض 1" }, "area": "324", "floor": "0" },
@@ -558,7 +560,7 @@ export class ProjectsService {
       location: { en: "Al-Masif District", ar: "حي المصيف" },
       locationUrl: "",
       area: "3647",
-      stats: { offices: 21, parkings: 115, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 21, parkings: 115, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       "Units": [
         {
           "unitId": 1,
@@ -782,7 +784,7 @@ export class ProjectsService {
       location: { en: "Al-Falah District", ar: "حي الفلاح" },
       locationUrl: "https://maps.app.goo.gl/8r5CFYFCgUUjZpUF8",
       area: "8353",
-      stats: { offices: 30, parkings: 300, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 30, parkings: 300, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 4 },
       Units: [],
       images: [
         "assets/Al Falah/falah-1-main.jpg",
@@ -805,7 +807,7 @@ export class ProjectsService {
       location: { en: "Al-Nozha District", ar: "حي النزهة" },
       locationUrl: "https://maps.app.goo.gl/wT4f3zM4zchXsYZW9",
       area: "1,715",
-      stats: { offices: 6, parkings: 78, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 2, floors: 0 },
+      stats: { offices: 6, parkings: 78, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 2, floors: 0, elevators: 0 },
       Units: [],
       images: [
         "assets/Al Nozha/nozha-1-main.jpg",
@@ -825,7 +827,7 @@ export class ProjectsService {
       location: { en: "Al-Narjis District", ar: "حي النرجس" },
       locationUrl: "http://google.com/maps?q=24.865398,46.633610",
       area: "8070",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 24, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 24, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [
         { unitId: 1, name: { en: "Showroom 1", ar: "معرض 1" }, area: "1730", floor: "0" },
         { unitId: 2, name: { en: "Office 1", ar: "مكتب 1" }, area: "300", floor: "1" },
@@ -870,7 +872,7 @@ export class ProjectsService {
       location: { en: "Al-Narjis District", ar: "حي النرجس" },
       locationUrl: "https://www.google.com/maps?q=24.865398,46.633610",
       area: "1850",
-      stats: { offices: 10, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 10, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [],
       images: [
         "assets/Al Narjis 2/narjis-o-1-main.jpg",
@@ -888,7 +890,7 @@ export class ProjectsService {
       location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
       locationUrl: "https://maps.app.goo.gl/9jjU4Ez3Rb315DPm6",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [],
       images: [
         "assets/Ejada/ejada-1-main.jpg",
@@ -906,7 +908,7 @@ export class ProjectsService {
       location: { en: "Al-Nada District", ar: "حي الندى" },
       locationUrl: "https://maps.app.goo.gl/4ibW1VPLBmzZFjSx5",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [],
       images: [
         "assets/Binyah/binyah-1-main.jpg",
@@ -924,7 +926,7 @@ export class ProjectsService {
       location: { en: "Al-Wurud District", ar: "حي الورود" },
       locationUrl: "https://maps.app.goo.gl/F6ptepzNJFS2cv8c6",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 , elevators: 0},
       Units: [],
       images: [
         "assets/Mitsubishi Electric/Mitsubishi-1-main.jpg",
@@ -941,7 +943,7 @@ export class ProjectsService {
       location: { en: "Al-Mughrizat District", ar: "حي المغرزات" },
       locationUrl: "https://maps.app.goo.gl/BBCJaKDUQATKsRus5",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 , elevators: 0},
       Units: [],
       images: [
         "assets/ttk-1-main.jpg",
@@ -959,7 +961,7 @@ export class ProjectsService {
       location: { en: "Al-Arid District", ar: "حي العارض" },
       locationUrl: "https://maps.app.goo.gl/FuRrjmqsUq2APsQf7",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0 , elevators: 0},
       Units: [],
       images: [
         "assets/aaridf1-1-main.jpg",
@@ -978,7 +980,7 @@ export class ProjectsService {
       location: { en: "Al-Arid District", ar: "حي العارض" },
       locationUrl: "https://maps.app.goo.gl/FuRrjmqsUq2APsQf7",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 50, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 50, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [ ],
       images: [
         "assets/aaridf2-1-main.jpg",
@@ -995,7 +997,7 @@ export class ProjectsService {
       location: { en: "Al-Masif District", ar: "حي المصيف" },
       locationUrl: "https://maps.app.goo.gl/C4pERhxF9qBfEypg9",
       area: "0",
-      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 10, exhibitionsShowrooms: 0, floors: 0 },
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 10, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
       Units: [],
       images: [
         "assets/masif1-1-main.jpg",
@@ -1011,7 +1013,7 @@ export class ProjectsService {
       location: { en: "Al-Izdihar District", ar: "حي الإزدهار" },
       locationUrl: "https://maps.app.goo.gl/gE8jBctGcQnp8R5r8",
       area: "0",
-      stats: { offices: 18, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 5, floors: 0 },
+      stats: { offices: 18, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 5, floors: 0, elevators: 0 },
       Units: [],
       images: [
         "assets/izdihar-1-main.jpg",
