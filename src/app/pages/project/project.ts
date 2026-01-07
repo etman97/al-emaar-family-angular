@@ -43,6 +43,7 @@ export class Project implements OnDestroy, OnInit {
     if (stats.units > 0) result.push({ label: 'UNITS', value: stats.units, icon: 'house.svg' });
     if (stats.exhibitionsShowrooms > 0) result.push({ label: 'SHOWROOMS', value: stats.exhibitionsShowrooms, icon: 'house.svg' });
     if (stats.floors > 0) result.push({ label: 'FLOORS', value: stats.floors, icon: 'Buildings.svg' });
+    if (stats.elevators > 0) result.push({ label: 'ELEVATORS', value: stats.elevators, icon: 'fa-elevator' });
     
     return result;
   }

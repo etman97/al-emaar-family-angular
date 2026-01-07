@@ -45,7 +45,8 @@
       <div class="stat-cards" *ngIf="visibleStats.length > 0">
         <div class="stat-card" *ngFor="let stat of visibleStats; let first = first" [class.stat-card-primary]="first">
           <div class="stat-icon">
-            <img [src]="'assets/' + stat.icon" [alt]="stat.label" />
+            <img *ngIf="!stat.icon.startsWith('fa-')" [src]="'assets/' + stat.icon" [alt]="stat.label" />
+            <i *ngIf="stat.icon.startsWith('fa-')" class="fa-solid" [ngClass]="stat.icon"></i>
           </div>
           <div class="stat-text">
             <div class="stat-label">{{ 'PROJECT.STATS.' + stat.label | translate }}</div>
