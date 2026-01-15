@@ -126,7 +126,7 @@ export class ContactUs implements OnInit, OnDestroy {
   // Validation patterns
   private validationPatterns = {
     name: /^[a-zA-Z\u0600-\u06FF\s]{2,50}$/,
-    phone: /^[+]?[0-9\s\-()]{10,20}$/,
+    phone: /^[+]?[0-9\s\-()]{9,20}$/,
   };
 
   // Error states

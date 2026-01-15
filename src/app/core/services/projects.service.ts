@@ -1022,6 +1022,81 @@ export class ProjectsService {
         "assets/izdihar-4.jpg"
       ]
     },
+    {
+      id: "project19",
+      category: "completed",
+      name: { en: "Al-Yasmin", ar: "مشروع الياسمين" },
+      description: { en: "", ar: "" },
+      type: { en: "Commercial", ar: "تجاري" },
+      location: { en: "Al-Yasmin District", ar: "حي الياسمين" },
+      locationUrl: "",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
+      Units: [],
+      images: [
+         "assets/Al-Yasmin/Al-Yasmin-1-main.jpeg"
+      ]
+    },
+    {
+      id: "project20",
+      category: "completed",
+      name: { en: "Al-Nakheel", ar: "مشروع النخيل" },
+      description: { en: "", ar: "" },
+      type: { en: "Commercial", ar: "تجاري" },
+      location: { en: "Al-Nakheel District", ar: "حي النخيل" },
+      locationUrl: "",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
+      Units: [],
+      images: [
+         "assets/Al-Nakheel/Al-Nakheel-1-main.jpeg"
+      ]
+    },
+    {
+      id: "project21",
+      category: "completed",
+      name: { en: "Al-Musayif 1", ar: "مشروع المصيف 1" },
+      description: { en: "", ar: "" },
+      type: { en: "Commercial", ar: "تجاري" },
+      location: { en: "Al-Musayif District", ar: "حي المصيف" },
+      locationUrl: "",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
+      Units: [],
+      images: [
+         "assets/Al-Musayif-1/Al-Musayif-1-1-main.jpeg"
+      ]
+    },
+    {
+      id: "project22",
+      category: "completed",
+      name: { en: "Al-Falah 1", ar: "مشروع الفلاح 1" },
+      description: { en: "", ar: "" },
+      type: { en: "Commercial", ar: "تجاري" },
+      location: { en: "Al-Falah District", ar: "حي الفلاح" },
+      locationUrl: "",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
+      Units: [],
+      images: [
+         "assets/Al-Falah-1/Al-Falah-1-1-main.jpeg"
+      ]
+    },
+    {
+      id: "project23",
+      category: "completed",
+      name: { en: "Al-Khurais", ar: "مشروع الخريص" },
+      description: { en: "", ar: "" },
+      type: { en: "Commercial", ar: "تجاري" },
+      location: { en: "Al-Khurais District", ar: "حي الخريص" },
+      locationUrl: "",
+      area: "0",
+      stats: { offices: 0, parkings: 0, villas: 0, models: 0, units: 0, exhibitionsShowrooms: 0, floors: 0, elevators: 0 },
+      Units: [],
+      images: [
+         "assets/Al-Khurais/Al-Khurais-1-main.jpeg"
+      ]
+    },
   ];
 
 
