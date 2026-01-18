@@ -15,7 +15,7 @@ export interface EmailData {
 export class EmailJSService {
   private initialized = false;
   private readonly PUBLIC_KEY = '3OCWh2z8dK60p4sGd';
-  private readonly SERVICE_ID = 'service_qu3lp2s';
+  private readonly SERVICE_ID = 'service_ca29m2t';
   private readonly TEMPLATE_ID = 'template_f3oofso';
 
   constructor() {
