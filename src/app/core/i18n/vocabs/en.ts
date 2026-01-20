@@ -134,23 +134,23 @@ export const locale = {
     // About Us Page
     ABOUT_US: {
       TITLE: 'About Emmar Family',
-      DESCRIPTION: 'The company was established after 30 years of experience in quality and excellence in the field of residential and commercial real estate development. Through it, we aspire to lead in crafting residential and commercial concepts that combine sophistication and distinction, keeping in mind to meet your needs with the highest levels of quality. Our constant goal is to exceed expectations with a real estate product of genuine value, reflecting our ethical identity and supporting the advancement of our community.',
+      DESCRIPTION: 'Established as the culmination of 30 years of mastery in real estate development, Al-Emaar Family leads with innovative residential and commercial concepts that blend sophistication with quality. We are committed to delivering true value that exceeds expectations, reflecting our authentic identity and supporting our community growth.',
       VALUES: {
         VISION: {
           TITLE: 'Vision',
-          DESCRIPTION: 'Aspires to lead in providing high-quality residential and commercial real estate services, combining beauty and distinction to meet the aspirations of the Saudi citizen.'
+          DESCRIPTION: 'To lead in providing exceptional real estate services that meet the aspirations of the Saudi citizen.'
         },
         MISSION: {
           TITLE: 'Mission',
-          DESCRIPTION: 'We are committed to delivering the best services to our clients.'
+          DESCRIPTION: 'To deliver integrated and innovative real estate solutions that exceed our clients expectations'
         },
         GOAL: {
           TITLE: 'Goal',
-          DESCRIPTION: 'We aim to meet the needs of citizens and businesses with valuable engineering standards and high-quality solutions.'
+          DESCRIPTION: 'To satisfy market needs through high-quality, valuable engineering solutions.'
         },
         VALUES: {
           TITLE: 'Values',
-          DESCRIPTION: 'To operate professionally and ethically while driving economic growth.'
+          DESCRIPTION: 'Professionalism, Ethics, and contributing to economic growth.'
         }
       },
       EMPLOYEES: {
@@ -173,6 +173,7 @@ export const locale = {
       HOME: 'Home',
       ABOUT: 'About Us',
       PROJECTS: 'Our Projects',
+      OUR_PARTNERS: 'Our Partners',
       CONTACT: 'Contact Us',
       CONTACT_US: 'Contact Us',
       PHONE: '+966 55 922 3111',
