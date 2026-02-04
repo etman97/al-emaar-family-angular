@@ -149,4 +149,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   navigateToContact(){
     window.location.href = '/contact-us';
   }
+
+  navigateToOurProjects(): void {
+    this.router.navigate(['/our-projects']);
+  }
 }

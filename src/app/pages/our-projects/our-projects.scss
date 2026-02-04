@@ -185,6 +185,22 @@
   transform: scale(1.1);
 }
 
+/* Fix spacing for Angular component generated dropdown items */
+.dropdown-item[_ngcontent-ng-c4023361931],
+::ng-deep .dropdown-item[class*="_ngcontent"] {
+  padding: 16px 24px !important;
+  margin: 6px 12px !important;
+  line-height: 1.8 !important;
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(63, 91, 145, 0.08) !important;
+}
+
+.dropdown-item[_ngcontent-ng-c4023361931]:last-child,
+::ng-deep .dropdown-item[class*="_ngcontent"]:last-child {
+  border-bottom: none !important;
+}
 
 .dropdown-item.clear-option {
   color: #ffffff !important;

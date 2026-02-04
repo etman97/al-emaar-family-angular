@@ -135,6 +135,8 @@ export const locale = {
     ABOUT_US: {
       TITLE: 'About Emmar Family',
       DESCRIPTION: 'Established as the culmination of 30 years of mastery in real estate development, Al-Emaar Family leads with innovative residential and commercial concepts that blend sophistication with quality. We are committed to delivering true value that exceeds expectations, reflecting our authentic identity and supporting our community growth.',
+      VISION_2030_TITLE: 'Vision 2030',
+      VISION_CONTENT: 'Represents a sustainable option for living, working, and investing. The company operates from an integrated approach that unifies the real estate value chain. From planning and acquisition to development and execution, to strategic partnerships to deliver real estate projects with real value and high quality. Projects designed to last.',
       VALUES: {
         VISION: {
           TITLE: 'Vision',
